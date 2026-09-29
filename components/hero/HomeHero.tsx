@@ -3,7 +3,6 @@
 import { motion } from "framer-motion";
 import { ButtonLink, Container, Eyebrow } from "@/components/ui/primitives";
 import { BannerGlow } from "@/components/ui/BannerGlow";
-import { LobbyHero } from "@/components/hero/LobbyHero";
 import { easeOut } from "@/components/animations/variants";
 import { primaryCta, secondaryCta } from "@/lib/navigation";
 
@@ -18,7 +17,7 @@ const headline = { hidden: { y: 28 }, visible: { y: 0, transition: { duration: 0
 
 export function HomeHero() {
   return (
-    <section className="relative isolate overflow-hidden pt-36 pb-16 sm:pt-44 sm:pb-24 lg:pt-48">
+    <section className="relative isolate overflow-hidden pt-36 pb-28 sm:pt-48 sm:pb-40 lg:pt-56 lg:pb-48">
       {/* Background: animated banner swirl, faded out behind the text */}
       <motion.div
         aria-hidden
@@ -57,7 +56,6 @@ export function HomeHero() {
             </ButtonLink>
           </motion.div>
         </motion.div>
-        <LobbyHero />
       </Container>
     </section>
   );
