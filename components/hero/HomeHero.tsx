@@ -31,7 +31,7 @@ export function HomeHero({ src }: { src: string | null }) {
     <section className="relative isolate overflow-hidden bg-page pt-36 pb-16 sm:pt-44 sm:pb-24">
       <div
         aria-hidden
-        className="pointer-events-none absolute inset-x-0 top-0 -z-10 h-[720px] bg-[radial-gradient(60%_55%_at_50%_0%,rgba(0,120,125,0.12),transparent)]"
+        className="pointer-events-none absolute inset-x-0 top-0 -z-10 h-[760px] bg-[radial-gradient(80%_70%_at_50%_0%,var(--linen-2),transparent)]"
       />
 
       <Container>
@@ -56,8 +56,8 @@ export function HomeHero({ src }: { src: string | null }) {
               {secondaryCta.label}
             </ButtonLink>
           </motion.div>
-          <motion.p variants={item} className="mt-4 text-sm text-stone">
-            Book a demo and see it on your own property.
+          <motion.p variants={item} className="mt-4 text-[0.8125rem] text-stone">
+            Early birds get to use the SaraiOS Essential plan for free.
           </motion.p>
         </motion.div>
 
@@ -69,7 +69,7 @@ export function HomeHero({ src }: { src: string | null }) {
         >
           <div
             aria-hidden
-            className="pointer-events-none absolute -inset-x-6 -top-6 -bottom-10 -z-10 rounded-[3rem] bg-[radial-gradient(closest-side,rgba(0,120,125,0.16),transparent)] blur-2xl"
+            className="pointer-events-none absolute -inset-x-6 -top-6 -bottom-10 -z-10 rounded-[3rem] bg-[radial-gradient(closest-side,var(--linen-2),transparent)] blur-2xl"
           />
           <motion.div ref={frameRef} style={{ rotateX, scale, transformOrigin: "50% 0%" }}>
             <ProductScreenshot
