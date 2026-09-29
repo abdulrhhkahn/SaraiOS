@@ -69,7 +69,7 @@ export default function PricingPage() {
             {steps.map((s, i) => (
               <Reveal as="li" key={s.title} delay={i * 0.06} className="rounded-3xl bg-card p-6 ring-1 ring-line">
                 <p className="text-sm font-semibold text-brass-ink">Step {i + 1}</p>
-                <h3 className="mt-3 text-xl font-semibold tracking-[-0.02em]">{s.title}</h3>
+                <h3 className="mt-3 heading-sub text-2xl">{s.title}</h3>
                 <p className="mt-2 leading-relaxed text-stone">{s.body}</p>
               </Reveal>
             ))}
