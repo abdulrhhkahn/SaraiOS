@@ -5,7 +5,6 @@ import { JsonLd } from "@/components/layout/JsonLd";
 import { HomeHero } from "@/components/hero/HomeHero";
 import { ValueFlow } from "@/components/home/ValueFlow";
 import { StickyFeatureCards } from "@/components/home/StickyFeatureCards";
-import { DashboardShowcase } from "@/components/home/DashboardShowcase";
 import { GuestJourney } from "@/components/home/GuestJourney";
 import { AiTakesAction } from "@/components/home/AiTakesAction";
 import { IndustryPreview } from "@/components/home/IndustryPreview";
@@ -31,7 +30,6 @@ export default function HomePage() {
     <>
       <JsonLd data={softwareJsonLd()} />
       <HomeHero src={shots.concierge} />
-      <DashboardShowcase shots={shots} />
       <ValueFlow />
 
       <StickyFeatureCards features={coreFeatures} shots={shots} />

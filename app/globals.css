@@ -170,6 +170,9 @@ body {
 .on-night :focus-visible {
   outline-color: var(--brass);
 }
+.on-green :focus-visible {
+  outline-color: #fff;
+}
 
 /* Subtle grain used behind hero + night sections */
 .grain {
