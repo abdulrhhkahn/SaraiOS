@@ -74,13 +74,13 @@ export function Footer() {
         </Container>
       </section>
 
-      {/* Links */}
-      <div className="border-t border-black/[0.08]">
-        <Container className="pt-11 pb-8">
+      {/* Links: same width as the sections and the header, inset like the header pill so the logos line up. */}
+      <Container>
+        <div className="border-t border-black/[0.08] px-4 pt-11 pb-8 sm:px-5">
           <div className="grid grid-cols-2 gap-x-6 gap-y-8 sm:grid-cols-4 lg:grid-cols-[1.2fr_1fr_1fr_1fr_1fr]">
             <div className="col-span-full lg:col-span-1">
               <Logo />
-              <p className="mt-2 text-sm text-ink/60">{siteConfig.footerTagline}</p>
+              <p className="mt-2 ml-[3px] text-sm text-ink/60">{siteConfig.footerTagline}</p>
             </div>
             {groups.map((group) => (
               <nav key={group.title} aria-label={group.title}>
@@ -104,7 +104,7 @@ export function Footer() {
             ))}
           </div>
 
-          <ul className="mt-16 flex gap-2 sm:mt-24" aria-label="Social media">
+          <ul className="mt-16 -ml-[5px] flex gap-2 sm:mt-24" aria-label="Social media">
             {social.map((link) => (
               <li key={link.label}>
                 {link.disabled ? (
@@ -126,14 +126,14 @@ export function Footer() {
               </li>
             ))}
           </ul>
-        </Container>
-      </div>
+        </div>
+      </Container>
 
-      <div className="border-t border-black/[0.08]">
-        <Container className="py-5 text-sm text-ink/60">
-          <p>© 2026 SaraiOS. All rights reserved. {siteConfig.footerNote}</p>
-        </Container>
-      </div>
+      <Container>
+        <div className="border-t border-black/[0.08] px-4 py-5 text-sm text-ink/60 sm:px-5">
+          <p className="ml-[3px]">© 2026 SaraiOS. All rights reserved. {siteConfig.footerNote}</p>
+        </div>
+      </Container>
     </footer>
   );
 }
