@@ -23,12 +23,14 @@ export function Logo({ tone = "ink", className }: { tone?: "ink" | "linen"; clas
       aria-label="SaraiOS home"
       className={cn("inline-flex min-h-11 items-center gap-2.5 rounded-lg", className)}
     >
-      <LogoMark />
+      <LogoMark className={tone === "linen" ? "brightness-0 invert" : undefined} />
       {tone === "ink" ? (
-        <span className="text-[1.15rem] font-bold tracking-[-0.03em] text-stone">SaraiOS</span>
+        <span className="text-[1.15rem] font-bold tracking-[-0.03em] text-stone">
+          Sarai<span className="text-stone/55">OS</span>
+        </span>
       ) : (
         <span className="text-[1.15rem] font-bold tracking-[-0.03em] text-linen">
-          Sarai<span className="text-night-muted">OS</span>
+          Sarai<span className="text-white/70">OS</span>
         </span>
       )}
     </Link>
