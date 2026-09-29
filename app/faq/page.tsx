@@ -41,14 +41,14 @@ export default function FaqPage() {
         <div className="min-w-0 space-y-16">
           {faqCategories.map((c) => (
             <Reveal as="section" key={c.id}>
-              <h2 id={c.id} className="mb-4 scroll-mt-28 text-2xl font-semibold tracking-[-0.02em]">
+              <h2 id={c.id} className="mb-4 scroll-mt-28 heading-sub text-3xl">
                 {c.title}
               </h2>
               <Accordion items={c.items} />
             </Reveal>
           ))}
           <div className="rounded-3xl bg-card p-8 ring-1 ring-line">
-            <h2 className="text-xl font-semibold tracking-[-0.02em]">Still have questions?</h2>
+            <h2 className="heading-sub text-2xl">Still have questions?</h2>
             <p className="mt-2 text-stone">
               Talk to the team — we&apos;ll walk you through anything specific to your property.
             </p>
