@@ -110,11 +110,13 @@ body {
  * lead: paragraph under a heading (16px)
  */
 @utility heading-hero {
+  /* Matches the Serai app's landing banner: Fraunces, regular weight, optical sizing on. */
   font-family: var(--font-serif);
   font-size: 40px;
   line-height: 1.05;
-  letter-spacing: -0.04em;
-  font-weight: 600;
+  letter-spacing: -0.01em;
+  font-weight: 400;
+  font-optical-sizing: auto;
   color: var(--hero-heading);
   @media (width >= 40rem) {
     font-size: 64px;

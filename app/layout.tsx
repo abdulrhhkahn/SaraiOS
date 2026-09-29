@@ -11,10 +11,12 @@ import { siteConfig } from "@/lib/siteConfig";
 // Body text and UI copy.
 const inter = Inter({ variable: "--font-inter", subsets: ["latin"], display: "swap" });
 // Main headings (Fraunces primary, Cormorant Garamond as the loaded fallback).
+// Variable font with the optical-size axis (same as the Serai app), so big banner
+// headings get Fraunces' high-contrast display cut and small ones stay sturdy.
 const fraunces = Fraunces({
   variable: "--font-fraunces",
   subsets: ["latin"],
-  weight: ["500", "600", "700"],
+  axes: ["opsz"],
   style: ["normal", "italic"],
   display: "swap",
 });
