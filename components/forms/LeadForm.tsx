@@ -75,7 +75,7 @@ export function LeadForm({
             <span className="inline-flex size-12 items-center justify-center rounded-full bg-success-soft text-success">
               <Check className="size-6" aria-hidden />
             </span>
-            <h2 className="mt-6 text-3xl font-semibold tracking-[-0.03em]">{successTitle}</h2>
+            <h2 className="mt-6 heading-sub text-4xl">{successTitle}</h2>
             <p className="mt-3 max-w-md text-lg leading-relaxed text-stone">{successBody}</p>
           </motion.div>
         ) : (
