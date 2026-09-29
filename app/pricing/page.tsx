@@ -1,5 +1,4 @@
 import { faqCategories } from "@/lib/faq";
-import { getScreenAvailability } from "@/lib/screenshots.server";
 import { faqJsonLd, pageMetadata } from "@/lib/seo";
 import { Container, Section, SectionHeading } from "@/components/ui/primitives";
 import { PageHero } from "@/components/ui/PageHero";
@@ -8,7 +7,6 @@ import { PlanCards } from "@/components/pricing/PlanCards";
 import { ComparisonTable } from "@/components/pricing/ComparisonTable";
 import { Accordion } from "@/components/faq/Accordion";
 import { JsonLd } from "@/components/layout/JsonLd";
-import { FinalCta } from "@/components/home/FinalCta";
 
 export const metadata = pageMetadata({
   title: "SaraiOS Pricing",
@@ -31,7 +29,6 @@ const steps = [
 ];
 
 export default function PricingPage() {
-  const shots = getScreenAvailability();
   return (
     <>
       <JsonLd data={faqJsonLd(pricingFaqs)} />
@@ -87,7 +84,6 @@ export default function PricingPage() {
           </Reveal>
         </Container>
       </Section>
-      <FinalCta src={shots.overview} />
     </>
   );
 }
