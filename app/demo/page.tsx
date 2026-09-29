@@ -43,7 +43,7 @@ export default function DemoPage() {
         <Reveal delay={0.1} className="lg:sticky lg:top-28 lg:self-start">
           <ProductScreenshot screen="concierge" src={shots.concierge} sizes="(min-width: 1024px) 45vw, 100vw" />
           <div className="mt-8 rounded-3xl bg-card p-6 ring-1 ring-line">
-            <h2 className="text-lg font-semibold tracking-[-0.02em]">What to expect</h2>
+            <h2 className="heading-sub text-2xl">What to expect</h2>
             <ul className="mt-4 space-y-3">
               {expectations.map((e) => (
                 <li key={e} className="flex gap-3">
