@@ -30,7 +30,7 @@ export default function HomePage() {
   return (
     <>
       <JsonLd data={softwareJsonLd()} />
-      <HomeHero />
+      <HomeHero src={shots.concierge} />
       <DashboardShowcase shots={shots} />
       <ValueFlow />
 
