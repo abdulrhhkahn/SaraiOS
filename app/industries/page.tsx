@@ -6,7 +6,6 @@ import { Container } from "@/components/ui/primitives";
 import { PageHero } from "@/components/ui/PageHero";
 import { IndustrySection } from "@/components/industries/IndustrySection";
 import { IndustryIcon } from "@/components/industries/IndustryIcon";
-import { FinalCta } from "@/components/home/FinalCta";
 
 export const metadata = pageMetadata({
   title: "AI Guest Experience for Hotels, Resorts & Hospitality",
@@ -46,7 +45,6 @@ export default function IndustriesPage() {
           <IndustrySection key={ind.slug} industry={ind} src={shots[ind.screen]} flip={i % 2 === 1} />
         ))}
       </div>
-      <FinalCta src={shots.overview} />
     </>
   );
 }
