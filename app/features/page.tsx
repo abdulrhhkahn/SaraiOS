@@ -11,7 +11,6 @@ import { StickyFeatureStory } from "@/components/features/StickyFeatureStory";
 import { RequestWorkflowDemo } from "@/components/features/RequestWorkflowDemo";
 import { HorizontalShowcase } from "@/components/features/HorizontalShowcase";
 import { IntegrationsSection } from "@/components/home/IntegrationsSection";
-import { FinalCta } from "@/components/home/FinalCta";
 
 export const metadata = pageMetadata({
   title: "SaraiOS Features — AI Guest Experience Platform",
@@ -49,12 +48,6 @@ export default function FeaturesPage() {
       <RequestWorkflowDemo />
       <HorizontalShowcase shots={shots} />
       <IntegrationsSection />
-      <FinalCta
-        src={shots.concierge}
-        screen="concierge"
-        title="See SaraiOS on your property."
-        body="We'll walk through your guest journey, your workflows and your systems."
-      />
     </>
   );
 }
