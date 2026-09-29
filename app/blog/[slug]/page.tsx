@@ -144,7 +144,7 @@ export default async function BlogPostPage(props: PageProps<"/blog/[slug]">) {
 
       <section className="py-24">
         <Container>
-          <h2 className="text-2xl font-semibold tracking-[-0.02em]">Related articles</h2>
+          <h2 className="heading-sub text-3xl">Related articles</h2>
           <Stagger className="mt-8 grid gap-x-6 gap-y-14 sm:grid-cols-2 lg:grid-cols-3">
             {related.map((p) => (
               <RevealItem key={p.slug}>
