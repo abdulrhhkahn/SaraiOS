@@ -10,7 +10,6 @@ import { AiTakesAction } from "@/components/home/AiTakesAction";
 import { IndustryPreview } from "@/components/home/IndustryPreview";
 import { IntegrationsSection } from "@/components/home/IntegrationsSection";
 import { FaqPreview } from "@/components/home/PreviewSections";
-import { FinalCta } from "@/components/home/FinalCta";
 
 export const metadata = pageMetadata({
   title: "SaraiOS — AI-Native Guest Experience Platform",
@@ -39,7 +38,6 @@ export default function HomePage() {
       <IndustryPreview />
       <IntegrationsSection />
       <FaqPreview />
-      <FinalCta src={shots.overview} />
     </>
   );
 }
