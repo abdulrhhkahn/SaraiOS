@@ -1,115 +1,139 @@
-import Image from "next/image";
 import Link from "next/link";
+import type { ReactNode } from "react";
 import { footerNav, primaryCta, secondaryCta } from "@/lib/navigation";
 import { siteConfig } from "@/lib/siteConfig";
-import { publicFileExists } from "@/lib/screenshots.server";
+import { getScreenAvailability } from "@/lib/screenshots.server";
 import { ButtonLink, Container } from "@/components/ui/primitives";
+import { ProductScreenshot } from "@/components/dashboard/ProductScreenshot";
 import { Logo } from "./Logo";
-import { LobbyArt } from "./LobbyArt";
 
-/** Drop a hotel photo here (JPG, ~2400px wide) and it replaces the illustration automatically. */
-const HOTEL_PHOTO = "/images/footer/hotel.jpg";
+/** Simple Icons paths (CC0). lucide-react no longer ships brand icons. */
+const socialIcons: Record<string, ReactNode> = {
+  LinkedIn: (
+    <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
+  ),
+  X: (
+    <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
+  ),
+  Instagram: (
+    <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z" />
+  ),
+};
 
-const linkClass = "inline-flex min-h-10 items-center text-[0.95rem] text-white transition-colors hover:text-white/80";
+function SocialIcon({ name }: { name: string }) {
+  return (
+    <svg aria-hidden viewBox="0 0 24 24" fill="currentColor" className="size-4">
+      {socialIcons[name]}
+    </svg>
+  );
+}
+
+const socialClass = "inline-flex size-8 items-center justify-center rounded-md text-ink transition-colors";
+const linkClass = "inline-flex min-h-8 items-center text-sm text-ink/60 transition-colors hover:text-ink";
 
 export function Footer() {
-  const hasPhoto = publicFileExists(HOTEL_PHOTO);
+  const shots = getScreenAvailability();
+  const groups = footerNav.filter((g) => g.title !== "Connect");
+  const social = footerNav.find((g) => g.title === "Connect")?.links ?? [];
 
   return (
-    <footer className="on-green relative overflow-hidden bg-cta text-white">
-      {/* Image banner with the closing call to action */}
-      <Container className="pt-10 sm:pt-14">
-        <div className="relative isolate flex min-h-[420px] items-end overflow-hidden rounded-[1.75rem] sm:min-h-[500px] sm:rounded-[2.25rem]">
-          {hasPhoto ? (
-            <Image
-              src={HOTEL_PHOTO}
-              alt=""
-              fill
-              quality={80}
-              sizes="(min-width: 1240px) 1176px, 100vw"
-              className="object-cover"
+    <footer className="bg-page text-ink">
+      {/* Closing call to action with the product underneath */}
+      <section aria-labelledby="footer-cta" className="relative overflow-hidden pt-20 pb-16 sm:pt-24 sm:pb-24">
+        <div
+          aria-hidden
+          className="pointer-events-none absolute inset-x-0 top-40 -z-10 h-[520px] bg-[radial-gradient(60%_60%_at_50%_40%,var(--linen-2),transparent)]"
+        />
+        <Container className="text-center">
+          <p className="font-mono text-[0.8125rem] tracking-[0.08em] text-cta uppercase">Get started</p>
+          <h2 id="footer-cta" className="mx-auto mt-5 max-w-[16ch] heading-section text-balance text-subheading">
+            Give every guest a smarter stay.
+          </h2>
+          <p className="mx-auto mt-5 max-w-[46ch] text-base text-pretty text-stone">
+            Bring AI into the guest journey without taking the hospitality out of it.
+          </p>
+          <div className="mt-8 flex flex-wrap justify-center gap-2.5">
+            <ButtonLink href={primaryCta.href} size="sm" arrow>
+              {primaryCta.label}
+            </ButtonLink>
+            <ButtonLink href={secondaryCta.href} size="sm" variant="secondary">
+              {secondaryCta.label}
+            </ButtonLink>
+          </div>
+        </Container>
+
+        <Container className="mt-14 sm:mt-20">
+          <div className="rounded-[1.75rem] bg-black/[0.03] [mask-image:linear-gradient(to_bottom,#000_58%,transparent)] p-2.5 ring-1 ring-black/[0.05] sm:p-3">
+            <ProductScreenshot
+              screen="overview"
+              src={shots.overview}
+              chrome={false}
+              sizes="(min-width: 1240px) 1150px, 100vw"
             />
-          ) : (
-            <LobbyArt />
-          )}
-          <div
-            aria-hidden
-            className="absolute inset-0 bg-[linear-gradient(90deg,rgba(17,18,20,0.88),rgba(17,18,20,0.55)_50%,rgba(17,18,20,0.08)),linear-gradient(to_top,rgba(17,18,20,0.5),transparent_55%)]"
-          />
-          <div className="relative z-10 max-w-2xl p-7 sm:p-12">
-            <h2 className="heading-section text-balance">Give every guest a smarter stay.</h2>
-            <p className="mt-4 max-w-md text-[0.95rem] leading-relaxed text-white/90">
-              Bring AI into the guest journey without taking the hospitality out of it.
-            </p>
-            <div className="mt-6 flex flex-wrap gap-2.5">
-              <ButtonLink href={primaryCta.href} size="sm" variant="light" arrow>
-                {primaryCta.label}
-              </ButtonLink>
-              <ButtonLink
-                href={secondaryCta.href}
-                size="sm"
-                className="bg-white/15 text-white ring-1 ring-white/35 backdrop-blur hover:bg-white/25"
-              >
-                {secondaryCta.label}
-              </ButtonLink>
+          </div>
+        </Container>
+      </section>
+
+      {/* Links */}
+      <div className="border-t border-black/[0.08]">
+        <Container className="pt-11 pb-8">
+          <div className="grid grid-cols-2 gap-x-6 gap-y-8 sm:grid-cols-4 lg:grid-cols-[1.2fr_1fr_1fr_1fr_1fr]">
+            <div className="col-span-full lg:col-span-1">
+              <Logo />
+              <p className="mt-2 text-sm text-ink/60">{siteConfig.footerTagline}</p>
             </div>
-          </div>
-        </div>
-      </Container>
-
-      <Container className="pt-16 pb-10">
-        <div className="grid gap-14 lg:grid-cols-[1.1fr_2fr]">
-          <div className="max-w-sm">
-            <Logo tone="linen" />
-            <p className="mt-5 text-[0.95rem] text-white/90">{siteConfig.footerTagline}</p>
-          </div>
-          <nav aria-label="Footer" className="grid grid-cols-2 gap-x-8 gap-y-10 sm:grid-cols-3 lg:grid-cols-5">
-            {footerNav.map((group) => (
-              <div key={group.title}>
-                <h2 className="text-[0.75rem] font-semibold tracking-[0.14em] text-white/90 uppercase">
-                  {group.title}
-                </h2>
-                <ul className="mt-4 space-y-1">
-                  {group.links.map((link) =>
-                    link.disabled ? (
-                      <li key={link.label}>
-                        {/* Social link inactive until NEXT_PUBLIC_*_URL is configured. */}
-                        <span
-                          className="inline-flex min-h-10 items-center text-[0.95rem] text-white/60"
-                          aria-disabled="true"
-                        >
+            {groups.map((group) => (
+              <nav key={group.title} aria-label={group.title}>
+                <h2 className="flex min-h-8 items-center text-sm font-medium text-ink">{group.title}</h2>
+                <ul>
+                  {group.links.map((link) => (
+                    <li key={link.label}>
+                      {link.external ? (
+                        <a href={link.href} target="_blank" rel="noopener noreferrer" className={linkClass}>
                           {link.label}
-                        </span>
-                      </li>
-                    ) : (
-                      <li key={link.label}>
-                        {link.external ? (
-                          <a href={link.href} target="_blank" rel="noopener noreferrer" className={linkClass}>
-                            {link.label}
-                          </a>
-                        ) : (
-                          <Link href={link.href} className={linkClass}>
-                            {link.label}
-                          </Link>
-                        )}
-                      </li>
-                    ),
-                  )}
+                        </a>
+                      ) : (
+                        <Link href={link.href} className={linkClass}>
+                          {link.label}
+                        </Link>
+                      )}
+                    </li>
+                  ))}
                 </ul>
-              </div>
+              </nav>
             ))}
-          </nav>
-        </div>
+          </div>
 
-        <div className="mt-16 flex flex-col gap-3 border-t border-white/25 pt-8 text-sm text-white/90 sm:flex-row sm:items-center sm:justify-between">
-          <p>© 2026 SaraiOS. All rights reserved.</p>
-          <p>{siteConfig.footerNote}</p>
-        </div>
-      </Container>
-      <div
-        aria-hidden
-        className="pointer-events-none -mb-[0.2em] text-center text-[22vw] leading-none font-bold tracking-[-0.06em] text-white/[0.08] select-none before:content-['SaraiOS']"
-      />
+          <ul className="mt-16 flex gap-2 sm:mt-24" aria-label="Social media">
+            {social.map((link) => (
+              <li key={link.label}>
+                {link.disabled ? (
+                  // Inactive until the matching NEXT_PUBLIC_*_URL is configured.
+                  <span aria-label={link.label} aria-disabled="true" className={`${socialClass} opacity-35`}>
+                    <SocialIcon name={link.label} />
+                  </span>
+                ) : (
+                  <a
+                    href={link.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label={link.label}
+                    className={`${socialClass} hover:bg-black/5`}
+                  >
+                    <SocialIcon name={link.label} />
+                  </a>
+                )}
+              </li>
+            ))}
+          </ul>
+        </Container>
+      </div>
+
+      <div className="border-t border-black/[0.08]">
+        <Container className="py-5 text-sm text-ink/60">
+          <p>© 2026 SaraiOS. All rights reserved. {siteConfig.footerNote}</p>
+        </Container>
+      </div>
     </footer>
   );
 }
