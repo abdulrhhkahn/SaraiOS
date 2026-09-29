@@ -13,7 +13,7 @@ export const siteConfig = {
   productLoginUrl: "https://login.saraios.com/",
   demoEmail: process.env.NEXT_PUBLIC_DEMO_EMAIL || "",
   footerNote: "AI-native guest experience for modern hospitality.",
-  manifesto: ["Guests ask.", "Sarai understands.", "Sarai acts.", "Your team delivers."],
+  footerTagline: "Beyond Arrival",
   social: {
     linkedin: process.env.NEXT_PUBLIC_LINKEDIN_URL || "",
     x: process.env.NEXT_PUBLIC_X_URL || "",
