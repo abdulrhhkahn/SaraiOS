@@ -16,7 +16,7 @@ export function PlanCards({ compact = false }: { compact?: boolean }) {
             plan.emphasis ? "on-night bg-night text-linen shadow-[var(--shadow-frame)]" : "bg-card ring-1 ring-line",
           )}
         >
-          <h3 className="text-3xl font-semibold tracking-[-0.03em]">{plan.name}</h3>
+          <h3 className="heading-sub text-4xl">{plan.name}</h3>
           <p className={cn("mt-2 lead", plan.emphasis ? "text-night-muted" : "text-stone")}>{plan.audience}</p>
           {!compact && (
             <p className={cn("mt-6 leading-relaxed", plan.emphasis ? "text-linen/85" : "text-ink/80")}>
