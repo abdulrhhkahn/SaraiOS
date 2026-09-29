@@ -45,7 +45,7 @@ export default function BlogIndexPage() {
             <div className="flex flex-col justify-center p-8 sm:p-12">
               <p className="text-xs font-semibold tracking-[0.14em] text-iris-ink uppercase">Featured</p>
               <PostMeta post={featured} className="mt-4" />
-              <h2 className="mt-3 font-serif text-[clamp(2rem,3.6vw,3rem)] leading-[1.05] text-balance">
+              <h2 className="mt-3 heading-sub text-[clamp(2rem,3.6vw,3rem)] leading-[1.05] text-balance">
                 <Link href={`/blog/${featured.slug}`} className="after:absolute after:inset-0 after:content-['']">
                   {featured.title}
                 </Link>
@@ -59,7 +59,7 @@ export default function BlogIndexPage() {
           </article>
         </Reveal>
 
-        <h2 className="mt-24 text-2xl font-semibold tracking-[-0.02em]">Latest articles</h2>
+        <h2 className="mt-24 heading-sub text-3xl">Latest articles</h2>
         <Stagger className="mt-8 grid gap-x-6 gap-y-14 sm:grid-cols-2 lg:grid-cols-3">
           {rest.map((post) => (
             <RevealItem key={post.slug}>
