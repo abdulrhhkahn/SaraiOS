@@ -11,7 +11,7 @@ export function Footer() {
         <div className="grid gap-14 lg:grid-cols-[1.1fr_2fr]">
           <div className="max-w-sm">
             <Logo tone="linen" />
-            <p className="mt-6 heading-sub text-3xl leading-snug text-white">{siteConfig.footerTagline}</p>
+            <p className="mt-6 heading-sub text-[0.95rem] leading-snug text-white">{siteConfig.footerTagline}</p>
           </div>
           <nav aria-label="Footer" className="grid grid-cols-2 gap-x-8 gap-y-10 sm:grid-cols-3 lg:grid-cols-5">
             {footerNav.map((group) => (
