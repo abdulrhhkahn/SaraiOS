@@ -1,12 +1,14 @@
 "use client";
 
-import Image from "next/image";
-import { motion } from "framer-motion";
+import { useRef } from "react";
+import { motion, useScroll, useTransform } from "framer-motion";
 import { ButtonLink, Container } from "@/components/ui/primitives";
+import { ProductScreenshot } from "@/components/dashboard/ProductScreenshot";
+import { useReducedMotionSafe } from "@/components/animations/useReducedMotionSafe";
 import { easeOut } from "@/components/animations/variants";
 import { primaryCta, secondaryCta } from "@/lib/navigation";
 
-const container = { hidden: {}, visible: { transition: { staggerChildren: 0.09, delayChildren: 0.15 } } };
+const container = { hidden: {}, visible: { transition: { staggerChildren: 0.09, delayChildren: 0.05 } } };
 const item = {
   hidden: { opacity: 0, y: 22 },
   visible: { opacity: 1, y: 0, transition: { duration: 0.8, ease: easeOut } },
@@ -15,55 +17,70 @@ const item = {
 /** Headline slides without fading so it paints immediately (keeps LCP fast). */
 const headline = { hidden: { y: 28 }, visible: { y: 0, transition: { duration: 0.9, ease: easeOut } } };
 
-export function HomeHero() {
+/** Centred headline, two calls to action, then the product itself below the fold line. */
+export function HomeHero({ src }: { src: string | null }) {
+  const reduce = useReducedMotionSafe();
+  const frameRef = useRef<HTMLDivElement>(null);
+
+  // The screenshot starts slightly tilted back and lies flat as it scrolls into place.
+  const { scrollYProgress } = useScroll({ target: frameRef, offset: ["start 95%", "start 35%"] });
+  const rotateX = useTransform(scrollYProgress, [0, 1], [reduce ? 0 : 14, 0]);
+  const scale = useTransform(scrollYProgress, [0, 1], [reduce ? 1 : 0.94, 1]);
+
   return (
-    <section className="relative isolate flex min-h-[100svh] items-end overflow-hidden bg-night pt-28 pb-8 sm:pb-12 lg:items-center lg:pb-0">
-      {/* Banner image. Only the scale animates (never the opacity), so it can still be the LCP element. */}
-      <motion.div
+    <section className="relative isolate overflow-hidden bg-page pt-36 pb-16 sm:pt-44 sm:pb-24">
+      <div
         aria-hidden
-        className="absolute inset-0 -z-10"
-        initial={{ scale: 1.06 }}
-        animate={{ scale: 1 }}
-        transition={{ duration: 2.4, ease: easeOut }}
-      >
-        <Image
-          src="/images/hero/home-banner.jpg"
-          alt=""
-          fill
-          priority
-          quality={80}
-          sizes="100vw"
-          className="object-cover object-[64%_45%] lg:object-center"
-        />
-      </motion.div>
+        className="pointer-events-none absolute inset-x-0 top-0 -z-10 h-[720px] bg-[radial-gradient(60%_55%_at_50%_0%,rgba(0,120,125,0.12),transparent)]"
+      />
 
       <Container>
-        {/* Frosted glass panel: keeps the text readable over the busy painting. */}
-        <div className="w-full max-w-[640px] rounded-[1.75rem] border border-white/50 bg-[linear-gradient(135deg,rgba(255,255,255,0.92),rgba(255,255,255,0.78))] p-6 shadow-[inset_0_1px_0_rgba(255,255,255,0.7),0_30px_80px_-30px_rgba(0,0,0,0.65)] backdrop-blur-xl backdrop-saturate-150 sm:rounded-[2rem] sm:p-10">
-          <motion.div variants={container} initial="hidden" animate="visible" className="flex flex-col items-start">
-            <motion.div variants={item}>
-              <span className="inline-flex items-center gap-2 rounded-full bg-ink px-4 py-1.5 text-sm font-medium text-linen">
-                <span aria-hidden className="size-2 rounded-full bg-iris" />
-                AI-Native Guest Experience Platform
-              </span>
-            </motion.div>
-            <motion.h1 variants={headline} className="mt-6 heading-hero text-balance">
-              Hospitality, with an AI that never sleeps.
-            </motion.h1>
-            <motion.p variants={item} className="mt-6 max-w-[52ch] lead text-pretty text-stone">
-              Give every guest a personal AI concierge while giving your hotel team an intelligent layer that handles
-              conversations, requests and workflows.
-            </motion.p>
-            <motion.div variants={item} className="mt-8 flex flex-wrap gap-3">
-              <ButtonLink href={primaryCta.href} size="lg" arrow>
-                {primaryCta.label}
-              </ButtonLink>
-              <ButtonLink href={secondaryCta.href} size="lg" variant="secondary">
-                {secondaryCta.label}
-              </ButtonLink>
-            </motion.div>
+        <motion.div
+          variants={container}
+          initial="hidden"
+          animate="visible"
+          className="mx-auto flex max-w-[900px] flex-col items-center text-center"
+        >
+          <motion.h1 variants={headline} className="heading-hero text-balance">
+            Hospitality, with an AI that never sleeps.
+          </motion.h1>
+          <motion.p variants={item} className="mt-6 max-w-[58ch] lead text-pretty text-stone">
+            Give every guest a personal AI concierge while giving your hotel team an intelligent layer that handles
+            conversations, requests and workflows.
+          </motion.p>
+          <motion.div variants={item} className="mt-9 flex flex-wrap justify-center gap-3">
+            <ButtonLink href={primaryCta.href} size="lg" arrow>
+              {primaryCta.label}
+            </ButtonLink>
+            <ButtonLink href={secondaryCta.href} size="lg" variant="secondary">
+              {secondaryCta.label}
+            </ButtonLink>
           </motion.div>
-        </div>
+          <motion.p variants={item} className="mt-4 text-sm text-stone">
+            Book a demo and see it on your own property.
+          </motion.p>
+        </motion.div>
+
+        <motion.div
+          initial={{ opacity: 0, y: 48 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 1, delay: 0.55, ease: easeOut }}
+          className="relative mx-auto mt-14 max-w-[1120px] [perspective:1400px] sm:mt-16"
+        >
+          <div
+            aria-hidden
+            className="pointer-events-none absolute -inset-x-6 -top-6 -bottom-10 -z-10 rounded-[3rem] bg-[radial-gradient(closest-side,rgba(0,120,125,0.16),transparent)] blur-2xl"
+          />
+          <motion.div ref={frameRef} style={{ rotateX, scale, transformOrigin: "50% 0%" }}>
+            <ProductScreenshot
+              screen="concierge"
+              src={src}
+              priority
+              sizes="(min-width: 1200px) 1120px, 100vw"
+              className="shadow-[0_50px_100px_-40px_rgba(0,40,42,0.45)]"
+            />
+          </motion.div>
+        </motion.div>
       </Container>
     </section>
   );
