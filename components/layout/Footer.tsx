@@ -49,7 +49,7 @@ export function Footer() {
           <h2 id="footer-cta" className="mx-auto mt-5 max-w-[16ch] heading-section text-balance text-subheading">
             Give every guest a smarter stay.
           </h2>
-          <p className="mx-auto mt-5 max-w-[46ch] text-base text-pretty text-stone">
+          <p className="mx-auto mt-5 max-w-[46ch] text-lg text-pretty text-stone">
             Bring AI into the guest journey without taking the hospitality out of it.
           </p>
           <div className="mt-8 flex flex-wrap justify-center gap-2.5">
