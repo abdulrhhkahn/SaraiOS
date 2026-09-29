@@ -22,7 +22,7 @@ export function ValueFlow() {
   });
 
   return (
-    <Section className="bg-linen-2/60">
+    <Section>
       <Container>
         <Reveal>
           <SectionHeading
