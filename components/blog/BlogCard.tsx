@@ -27,7 +27,7 @@ export function BlogCard({ post, hasImage }: { post: BlogPost; hasImage: boolean
         />
       </div>
       <PostMeta post={post} className="mt-5" />
-      <h3 className="mt-2.5 text-xl leading-snug font-semibold tracking-[-0.02em] text-balance">
+      <h3 className="mt-2.5 heading-sub text-2xl leading-snug text-balance">
         <Link href={`/blog/${post.slug}`} className="after:absolute after:inset-0 after:content-['']">
           {post.title}
         </Link>
