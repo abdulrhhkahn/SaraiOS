@@ -34,7 +34,7 @@ export function GuestJourney() {
                 <p className="inline-flex rounded-full bg-linen-2 px-3 py-1 text-xs font-semibold tracking-[0.1em] text-brass-ink uppercase">
                   {s.stage}
                 </p>
-                <h3 className="mt-3 text-lg font-semibold tracking-[-0.02em] text-subheading">{s.title}</h3>
+                <h3 className="mt-3 heading-sub text-xl text-subheading">{s.title}</h3>
                 <p className="mt-2 text-[0.95rem] leading-relaxed text-stone">{s.body}</p>
               </div>
             </RevealItem>

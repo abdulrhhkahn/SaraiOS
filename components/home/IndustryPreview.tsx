@@ -36,7 +36,7 @@ export function IndustryPreview() {
                     className="size-5 text-stone transition-[transform,color] duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 group-hover:text-linen"
                   />
                 </div>
-                <h3 className="mt-auto pt-10 text-2xl font-semibold tracking-[-0.03em] transition-colors duration-300 group-hover:text-linen">
+                <h3 className="mt-auto pt-10 heading-sub text-3xl transition-colors duration-300 group-hover:text-linen">
                   {ind.name}
                 </h3>
                 <p className="mt-2 leading-relaxed text-stone transition-colors duration-300 group-hover:text-night-muted">
