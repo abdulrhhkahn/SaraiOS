@@ -1,6 +1,6 @@
 import type { ReactNode } from "react";
-import { ArrowRight, Globe, Mail, MessageSquare, Phone, Wifi } from "lucide-react";
-import { Container, Eyebrow } from "@/components/ui/primitives";
+import { Globe, Mail, MessageSquare, Phone, Wifi } from "lucide-react";
+import { Container } from "@/components/ui/primitives";
 import { Reveal, RevealItem, Stagger } from "@/components/animations/Reveal";
 import { cn } from "@/lib/cn";
 
@@ -74,48 +74,15 @@ function RepeatPanel() {
   );
 }
 
-function Arrow() {
-  return <ArrowRight className="size-3.5 text-stone/40" aria-hidden />;
-}
-
-function WorkflowPanel() {
-  return (
-    <>
-      <PanelHeader
-        title="Routing"
-        aside={
-          <span className="rounded-full bg-brass-soft px-2.5 py-0.5 text-xs font-semibold text-brass-ink">Manual</span>
-        }
-      />
-      <div className="mt-4 space-y-2.5">
-        <div className="flex items-center gap-2">
-          <span className={chip}>Guest</span>
-          <Arrow />
-          <span className={chip}>Front desk</span>
-          <Arrow />
-        </div>
-        <div className="flex items-center gap-2">
-          <span className={chip}>Phone</span>
-          <Arrow />
-          <span className={chip}>Housekeeping</span>
-        </div>
-      </div>
-      <div className="mt-6 space-y-2.5">
-        <Bar w="70%" />
-        <Bar w="52%" />
-      </div>
-    </>
-  );
-}
-
 function MissedPanel() {
   return (
     <>
       <PanelHeader title="Guest stay" />
       <div className="mt-4 flex items-center justify-between gap-4 rounded-xl border border-dashed border-line-strong bg-linen/70 px-4 py-3.5 text-sm">
-        <p className="font-semibold text-ink line-through decoration-ink/50">
-          Spa · Sunset dinner ·<br />
-          Room upgrade
+        <p className="space-y-0.5 font-semibold text-ink [&>span]:block [&>span]:line-through [&>span]:decoration-ink/50">
+          <span>Spa</span>
+          <span>Sunset dinner</span>
+          <span>Room upgrade</span>
         </p>
         <p className="shrink-0 text-stone">Never offered</p>
       </div>
@@ -141,11 +108,6 @@ const problems: { label: string; text: string; panel: ReactNode }[] = [
     panel: <RepeatPanel />,
   },
   {
-    label: "Manual workflows",
-    text: "Requests often need to be manually routed to the right team.",
-    panel: <WorkflowPanel />,
-  },
-  {
     label: "Missed opportunities",
     text: "Upsells and hotel experiences can be difficult to surface at the right moment.",
     panel: <MissedPanel />,
@@ -158,7 +120,7 @@ export function ProblemSection() {
       <Container>
         <Reveal className="grid gap-8 lg:grid-cols-2 lg:gap-16">
           <div>
-            <Eyebrow>The problem</Eyebrow>
+            <p className="font-mono text-[0.8125rem] tracking-[0.08em] text-cta uppercase">The problem</p>
             <h2 className="mt-5 heading-section text-balance text-subheading">
               Guests expect instant. <br className="hidden lg:block" />
               Hotels still run on inboxes.
@@ -173,12 +135,12 @@ export function ProblemSection() {
           </div>
         </Reveal>
 
-        <Stagger className="mt-14 grid gap-5 sm:mt-16 md:grid-cols-2" stagger={0.09}>
+        <Stagger className="mt-14 grid gap-5 sm:mt-16 lg:grid-cols-3" stagger={0.09}>
           {problems.map((p) => (
             <RevealItem key={p.label} className="h-full">
               <article className="group relative isolate flex h-full min-h-[27rem] flex-col overflow-hidden rounded-[2rem] bg-[linear-gradient(165deg,#f7f4ec_0%,#f0eee5_55%,#e3eee9_100%)] p-7 ring-1 ring-black/[0.04] sm:p-9">
                 <p className="text-[0.95rem] text-stone/70">{p.label}</p>
-                <h3 className="mt-3 max-w-[24ch] heading-sub text-2xl leading-snug text-balance text-subheading sm:text-[1.7rem]">
+                <h3 className="mt-3 max-w-[24ch] heading-sub text-2xl leading-snug text-balance text-subheading sm:text-[1.7rem] lg:text-2xl">
                   {p.text}
                 </h3>
 
@@ -193,7 +155,7 @@ export function ProblemSection() {
                   <div className="rounded-[1.75rem] bg-white/50 p-3.5 ring-1 ring-white/80 backdrop-blur-sm transition-transform duration-500 ease-out group-hover:-translate-y-1">
                     <div
                       aria-hidden
-                      className="min-h-[15.5rem] rounded-2xl bg-white p-5 pb-16 shadow-[0_10px_30px_-14px_rgba(0,60,62,0.3)]"
+                      className="h-[16.5rem] overflow-hidden rounded-2xl bg-white p-5 shadow-[0_10px_30px_-14px_rgba(0,60,62,0.3)]"
                     >
                       {p.panel}
                     </div>
