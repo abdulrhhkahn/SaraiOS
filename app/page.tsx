@@ -3,6 +3,7 @@ import { pageMetadata, softwareJsonLd } from "@/lib/seo";
 import { JsonLd } from "@/components/layout/JsonLd";
 import { HomeHero } from "@/components/hero/HomeHero";
 import { ProblemSection } from "@/components/home/ProblemSection";
+import { ConciergeKnowledge } from "@/components/home/ConciergeKnowledge";
 import { IndustryPreview } from "@/components/home/IndustryPreview";
 import { FaqPreview } from "@/components/home/PreviewSections";
 
@@ -21,6 +22,7 @@ export default function HomePage() {
       <JsonLd data={softwareJsonLd()} />
       <HomeHero src={shots.concierge} />
       <ProblemSection />
+      <ConciergeKnowledge />
       <IndustryPreview />
       <FaqPreview />
     </>
