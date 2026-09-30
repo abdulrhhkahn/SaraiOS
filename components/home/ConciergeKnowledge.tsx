@@ -129,7 +129,7 @@ const faqs: Faq[] = [
 
 function KnowledgeCard({ stage }: { stage: number }) {
   return (
-    <div className="rounded-2xl bg-white p-4 shadow-[0_18px_40px_-20px_rgba(0,60,62,0.35)] ring-1 ring-black/[0.05] sm:p-5 md:pl-[5.25rem]">
+    <div className="rounded-2xl bg-white p-4 shadow-[0_10px_28px_-20px_rgba(0,0,0,0.3)] ring-1 ring-black/[0.08] sm:p-5 md:pl-[5.25rem]">
       <div className="flex items-start justify-between gap-3">
         <div>
           <div className="flex items-center gap-2">
@@ -246,18 +246,16 @@ export function ConciergeKnowledge() {
 
           {/* Mockup frame: phone chat on the left, the saved FAQs it answers from on the right */}
           <Reveal delay={0.1}>
-            <div ref={ref} className="rounded-[1.75rem] bg-black/[0.03] p-2.5 ring-1 ring-black/[0.05] sm:p-3">
-              <div
-                aria-hidden
-                className="relative isolate flex flex-col gap-8 overflow-hidden rounded-[1.25rem] bg-[linear-gradient(165deg,#f7f4ec_0%,#f0eee5_55%,#e3eee9_100%)] px-4 py-8 md:block md:h-[38rem] md:p-0"
-              >
-                <div className="pointer-events-none absolute top-1/3 left-1/4 -z-10 h-56 w-2/3 rounded-full bg-cta/20 blur-3xl" />
-                <div className="order-2 md:absolute md:inset-y-0 md:right-0 md:w-[68%] md:pt-10 md:pr-6">
-                  <KnowledgeCard stage={stage} />
-                </div>
-                <div className="order-1 flex justify-center md:absolute md:top-12 md:left-[5%] md:block">
-                  <PhoneChat stage={stage} />
-                </div>
+            <div
+              ref={ref}
+              aria-hidden
+              className="relative isolate flex flex-col gap-8 overflow-hidden rounded-3xl bg-white px-4 py-8 ring-1 ring-black/[0.08] md:block md:h-[38rem] md:p-0"
+            >
+              <div className="order-2 md:absolute md:inset-y-0 md:right-0 md:w-[68%] md:pt-10 md:pr-6">
+                <KnowledgeCard stage={stage} />
+              </div>
+              <div className="order-1 flex justify-center md:absolute md:top-12 md:left-[5%] md:block">
+                <PhoneChat stage={stage} />
               </div>
             </div>
           </Reveal>

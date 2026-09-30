@@ -118,44 +118,33 @@ export function ProblemSection() {
   return (
     <section className="relative pt-12 pb-24 sm:pt-16 sm:pb-32">
       <Container>
-        <Reveal className="grid gap-8 lg:grid-cols-2 lg:gap-16">
-          <div>
-            <p className="font-mono text-[0.8125rem] tracking-[0.08em] text-cta uppercase">The problem</p>
-            <h2 className="mt-5 heading-section text-balance text-subheading">
-              Guests expect instant. <br className="hidden lg:block" />
-              Hotels still run on inboxes.
-            </h2>
-          </div>
-          <div className="lg:pt-9">
-            <p className="text-base font-semibold text-ink">Guest expectations have changed.</p>
-            <p className="mt-4 max-w-[52ch] text-lg text-pretty text-stone">
-              Questions arrive through multiple channels. Requests move between teams. Staff answer the same questions
-              repeatedly. Revenue opportunities disappear between guest interactions.
-            </p>
-          </div>
+        <Reveal>
+          <p className="font-mono text-[0.8125rem] tracking-[0.08em] text-cta uppercase">The problem</p>
+          <h2 className="mt-5 heading-section text-balance text-subheading">
+            Guests expect instant. <br className="hidden lg:block" />
+            Hotels still run on inboxes.
+          </h2>
+          <p className="mt-5 max-w-[52ch] text-lg text-pretty text-stone">
+            Questions arrive through multiple channels. Requests move between teams. Staff answer the same questions
+            repeatedly. Revenue opportunities disappear between guest interactions.
+          </p>
         </Reveal>
 
         <Stagger className="mt-14 grid gap-5 sm:mt-16 lg:grid-cols-3" stagger={0.09}>
           {problems.map((p) => (
             <RevealItem key={p.label} className="h-full">
-              <article className="group relative isolate flex h-full min-h-[27rem] flex-col overflow-hidden rounded-[2rem] bg-[linear-gradient(165deg,#f7f4ec_0%,#f0eee5_55%,#e3eee9_100%)] p-7 ring-1 ring-black/[0.04] sm:p-9">
+              <article className="group relative isolate flex h-full min-h-[27rem] flex-col overflow-hidden rounded-3xl bg-white p-7 ring-1 ring-black/[0.08] sm:p-9">
                 <p className="text-[0.95rem] text-stone/70">{p.label}</p>
                 <h3 className="mt-3 max-w-[24ch] heading-sub text-2xl leading-snug text-balance text-subheading sm:text-[1.7rem] lg:text-2xl">
                   {p.text}
                 </h3>
 
-                {/* Soft Sarai-green glow behind the frame */}
-                <div
-                  aria-hidden
-                  className="pointer-events-none absolute right-[8%] bottom-[16%] -z-10 h-40 w-[72%] rounded-full bg-cta/25 blur-3xl"
-                />
-
-                {/* Frosted frame holding the mini interface; it runs off the card edge like a cropped screenshot */}
+                {/* Light frame holding the mini interface; it runs off the card edge like a cropped screenshot */}
                 <div className="mt-auto -mr-14 -mb-14 pt-10">
-                  <div className="rounded-[1.75rem] bg-white/50 p-3.5 ring-1 ring-white/80 backdrop-blur-sm transition-transform duration-500 ease-out group-hover:-translate-y-1">
+                  <div className="rounded-[1.75rem] bg-black/[0.03] p-3.5 ring-1 ring-black/[0.06] transition-transform duration-500 ease-out group-hover:-translate-y-1">
                     <div
                       aria-hidden
-                      className="h-[16.5rem] overflow-hidden rounded-2xl bg-white p-5 shadow-[0_10px_30px_-14px_rgba(0,60,62,0.3)]"
+                      className="h-[16.5rem] overflow-hidden rounded-2xl bg-white p-5 shadow-[0_6px_20px_-14px_rgba(0,0,0,0.3)] ring-1 ring-black/[0.06]"
                     >
                       {p.panel}
                     </div>
