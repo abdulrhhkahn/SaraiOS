@@ -6,6 +6,7 @@ import { ProblemSection } from "@/components/home/ProblemSection";
 import { ConciergeKnowledge } from "@/components/home/ConciergeKnowledge";
 import { GuestCheckin } from "@/components/home/GuestCheckin";
 import { IndustryPreview } from "@/components/home/IndustryPreview";
+import { OfflineReady } from "@/components/home/OfflineReady";
 import { FaqPreview } from "@/components/home/PreviewSections";
 
 export const metadata = pageMetadata({
@@ -26,6 +27,7 @@ export default function HomePage() {
       <ConciergeKnowledge />
       <GuestCheckin />
       <IndustryPreview />
+      <OfflineReady />
       <FaqPreview />
     </>
   );
