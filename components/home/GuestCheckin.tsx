@@ -244,7 +244,7 @@ export function GuestCheckin() {
   return (
     <section className="relative pb-24 sm:pb-32">
       <Container>
-        <Reveal className="mx-auto flex max-w-[44rem] flex-col items-center text-center">
+        <Reveal className="flex max-w-[44rem] flex-col items-start text-left">
           <p className="font-mono text-[0.8125rem] tracking-[0.08em] text-cta uppercase">Guest check-in</p>
           <h2 className="mt-5 max-w-[20ch] heading-section text-balance text-subheading">
             Check-in done before the guest arrives.

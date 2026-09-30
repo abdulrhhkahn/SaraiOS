@@ -32,11 +32,11 @@ function CardShell({ className, children }: { className?: string; children: Reac
 /** Zoomed-in guest hub chat with no connection: the hub still opens and a new message waits in the queue. */
 function OfflineChat() {
   return (
-    <div aria-hidden className="mt-auto -mr-10 -mb-14 pt-4">
+    <div aria-hidden className="w-[calc(100%+2rem)] pt-5">
       <div className="rounded-[1.6rem] bg-black/[0.03] p-2 ring-1 ring-black/[0.06]">
         <div className="rounded-[1.2rem] bg-white p-5 pb-12">
           {/* Header */}
-          <div className="flex items-center justify-between gap-3">
+          <div className="flex items-center justify-between gap-3 pr-8">
             <div className="flex items-center gap-3">
               <span className="size-10 rounded-xl bg-cta" />
               <div className="leading-tight">
@@ -57,7 +57,7 @@ function OfflineChat() {
           </div>
 
           {/* Conversation */}
-          <div className="mt-4 space-y-3 text-[0.95rem] leading-snug">
+          <div className="mt-4 space-y-3 pr-8 text-[0.95rem] leading-snug">
             <div className="ml-auto w-fit max-w-[80%]">
               <p className="rounded-2xl rounded-br-md bg-cta px-4 py-2.5 text-white">Can we get two extra towels?</p>
               <p className="mt-1.5 flex items-center justify-end gap-1.5 text-[0.75rem] text-ink/55">
@@ -85,7 +85,7 @@ export function OfflineReady() {
   return (
     <section className="relative pt-24 sm:pt-32">
       <Container>
-        <Reveal className="mx-auto flex max-w-[44rem] flex-col items-center text-center">
+        <Reveal className="flex max-w-[44rem] flex-col items-start text-left">
           <p className="font-mono text-[0.8125rem] tracking-[0.08em] text-cta uppercase">Offline ready</p>
           <h2 className="mt-5 max-w-[20ch] heading-section text-balance text-subheading">
             Still works when the signal drops.
@@ -101,8 +101,8 @@ export function OfflineReady() {
             <CardShell className="min-h-[22rem] lg:h-[27rem]">
               <IconBadge icon={WifiOff} />
               <div className="mt-auto pt-16">
-                <h3 className="heading-sub text-3xl leading-tight text-subheading">Works offline</h3>
-                <p className="mt-3 max-w-[34ch] text-base text-pretty text-ink/60">
+                <h3 className="heading-sub text-xl text-subheading">Works offline</h3>
+                <p className="mt-3 max-w-[40ch] text-[0.95rem] text-pretty text-ink/60">
                   Wi-Fi details and hotel info still open without a signal, from what the phone saved last time.
                 </p>
               </div>
@@ -111,12 +111,12 @@ export function OfflineReady() {
 
           <RevealItem>
             <CardShell className="lg:h-[31rem]">
-              <h3 className="heading-sub text-3xl leading-tight text-subheading">Chat keeps working</h3>
-              <p className="mt-3 max-w-[34ch] text-base text-pretty text-ink/60">
+              <h3 className="heading-sub text-xl text-subheading">Chat keeps working</h3>
+              <p className="mt-3 max-w-[40ch] text-[0.95rem] text-pretty text-ink/60">
                 Messages written offline are saved and sent in order once the phone is back online.
               </p>
               <DemoTag className="mt-5 w-fit">Sample conversation</DemoTag>
-              <div className="relative mt-auto h-[20rem] overflow-hidden lg:h-auto lg:flex-1">
+              <div className="relative mt-auto -mr-7 -mb-7 h-[20rem] overflow-hidden sm:-mr-8 sm:-mb-8 lg:h-auto lg:flex-1">
                 <OfflineChat />
               </div>
             </CardShell>
@@ -126,8 +126,8 @@ export function OfflineReady() {
             <CardShell className="min-h-[22rem] lg:h-[27rem]">
               <IconBadge icon={Feather} />
               <div className="mt-auto pt-16">
-                <h3 className="heading-sub text-3xl leading-tight text-subheading">Light on data</h3>
-                <p className="mt-3 max-w-[34ch] text-base text-pretty text-ink/60">
+                <h3 className="heading-sub text-xl text-subheading">Light on data</h3>
+                <p className="mt-3 max-w-[40ch] text-[0.95rem] text-pretty text-ink/60">
                   No app store download. It loads only the stay details a guest needs, then keeps a copy on the phone.
                 </p>
               </div>

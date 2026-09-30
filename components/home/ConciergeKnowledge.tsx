@@ -31,7 +31,7 @@ function TypingDots() {
 function PhoneChat({ stage }: { stage: number }) {
   const answered = stage >= LAST_STAGE;
   return (
-    <div className="w-[15.5rem] shrink-0 rounded-[2.4rem] bg-ink p-2 shadow-[0_30px_60px_-20px_rgba(0,40,42,0.55)]">
+    <div className="w-[15.5rem] shrink-0 rounded-[2.4rem] bg-ink p-2">
       <div className="relative flex h-[32rem] flex-col overflow-hidden rounded-[1.9rem] bg-white">
         <span aria-hidden className="absolute top-2 left-1/2 h-4 w-16 -translate-x-1/2 rounded-full bg-ink" />
 
