@@ -46,7 +46,7 @@ export function Footer() {
           className="pointer-events-none absolute inset-x-0 top-40 -z-10 h-[520px] bg-[radial-gradient(60%_60%_at_50%_40%,var(--linen-2),transparent)]"
         />
         <Container className="text-center">
-          <p className="font-mono text-[0.8125rem] tracking-[0.08em] text-cta uppercase">Get started</p>
+          <p className="font-mono text-[0.9375rem] tracking-[0.08em] text-cta uppercase">Get started</p>
           <h2 id="footer-cta" className="mx-auto mt-5 max-w-[16ch] heading-section text-balance text-subheading">
             Give every guest a smarter stay.
           </h2>
