@@ -2,7 +2,8 @@
 
 import { useRef } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
-import { ButtonLink, Container } from "@/components/ui/primitives";
+import { Container } from "@/components/ui/primitives";
+import { ArrowButton } from "@/components/ui/ArrowButton";
 import { ProductScreenshot } from "@/components/dashboard/ProductScreenshot";
 import { useReducedMotionSafe } from "@/components/animations/useReducedMotionSafe";
 import { easeOut } from "@/components/animations/variants";
@@ -49,12 +50,12 @@ export function HomeHero({ src }: { src: string | null }) {
             conversations, requests and workflows.
           </motion.p>
           <motion.div variants={item} className="mt-9 flex flex-wrap justify-center gap-3">
-            <ButtonLink href={primaryCta.href} size="sm" arrow>
+            <ArrowButton href={primaryCta.href} size="sm">
               {primaryCta.label}
-            </ButtonLink>
-            <ButtonLink href={secondaryCta.href} size="sm" variant="secondary">
+            </ArrowButton>
+            <ArrowButton href={secondaryCta.href} size="sm" variant="secondary">
               {secondaryCta.label}
-            </ButtonLink>
+            </ArrowButton>
           </motion.div>
           <motion.p variants={item} className="mt-4 text-[0.8125rem] text-stone">
             *Early birds get to use the SaraiOS Essential plan for free.
