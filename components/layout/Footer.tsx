@@ -78,7 +78,7 @@ export function Footer() {
       {/* Links: same width as the sections and the header, inset like the header pill so the logos line up. */}
       <Container>
         <div className="border-t border-black/[0.08] px-4 pt-11 pb-8 sm:px-5">
-          <div className="grid grid-cols-2 gap-x-6 gap-y-8 sm:grid-cols-3 lg:grid-cols-[1.1fr_1fr_1.5fr_1fr_1fr_1fr]">
+          <div className="grid grid-cols-2 gap-x-6 gap-y-8 sm:grid-cols-3 lg:grid-cols-[1.62fr_1fr_1.5fr_1fr_1fr_0.48fr]">
             <div className="col-span-full lg:col-span-1">
               <Logo />
               <p className="mt-2 ml-[3px] text-sm text-ink/60">{siteConfig.footerTagline}</p>
