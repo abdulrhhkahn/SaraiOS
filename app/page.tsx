@@ -24,8 +24,8 @@ export default function HomePage() {
       <JsonLd data={softwareJsonLd()} />
       <HomeHero src={shots.concierge} />
       <ProblemSection />
-      <ConciergeKnowledge />
       <GuestCheckin />
+      <ConciergeKnowledge />
       <IndustryPreview />
       <OfflineReady />
       <FaqPreview />
