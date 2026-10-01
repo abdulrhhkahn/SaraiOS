@@ -3,7 +3,8 @@
 import { useEffect, useRef, useState } from "react";
 import { useInView } from "framer-motion";
 import { BookOpen, Pencil, Plus, Send, Smartphone, Trash2, UserCheck } from "lucide-react";
-import { ButtonLink, Container, DemoTag } from "@/components/ui/primitives";
+import { Container, DemoTag } from "@/components/ui/primitives";
+import { ArrowButton } from "@/components/ui/ArrowButton";
 import { Reveal, RevealItem, Stagger } from "@/components/animations/Reveal";
 import { useReducedMotionSafe } from "@/components/animations/useReducedMotionSafe";
 import { primaryCta } from "@/lib/navigation";
@@ -235,12 +236,12 @@ export function ConciergeKnowledge() {
               phone, and hands over to your team when needed.
             </p>
             <div className="mt-8 flex flex-wrap gap-2.5">
-              <ButtonLink href="/pricing" size="sm" arrow>
+              <ArrowButton href="/pricing" size="sm">
                 Start your free trial
-              </ButtonLink>
-              <ButtonLink href={primaryCta.href} size="sm" variant="secondary">
+              </ArrowButton>
+              <ArrowButton href={primaryCta.href} size="sm" variant="secondary">
                 {primaryCta.label}
-              </ButtonLink>
+              </ArrowButton>
             </div>
           </Reveal>
 

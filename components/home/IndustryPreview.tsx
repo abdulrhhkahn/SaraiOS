@@ -1,7 +1,8 @@
 import Link from "next/link";
 import { ArrowUpRight } from "lucide-react";
 import { industries } from "@/lib/industries";
-import { ButtonLink, Container } from "@/components/ui/primitives";
+import { Container } from "@/components/ui/primitives";
+import { ArrowButton } from "@/components/ui/ArrowButton";
 import { Reveal, RevealItem, Stagger } from "@/components/animations/Reveal";
 import { IndustryIcon } from "@/components/industries/IndustryIcon";
 
@@ -17,9 +18,9 @@ export function IndustryPreview() {
             </h2>
           </Reveal>
           <Reveal>
-            <ButtonLink href="/industries" size="sm" variant="secondary" arrow>
+            <ArrowButton href="/industries" size="sm" variant="secondary">
               Explore Solutions
-            </ButtonLink>
+            </ArrowButton>
           </Reveal>
         </div>
 
