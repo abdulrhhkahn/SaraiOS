@@ -224,7 +224,7 @@ function HubIllustration() {
 
 const cards: { title: string; text: string; art: ReactNode }[] = [
   {
-    title: "QR code check-in",
+    title: "Digital check-in",
     text: "Guests scan a QR code or open a link and start check-in on their own phone, with no login.",
     art: <QrIllustration />,
   },
@@ -243,8 +243,8 @@ const cards: { title: string; text: string; art: ReactNode }[] = [
 export function GuestCheckin() {
   return (
     <section className="relative pb-24 sm:pb-32">
-      <Container>
-        <div className="rounded-3xl bg-linen px-5 py-10 sm:px-8 sm:py-14 lg:px-10 lg:py-16">
+      <div className="rounded-3xl bg-linen py-14 sm:py-20 lg:py-24">
+        <Container>
           <Reveal className="flex max-w-[44rem] flex-col items-start text-left">
             <p className="font-mono text-[0.8125rem] tracking-[0.08em] text-cta uppercase">Guest check-in</p>
             <h2 className="mt-5 max-w-[20ch] heading-section text-balance text-subheading">
@@ -272,8 +272,8 @@ export function GuestCheckin() {
               </RevealItem>
             ))}
           </Stagger>
-        </div>
-      </Container>
+        </Container>
+      </div>
     </section>
   );
 }
