@@ -30,10 +30,12 @@ export function HomeHero({ src }: { src: string | null }) {
 
   return (
     <section className="relative isolate overflow-hidden bg-page pt-36 pb-16 sm:pt-44 sm:pb-24">
-      <div
-        aria-hidden
-        className="pointer-events-none absolute inset-x-0 top-0 -z-10 h-[760px] bg-[radial-gradient(80%_70%_at_50%_0%,var(--linen-2),transparent)]"
-      />
+      {/* Cream backdrop: soft vertical pleats that fade out towards the middle, a touch of grain, and a fade into the page below */}
+      <div aria-hidden className="pointer-events-none absolute inset-0 -z-10 bg-linen-2">
+        <div className="absolute inset-0 bg-[repeating-linear-gradient(90deg,rgba(255,255,255,0)_0px,rgba(255,255,255,0.8)_80px,rgba(255,255,255,0)_160px,rgba(110,90,40,0.06)_240px,rgba(255,255,255,0)_320px)] [mask-image:linear-gradient(90deg,#000,rgba(0,0,0,0.2)_32%,rgba(0,0,0,0.2)_68%,#000)]" />
+        <div className="absolute inset-0 bg-grain opacity-[0.07] mix-blend-multiply" />
+        <div className="absolute inset-x-0 bottom-0 h-56 bg-[linear-gradient(to_bottom,transparent,var(--page))]" />
+      </div>
 
       <Container>
         <motion.div
@@ -70,7 +72,7 @@ export function HomeHero({ src }: { src: string | null }) {
         >
           <div
             aria-hidden
-            className="pointer-events-none absolute -inset-x-6 -top-6 -bottom-10 -z-10 rounded-[3rem] bg-[radial-gradient(closest-side,var(--linen-2),transparent)] blur-2xl"
+            className="pointer-events-none absolute -inset-x-6 -top-6 -bottom-10 -z-10 rounded-[3rem] bg-[radial-gradient(closest-side,rgba(255,255,255,0.85),transparent)] blur-2xl"
           />
           <motion.div ref={frameRef} style={{ rotateX, scale, transformOrigin: "50% 0%" }}>
             <div className="rounded-[1.75rem] bg-black/[0.03] p-2.5 ring-1 ring-black/[0.05] sm:p-3">
