@@ -10,5 +10,5 @@ export const metadata = pageMetadata({
 
 /** Platform page: the banner, then the closing call to action and footer. More sections will be added below the banner. */
 export default function FeaturesPage() {
-  return <ImageBanner src="/images/platform/banner.jpg" title="Platform" imageClassName="object-[50%_32%]" />;
+  return <ImageBanner src="/images/platform/banner.jpg" title="Platform" imageClassName="object-[50%_28%]" />;
 }
