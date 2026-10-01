@@ -5,6 +5,7 @@ import { useInView } from "framer-motion";
 import { BookOpen, Pencil, Plus, Send, Smartphone, Trash2, UserCheck } from "lucide-react";
 import { Container, DemoTag } from "@/components/ui/primitives";
 import { ArrowButton } from "@/components/ui/ArrowButton";
+import { GreyGreenBackdrop } from "@/components/ui/GreyGreenBackdrop";
 import { Reveal, RevealItem, Stagger } from "@/components/animations/Reveal";
 import { useReducedMotionSafe } from "@/components/animations/useReducedMotionSafe";
 import { primaryCta } from "@/lib/navigation";
@@ -32,7 +33,7 @@ function TypingDots() {
 function PhoneChat({ stage }: { stage: number }) {
   const answered = stage >= LAST_STAGE;
   return (
-    <div className="w-[15.5rem] shrink-0 rounded-[2.4rem] bg-ink p-2">
+    <div className="w-[15.5rem] shrink-0 rounded-[2.4rem] bg-ink p-2 ring-1 ring-white/20">
       <div className="relative flex h-[32rem] flex-col overflow-hidden rounded-[1.9rem] bg-white">
         <span aria-hidden className="absolute top-2 left-1/2 h-4 w-16 -translate-x-1/2 rounded-full bg-ink" />
 
@@ -130,11 +131,11 @@ const faqs: Faq[] = [
 
 function KnowledgeCard({ stage }: { stage: number }) {
   return (
-    <div className="rounded-2xl bg-white p-4 shadow-[0_10px_28px_-20px_rgba(0,0,0,0.3)] ring-1 ring-black/[0.08] sm:p-5 md:pl-[5.25rem]">
+    <div className="rounded-2xl bg-white p-4 shadow-[0_10px_28px_-20px_rgba(0,0,0,0.3)] ring-1 ring-black/[0.08] sm:p-5 md:pl-[7rem]">
       <div className="flex items-start justify-between gap-3">
         <div>
-          <div className="flex items-center gap-2">
-            <p className="font-serif text-[1.05rem] text-ink">Knowledge base</p>
+          <div className="flex flex-wrap items-center gap-x-2 gap-y-1">
+            <p className="font-serif text-[1.05rem] whitespace-nowrap text-ink">Knowledge base</p>
             <DemoTag>Demo data</DemoTag>
           </div>
           <p className="mt-1 max-w-[30ch] text-[0.7rem] leading-snug text-stone/60">
@@ -225,54 +226,58 @@ export function ConciergeKnowledge() {
   return (
     <section className="relative pb-24 sm:pb-32">
       <Container>
-        <div className="grid items-center gap-12 lg:grid-cols-[0.8fr_1.2fr] lg:gap-14">
-          <Reveal>
-            <p className="font-mono text-[0.8125rem] tracking-[0.08em] text-cta uppercase">AI concierge</p>
-            <h2 className="mt-5 max-w-[18ch] heading-section text-balance text-subheading">
-              An AI concierge that knows your hotel.
-            </h2>
-            <p className="mt-5 max-w-[46ch] text-lg text-pretty text-stone">
-              Your team saves each question and answer once. Sarai uses them to reply to guests in the chat on their
-              phone, and hands over to your team when needed.
-            </p>
-            <div className="mt-8 flex flex-wrap gap-2.5">
-              <ArrowButton href="/pricing" size="sm">
-                Start your free trial
-              </ArrowButton>
-              <ArrowButton href={primaryCta.href} size="sm" variant="secondary">
-                {primaryCta.label}
-              </ArrowButton>
-            </div>
-          </Reveal>
+        <div className="on-night relative isolate overflow-hidden rounded-[2rem] px-6 py-12 text-white sm:px-10 sm:py-16 lg:px-14 lg:py-20">
+          <GreyGreenBackdrop />
 
-          {/* Mockup frame: phone chat on the left, the saved FAQs it answers from on the right */}
-          <Reveal delay={0.1}>
-            <div
-              ref={ref}
-              aria-hidden
-              className="relative isolate flex flex-col gap-8 overflow-hidden rounded-3xl bg-white px-4 py-8 ring-1 ring-black/[0.08] md:block md:h-[38rem] md:p-0"
-            >
-              <div className="order-2 md:absolute md:inset-y-0 md:right-0 md:w-[68%] md:pt-10 md:pr-6">
-                <KnowledgeCard stage={stage} />
+          <div className="grid items-center gap-12 lg:grid-cols-[0.8fr_1.2fr] lg:gap-14">
+            <Reveal>
+              <p className="font-mono text-[0.8125rem] tracking-[0.08em] text-[#6fd6d3] uppercase">AI concierge</p>
+              <h2 className="mt-5 max-w-[18ch] heading-section text-balance text-white">
+                An AI concierge that knows your hotel.
+              </h2>
+              <p className="mt-5 max-w-[46ch] text-lg text-pretty text-white/75">
+                Your team saves each question and answer once. Sarai uses them to reply to guests in the chat on their
+                phone, and hands over to your team when needed.
+              </p>
+              <div className="mt-8 flex flex-wrap gap-2.5">
+                <ArrowButton href="/pricing" size="sm">
+                  Start your free trial
+                </ArrowButton>
+                <ArrowButton href={primaryCta.href} size="sm" variant="secondary">
+                  {primaryCta.label}
+                </ArrowButton>
               </div>
-              <div className="order-1 flex justify-center md:absolute md:top-12 md:left-[5%] md:block">
-                <PhoneChat stage={stage} />
+            </Reveal>
+
+            {/* Mockup frame: phone chat on the left, the saved FAQs it answers from on the right */}
+            <Reveal delay={0.1}>
+              <div
+                ref={ref}
+                aria-hidden
+                className="relative isolate flex flex-col gap-8 overflow-hidden rounded-3xl bg-white/[0.07] px-4 py-8 ring-1 ring-white/15 backdrop-blur-md md:block md:h-[38rem] md:p-0"
+              >
+                <div className="order-2 md:absolute md:inset-y-0 md:right-0 md:w-[70%] md:pt-10 md:pr-6">
+                  <KnowledgeCard stage={stage} />
+                </div>
+                <div className="order-1 flex justify-center md:absolute md:top-12 md:left-[5%] md:block">
+                  <PhoneChat stage={stage} />
+                </div>
               </div>
-            </div>
-          </Reveal>
+            </Reveal>
+          </div>
+
+          <Stagger className="mt-16 grid gap-10 sm:mt-20 md:grid-cols-3 md:gap-8">
+            {points.map((p) => (
+              <RevealItem key={p.title}>
+                <span className="inline-flex size-12 items-center justify-center rounded-xl bg-cta ring-1 ring-white/20">
+                  <p.icon className="size-5 text-white" aria-hidden />
+                </span>
+                <h3 className="mt-5 heading-sub text-xl text-white">{p.title}</h3>
+                <p className="mt-2 max-w-[38ch] text-[0.95rem] text-pretty text-white/70">{p.text}</p>
+              </RevealItem>
+            ))}
+          </Stagger>
         </div>
-
-        <Stagger className="mt-16 grid gap-10 sm:mt-20 md:grid-cols-3 md:gap-8">
-          {points.map((p) => (
-            <RevealItem key={p.title}>
-              <span className="inline-flex size-12 items-center justify-center rounded-xl bg-white shadow-sm ring-1 ring-line">
-                <p.icon className="size-5 text-cta" aria-hidden />
-              </span>
-              <h3 className="mt-5 heading-sub text-xl text-subheading">{p.title}</h3>
-              <p className="mt-2 max-w-[38ch] text-[0.95rem] text-pretty text-ink/60">{p.text}</p>
-            </RevealItem>
-          ))}
-        </Stagger>
       </Container>
     </section>
   );
