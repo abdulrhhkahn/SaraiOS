@@ -31,9 +31,9 @@ export function HomeHero({ src }: { src: string | null }) {
   return (
     <section className="relative isolate overflow-hidden bg-page pt-36 pb-16 sm:pt-44 sm:pb-24">
       {/* Cream backdrop: soft vertical pleats that fade out towards the middle, a touch of grain, and a fade into the page below */}
-      <div aria-hidden className="pointer-events-none absolute inset-0 -z-10 bg-linen-2">
-        <div className="absolute inset-0 bg-[repeating-linear-gradient(90deg,rgba(255,255,255,0)_0px,rgba(255,255,255,0.8)_80px,rgba(255,255,255,0)_160px,rgba(110,90,40,0.06)_240px,rgba(255,255,255,0)_320px)] [mask-image:linear-gradient(90deg,#000,rgba(0,0,0,0.2)_32%,rgba(0,0,0,0.2)_68%,#000)]" />
-        <div className="absolute inset-0 bg-grain opacity-[0.07] mix-blend-multiply" />
+      <div aria-hidden className="pointer-events-none absolute inset-0 -z-10 bg-linen">
+        <div className="absolute inset-0 bg-[repeating-linear-gradient(90deg,rgba(255,255,255,0)_0px,rgba(255,255,255,0.8)_80px,rgba(255,255,255,0)_160px,rgba(110,90,40,0.045)_240px,rgba(255,255,255,0)_320px)] [mask-image:linear-gradient(90deg,#000,rgba(0,0,0,0.2)_32%,rgba(0,0,0,0.2)_68%,#000)]" />
+        <div className="absolute inset-0 bg-grain opacity-[0.045] mix-blend-multiply" />
         <div className="absolute inset-x-0 bottom-0 h-56 bg-[linear-gradient(to_bottom,transparent,var(--page))]" />
       </div>
 
