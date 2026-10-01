@@ -246,7 +246,7 @@ export function GuestCheckin() {
       <div className="rounded-3xl bg-linen py-14 sm:py-20 lg:py-24">
         <Container>
           <Reveal className="flex max-w-[44rem] flex-col items-start text-left">
-            <p className="font-mono text-[0.8125rem] tracking-[0.08em] text-cta uppercase">Guest check-in</p>
+            <p className="font-mono text-[0.9375rem] tracking-[0.08em] text-cta uppercase">Guest check-in</p>
             <h2 className="mt-5 max-w-[20ch] heading-section text-balance text-subheading">
               Check-in done before the guest arrives.
             </h2>

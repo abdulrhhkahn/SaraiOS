@@ -119,7 +119,7 @@ export function ProblemSection() {
     <section className="relative pt-12 pb-24 sm:pt-16 sm:pb-32">
       <Container>
         <Reveal>
-          <p className="font-mono text-[0.8125rem] tracking-[0.08em] text-cta uppercase">The problem</p>
+          <p className="font-mono text-[0.9375rem] tracking-[0.08em] text-cta uppercase">The problem</p>
           <h2 className="mt-5 heading-section text-balance text-subheading">
             Guests expect instant. <br className="hidden lg:block" />
             Hotels still run on inboxes.

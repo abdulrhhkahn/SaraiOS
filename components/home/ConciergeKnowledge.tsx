@@ -227,7 +227,7 @@ export function ConciergeKnowledge() {
       <Container>
         <div className="grid items-center gap-12 lg:grid-cols-[0.8fr_1.2fr] lg:gap-14">
           <Reveal>
-            <p className="font-mono text-[0.8125rem] tracking-[0.08em] text-cta uppercase">AI concierge</p>
+            <p className="font-mono text-[0.9375rem] tracking-[0.08em] text-cta uppercase">AI concierge</p>
             <h2 className="mt-5 max-w-[18ch] heading-section text-balance text-subheading">
               An AI concierge that knows your hotel.
             </h2>

@@ -86,7 +86,7 @@ export function OfflineReady() {
     <section className="relative pt-24 sm:pt-32">
       <Container>
         <Reveal className="flex max-w-[44rem] flex-col items-start text-left">
-          <p className="font-mono text-[0.8125rem] tracking-[0.08em] text-cta uppercase">Offline ready</p>
+          <p className="font-mono text-[0.9375rem] tracking-[0.08em] text-cta uppercase">Offline ready</p>
           <h2 className="mt-5 max-w-[20ch] heading-section text-balance text-subheading">
             Still works when the signal drops.
           </h2>

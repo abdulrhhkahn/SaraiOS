@@ -13,7 +13,7 @@ export function IndustryPreview() {
         <Container>
           <div className="flex flex-col gap-8 lg:flex-row lg:items-end lg:justify-between">
             <Reveal>
-              <p className="font-mono text-[0.8125rem] tracking-[0.08em] text-white uppercase">Solutions</p>
+              <p className="font-mono text-[0.9375rem] tracking-[0.08em] text-white uppercase">Solutions</p>
               <h2 className="mt-5 max-w-[22ch] heading-section text-balance text-white">
                 Designed for every kind of hospitality.
               </h2>
