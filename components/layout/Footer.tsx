@@ -3,7 +3,8 @@ import type { ReactNode } from "react";
 import { footerNav, primaryCta, secondaryCta } from "@/lib/navigation";
 import { siteConfig } from "@/lib/siteConfig";
 import { getScreenAvailability } from "@/lib/screenshots.server";
-import { ButtonLink, Container } from "@/components/ui/primitives";
+import { Container } from "@/components/ui/primitives";
+import { ArrowButton } from "@/components/ui/ArrowButton";
 import { ProductScreenshot } from "@/components/dashboard/ProductScreenshot";
 import { Logo } from "./Logo";
 
@@ -53,12 +54,12 @@ export function Footer() {
             Bring AI into the guest journey without taking the hospitality out of it.
           </p>
           <div className="mt-8 flex flex-wrap justify-center gap-2.5">
-            <ButtonLink href={primaryCta.href} size="sm" arrow>
+            <ArrowButton href={primaryCta.href} size="sm">
               {primaryCta.label}
-            </ButtonLink>
-            <ButtonLink href={secondaryCta.href} size="sm" variant="secondary">
+            </ArrowButton>
+            <ArrowButton href={secondaryCta.href} size="sm" variant="secondary">
               {secondaryCta.label}
-            </ButtonLink>
+            </ArrowButton>
           </div>
         </Container>
 
