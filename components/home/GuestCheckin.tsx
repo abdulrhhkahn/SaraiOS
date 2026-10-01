@@ -244,33 +244,35 @@ export function GuestCheckin() {
   return (
     <section className="relative pb-24 sm:pb-32">
       <Container>
-        <Reveal className="flex max-w-[44rem] flex-col items-start text-left">
-          <p className="font-mono text-[0.8125rem] tracking-[0.08em] text-cta uppercase">Guest check-in</p>
-          <h2 className="mt-5 max-w-[20ch] heading-section text-balance text-subheading">
-            Check-in done before the guest arrives.
-          </h2>
-          <p className="mt-5 max-w-[52ch] text-lg text-pretty text-stone">
-            Every hotel gets its own guest surface. Guests scan a QR code, add their details and ID on their phone, and
-            land in a guest hub with everything they need for the stay.
-          </p>
-        </Reveal>
+        <div className="rounded-3xl bg-linen px-5 py-10 sm:px-8 sm:py-14 lg:px-10 lg:py-16">
+          <Reveal className="flex max-w-[44rem] flex-col items-start text-left">
+            <p className="font-mono text-[0.8125rem] tracking-[0.08em] text-cta uppercase">Guest check-in</p>
+            <h2 className="mt-5 max-w-[20ch] heading-section text-balance text-subheading">
+              Check-in done before the guest arrives.
+            </h2>
+            <p className="mt-5 max-w-[52ch] text-lg text-pretty text-stone">
+              Every hotel gets its own guest surface. Guests scan a QR code, add their details and ID on their phone,
+              and land in a guest hub with everything they need for the stay.
+            </p>
+          </Reveal>
 
-        <Stagger className="mt-14 grid gap-5 sm:mt-16 lg:grid-cols-3" stagger={0.1}>
-          {cards.map((c) => (
-            <RevealItem key={c.title} className="h-full">
-              <article className="flex h-full flex-col rounded-3xl bg-white p-7 ring-1 ring-black/[0.08] sm:p-8">
-                <div
-                  aria-hidden
-                  className="relative h-[15rem] overflow-hidden [mask-image:linear-gradient(to_bottom,#000_72%,transparent)]"
-                >
-                  {c.art}
-                </div>
-                <h3 className="mt-8 heading-sub text-xl text-subheading">{c.title}</h3>
-                <p className="mt-3 max-w-[40ch] text-[0.95rem] text-pretty text-ink/60">{c.text}</p>
-              </article>
-            </RevealItem>
-          ))}
-        </Stagger>
+          <Stagger className="mt-14 grid gap-5 sm:mt-16 lg:grid-cols-3" stagger={0.1}>
+            {cards.map((c) => (
+              <RevealItem key={c.title} className="h-full">
+                <article className="flex h-full flex-col rounded-3xl bg-white p-7 ring-1 ring-black/[0.08] sm:p-8">
+                  <div
+                    aria-hidden
+                    className="relative h-[15rem] overflow-hidden [mask-image:linear-gradient(to_bottom,#000_72%,transparent)]"
+                  >
+                    {c.art}
+                  </div>
+                  <h3 className="mt-8 heading-sub text-xl text-subheading">{c.title}</h3>
+                  <p className="mt-3 max-w-[40ch] text-[0.95rem] text-pretty text-ink/60">{c.text}</p>
+                </article>
+              </RevealItem>
+            ))}
+          </Stagger>
+        </div>
       </Container>
     </section>
   );
