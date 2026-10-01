@@ -68,7 +68,7 @@ export function Header() {
               <ArrowButton
                 href={primaryCta.href}
                 size="sm"
-                className="max-sm:hidden sm:inline-flex md:min-h-10 md:px-5 md:[--cap:2.5rem]"
+                className="max-sm:hidden sm:inline-flex md:min-h-10 md:pl-5 md:[--icon:1.5rem]"
               >
                 {primaryCta.label}
               </ArrowButton>
