@@ -32,7 +32,7 @@ export function Accordion({ items, defaultOpen }: { items: FaqItem[]; defaultOpe
                   aria-hidden
                   className={cn(
                     "inline-flex size-9 shrink-0 items-center justify-center rounded-full ring-1 ring-line transition-[transform,background-color,color] duration-300 ease-out",
-                    isOpen ? "rotate-45 bg-ink text-linen" : "bg-card",
+                    isOpen ? "rotate-45 bg-cta text-white ring-cta" : "bg-card text-cta",
                   )}
                 >
                   <Plus className="size-4" />
