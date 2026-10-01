@@ -1,4 +1,5 @@
 import { pageMetadata } from "@/lib/seo";
+import { ImageBanner } from "@/components/ui/ImageBanner";
 
 export const metadata = pageMetadata({
   title: "SaraiOS Features — AI Guest Experience Platform",
@@ -7,11 +8,7 @@ export const metadata = pageMetadata({
   path: "/features",
 });
 
-/** Platform page: sections are being rebuilt, so only the header, the closing call to action in the footer and the footer remain. */
+/** Platform page: the banner, then the closing call to action and footer. More sections will be added below the banner. */
 export default function FeaturesPage() {
-  return (
-    <div className="pt-12 sm:pt-16">
-      <h1 className="sr-only">Platform</h1>
-    </div>
-  );
+  return <ImageBanner src="/images/platform/banner.jpg" title="Platform" imageClassName="object-[50%_32%]" />;
 }
