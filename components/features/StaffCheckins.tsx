@@ -2,7 +2,7 @@
 
 import { useEffect, useRef, useState } from "react";
 import { useInView } from "framer-motion";
-import { BedDouble, ClipboardCheck, IdCard, Search } from "lucide-react";
+import { ClipboardCheck, IdCard, Search, Timer } from "lucide-react";
 import { Container, DemoTag } from "@/components/ui/primitives";
 import { ArrowButton } from "@/components/ui/ArrowButton";
 import { Reveal } from "@/components/animations/Reveal";
@@ -117,7 +117,7 @@ function CheckinsPanel({ verified }: { verified: boolean }) {
 const points = [
   { icon: ClipboardCheck, text: "Filter arrivals by status and search by guest name or booking reference" },
   { icon: IdCard, text: "Open a guest to see their details, ID document and signature" },
-  { icon: BedDouble, text: "Assign a room that shows as stay context in the inbox" },
+  { icon: Timer, text: "ID documents are deleted automatically 30 days after check-out" },
 ];
 
 export function StaffCheckins() {
@@ -154,7 +154,7 @@ export function StaffCheckins() {
           </Reveal>
 
           <Reveal delay={0.1}>
-            <p className="font-mono text-[0.9375rem] tracking-[0.08em] text-cta uppercase">Staff dashboard</p>
+            <p className="font-mono text-[0.9375rem] tracking-[0.08em] text-cta uppercase">Guest check-ins</p>
             <h2 className="mt-5 max-w-[16ch] heading-section text-balance text-subheading">
               Every arrival, reviewed in one place.
             </h2>
@@ -164,11 +164,11 @@ export function StaffCheckins() {
             </p>
             <ul className="mt-8 space-y-4">
               {points.map((p) => (
-                <li key={p.text} className="flex items-start gap-3.5">
-                  <span className="mt-0.5 inline-flex size-9 shrink-0 items-center justify-center rounded-lg bg-cta/10">
-                    <p.icon className="size-[1.15rem] text-cta" aria-hidden />
+                <li key={p.text} className="flex items-center gap-4">
+                  <span className="inline-flex size-12 shrink-0 items-center justify-center rounded-xl bg-white shadow-sm ring-1 ring-line">
+                    <p.icon className="size-5 text-cta" aria-hidden />
                   </span>
-                  <span className="pt-1.5 text-[0.95rem] text-pretty text-ink/75">{p.text}</span>
+                  <span className="text-[0.95rem] text-pretty text-ink/75">{p.text}</span>
                 </li>
               ))}
             </ul>
