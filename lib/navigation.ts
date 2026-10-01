@@ -1,11 +1,12 @@
 import { siteConfig } from "./siteConfig";
+import { industries } from "./industries";
 
 export type NavLink = { label: string; href: string; external?: boolean };
 
 /** Desktop header links. */
 export const mainNav: NavLink[] = [
-  { label: "Features", href: "/features" },
-  { label: "Industries", href: "/industries" },
+  { label: "Platform", href: "/features" },
+  { label: "Solutions", href: "/industries" },
   { label: "Pricing", href: "/pricing" },
   { label: "Contact", href: "/contact" },
 ];
@@ -20,21 +21,20 @@ export type FooterGroup = { title: string; links: (NavLink & { disabled?: boolea
 
 export const footerNav: FooterGroup[] = [
   {
-    title: "Product",
+    title: "Platform",
     links: [
       { label: "Features", href: "/features" },
-      { label: "Industries", href: "/industries" },
       { label: "Pricing", href: "/pricing" },
       { label: "Book a Demo", href: "/demo" },
     ],
   },
   {
+    title: "Solutions",
+    links: industries.map((ind) => ({ label: ind.name, href: `/industries#${ind.slug}` })),
+  },
+  {
     title: "Company",
-    links: [
-      { label: "Contact", href: "/contact" },
-      // Points to the home page story until a dedicated About page exists.
-      { label: "About SaraiOS", href: "/#about" },
-    ],
+    links: [{ label: "Contact", href: "/contact" }],
   },
   {
     title: "Resources",
