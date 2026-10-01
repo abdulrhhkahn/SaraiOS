@@ -88,7 +88,8 @@ const buttonStyles: Record<ButtonVariant, string> = {
   light: "bg-linen text-ink hover:bg-white",
 };
 
-export function buttonClass(variant: ButtonVariant = "primary", size: "md" | "lg" | "sm" = "md") {
+/** Shape, size and motion shared by every button. Colours come from the variant. */
+export function buttonBase(size: "md" | "lg" | "sm" = "md") {
   return cn(
     "group inline-flex min-h-11 cursor-pointer items-center justify-center gap-2 rounded-full font-semibold whitespace-nowrap",
     "transition-[background-color,box-shadow,transform,color] duration-200 ease-out active:scale-[0.97]",
@@ -96,8 +97,11 @@ export function buttonClass(variant: ButtonVariant = "primary", size: "md" | "lg
     size === "sm" && "min-h-9 px-4 text-sm",
     size === "md" && "px-5 text-[0.95rem]",
     size === "lg" && "min-h-13 px-7 text-base",
-    buttonStyles[variant],
   );
+}
+
+export function buttonClass(variant: ButtonVariant = "primary", size: "md" | "lg" | "sm" = "md") {
+  return cn(buttonBase(size), buttonStyles[variant]);
 }
 
 export function ButtonLink({
