@@ -6,7 +6,8 @@ import { useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import { Menu, X } from "lucide-react";
 import { Logo } from "@/components/layout/Logo";
-import { ButtonLink, Container } from "@/components/ui/primitives";
+import { Container } from "@/components/ui/primitives";
+import { ArrowButton } from "@/components/ui/ArrowButton";
 import { mainNav, primaryCta } from "@/lib/navigation";
 import { cn } from "@/lib/cn";
 import { MobileMenu } from "./MobileMenu";
@@ -64,12 +65,16 @@ export function Header() {
             </nav>
 
             <div className="flex items-center gap-1.5">
-              <ButtonLink href={primaryCta.href} size="sm" className="max-sm:hidden sm:inline-flex md:min-h-10 md:px-5">
+              <ArrowButton
+                href={primaryCta.href}
+                size="sm"
+                className="max-sm:hidden sm:inline-flex md:min-h-10 md:px-5 md:[--cap:2.5rem]"
+              >
                 {primaryCta.label}
-              </ButtonLink>
-              <ButtonLink href={primaryCta.href} size="sm" className="sm:hidden">
+              </ArrowButton>
+              <ArrowButton href={primaryCta.href} size="sm" className="sm:hidden">
                 Book Demo
-              </ButtonLink>
+              </ArrowButton>
               <button
                 type="button"
                 onClick={() => setOpen((v) => !v)}
