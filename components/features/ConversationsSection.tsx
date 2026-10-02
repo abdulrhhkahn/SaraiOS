@@ -18,7 +18,6 @@ import { Container, DemoTag } from "@/components/ui/primitives";
 import { ArrowButton } from "@/components/ui/ArrowButton";
 import { Reveal } from "@/components/animations/Reveal";
 import { useReducedMotionSafe } from "@/components/animations/useReducedMotionSafe";
-import { primaryCta } from "@/lib/navigation";
 import { cn } from "@/lib/cn";
 
 /* ---------- Staff dashboard "Conversations" page, with dummy data ---------- */
@@ -197,8 +196,8 @@ export function ConversationsSection() {
               ))}
             </ul>
             <div className="mt-9">
-              <ArrowButton href={primaryCta.href} size="sm">
-                {primaryCta.label}
+              <ArrowButton href="/pricing" size="sm">
+                Start your free trial
               </ArrowButton>
             </div>
           </Reveal>
