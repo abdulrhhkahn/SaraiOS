@@ -36,7 +36,7 @@ export default function IndustriesPage() {
           </ul>
         </Container>
       </nav>
-      <div className="divide-y divide-line">
+      <div className="mt-10 space-y-6 pb-24 sm:pb-32">
         {industries.map((ind, i) => (
           <IndustrySection key={ind.slug} industry={ind} src={shots[ind.screen]} flip={i % 2 === 1} />
         ))}
