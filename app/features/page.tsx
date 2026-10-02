@@ -1,6 +1,7 @@
 import { pageMetadata } from "@/lib/seo";
 import { ImageBanner } from "@/components/ui/ImageBanner";
 import { StaffCheckins } from "@/components/features/StaffCheckins";
+import { ConversationsSection } from "@/components/features/ConversationsSection";
 
 export const metadata = pageMetadata({
   title: "SaraiOS Features — AI Guest Experience Platform",
@@ -15,6 +16,7 @@ export default function FeaturesPage() {
     <>
       <ImageBanner src="/images/platform/banner.jpg" title="Platform" imageClassName="object-[50%_28%]" />
       <StaffCheckins />
+      <ConversationsSection />
     </>
   );
 }
