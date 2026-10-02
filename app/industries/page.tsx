@@ -3,7 +3,7 @@ import { industries } from "@/lib/industries";
 import { getScreenAvailability } from "@/lib/screenshots.server";
 import { pageMetadata } from "@/lib/seo";
 import { Container } from "@/components/ui/primitives";
-import { PageHero } from "@/components/ui/PageHero";
+import { ImageBanner } from "@/components/ui/ImageBanner";
 import { IndustrySection } from "@/components/industries/IndustrySection";
 import { IndustryIcon } from "@/components/industries/IndustryIcon";
 
@@ -18,12 +18,8 @@ export default function IndustriesPage() {
   const shots = getScreenAvailability();
   return (
     <>
-      <PageHero
-        eyebrow="Industries"
-        title="AI guest experience for every kind of hospitality."
-        body="Whether you run one boutique property or a portfolio of hotels, SaraiOS adapts to your guests, your team and your way of working."
-      />
-      <nav aria-label="Industries" className="sticky top-[84px] z-30 -mt-4">
+      <ImageBanner src="/images/solutions/banner.jpg" title="Solutions" imageClassName="object-[50%_34%]" />
+      <nav aria-label="Industries" className="sticky top-[84px] z-30 mt-6">
         <Container>
           <ul className="flex [scrollbar-width:none] gap-2 overflow-x-auto rounded-2xl bg-page/80 p-1.5 ring-1 ring-line backdrop-blur-xl">
             {industries.map((i) => (
