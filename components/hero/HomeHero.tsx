@@ -1,6 +1,7 @@
 "use client";
 
 import { useRef } from "react";
+import Image from "next/image";
 import { motion, useScroll, useTransform } from "framer-motion";
 import { Container } from "@/components/ui/primitives";
 import { ArrowButton } from "@/components/ui/ArrowButton";
@@ -30,11 +31,18 @@ export function HomeHero({ src }: { src: string | null }) {
 
   return (
     <section className="relative isolate overflow-hidden bg-page pt-36 pb-16 sm:pt-44 sm:pb-24">
-      {/* Cream backdrop: soft vertical pleats that fade out towards the middle, a touch of grain, and a fade into the page below */}
-      <div aria-hidden className="pointer-events-none absolute inset-0 -z-10 bg-linen">
-        <div className="absolute inset-0 bg-[repeating-linear-gradient(90deg,rgba(255,255,255,0)_0px,rgba(255,255,255,0.8)_80px,rgba(255,255,255,0)_160px,rgba(110,90,40,0.045)_240px,rgba(255,255,255,0)_320px)] [mask-image:linear-gradient(90deg,#000,rgba(0,0,0,0.2)_32%,rgba(0,0,0,0.2)_68%,#000)]" />
-        <div className="absolute inset-0 bg-grain opacity-[0.045] mix-blend-multiply" />
-        <div className="absolute inset-x-0 bottom-0 h-56 bg-[linear-gradient(to_bottom,transparent,var(--page))]" />
+      {/* Background photo-style gradient: covers the top of the hero and fades into the page colour */}
+      <div aria-hidden className="pointer-events-none absolute inset-x-0 top-0 -z-10 h-[1000px] sm:h-[1100px]">
+        <Image
+          src="/images/hero/home-bg.jpg"
+          alt=""
+          fill
+          priority
+          quality={85}
+          sizes="100vw"
+          className="object-cover object-top"
+        />
+        <div className="absolute inset-x-0 bottom-0 h-72 bg-[linear-gradient(to_bottom,transparent,var(--page))]" />
       </div>
 
       <Container>
