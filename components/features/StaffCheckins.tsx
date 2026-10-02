@@ -135,7 +135,7 @@ export function StaffCheckins() {
   }, [reduce, inView]);
 
   return (
-    <section className="relative pt-20 pb-20 sm:pt-28 sm:pb-24">
+    <section className="relative pt-24 pb-24 sm:pt-32 sm:pb-32">
       <Container>
         <div className="grid items-center gap-12 lg:grid-cols-2 lg:gap-16">
           {/* Visual: soft green-and-cream card with glass shapes and the staff page floating on it */}
@@ -143,7 +143,7 @@ export function StaffCheckins() {
             <div
               ref={ref}
               aria-hidden
-              className="relative isolate flex min-h-[26rem] items-center justify-center overflow-hidden rounded-3xl bg-[linear-gradient(135deg,#8ec9c5_0%,#b4dcd6_48%,#eaf0e6_100%)] px-4 py-10 sm:px-8 sm:py-12"
+              className="relative isolate flex h-[30rem] items-center justify-center overflow-hidden rounded-3xl bg-[linear-gradient(135deg,#8ec9c5_0%,#b4dcd6_48%,#eaf0e6_100%)] px-4 sm:h-[31rem] sm:px-6"
             >
               <div className="absolute -top-16 left-[28%] -z-10 h-56 w-28 rotate-[14deg] bg-white/30 [clip-path:polygon(50%_0,100%_100%,0_72%)]" />
               <div className="absolute top-[34%] -left-10 -z-10 h-52 w-28 -rotate-[16deg] rounded-[60%_40%_55%_45%] bg-white/25 ring-1 ring-white/50" />

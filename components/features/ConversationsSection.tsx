@@ -27,20 +27,19 @@ const list = [
   { name: "Maya Chen", channel: "web chat", when: "2 minutes ago", active: true },
   { name: "Tom Walsh", channel: "WhatsApp", when: "about 1 hour ago", active: false },
   { name: "Ines Duarte", channel: "SMS", when: "yesterday", active: false },
-  { name: "Kenji Mori", channel: "web chat", when: "2 days ago", active: false },
 ];
 
 function ConversationsPanel({ stage }: { stage: number }) {
   return (
     <div className="flex w-full overflow-hidden rounded-2xl bg-white text-[0.68rem] shadow-[0_24px_60px_-24px_rgba(0,60,62,0.5)] ring-1 ring-black/[0.06]">
       {/* List */}
-      <div className="hidden w-[36%] shrink-0 border-r border-black/[0.07] sm:block">
+      <div className="hidden w-[39%] shrink-0 border-r border-black/[0.07] sm:block">
         <div className="p-3.5">
           <p className="font-serif text-[1.15rem] leading-none text-ink">Conversations</p>
-          <p className="mt-1.5 text-[0.62rem] text-ink/55">4 conversations</p>
+          <p className="mt-1.5 text-[0.62rem] text-ink/55">3 conversations</p>
 
-          <div className="mt-3 grid grid-cols-2 rounded-lg bg-black/[0.05] p-0.5 text-center text-[0.62rem] font-medium text-ink/60">
-            <span className="py-1">Needs attention</span>
+          <div className="mt-3 grid grid-cols-[1.5fr_1fr] rounded-lg bg-black/[0.05] p-0.5 text-center text-[0.58rem] font-medium text-ink/60">
+            <span className="py-1 whitespace-nowrap">Needs attention</span>
             <span className="rounded-md bg-white py-1 text-ink shadow-sm">All</span>
           </div>
 
@@ -78,7 +77,7 @@ function ConversationsPanel({ stage }: { stage: number }) {
       <div className="flex min-w-0 flex-1 flex-col">
         <div className="flex items-start justify-between gap-2 border-b border-black/[0.07] px-4 py-3">
           <div className="min-w-0">
-            <div className="flex items-center gap-1.5">
+            <div className="flex flex-wrap items-center gap-x-1.5 gap-y-1">
               <p className="text-[0.8rem] font-semibold whitespace-nowrap text-ink">Maya Chen</p>
               <span className="inline-flex items-center gap-1 rounded-full bg-emerald-100 px-1.5 py-0.5 text-[0.55rem] font-semibold tracking-wide text-emerald-900 uppercase">
                 <CircleCheck className="size-2.5" /> Resolved
@@ -90,7 +89,7 @@ function ConversationsPanel({ stage }: { stage: number }) {
               <span className="rounded-full bg-black/[0.05] px-2 py-0.5">2 guests</span>
             </div>
           </div>
-          <div className="flex shrink-0 items-center gap-1.5 text-[0.62rem] font-medium text-ink">
+          <div className="ml-1 flex shrink-0 items-center gap-1.5 text-[0.62rem] font-medium text-ink">
             <span className="hidden rounded-md px-2 py-1 ring-1 ring-black/10 sm:inline-block">Reopen</span>
             <span className="inline-flex items-center gap-1 rounded-md px-2 py-1 ring-1 ring-black/10">
               <History className="size-3" /> Audit
@@ -129,7 +128,7 @@ function ConversationsPanel({ stage }: { stage: number }) {
 
         <div className="border-t border-black/[0.07] p-3">
           <div className="flex items-end gap-2">
-            <div className="h-12 flex-1 rounded-lg px-2.5 py-2 text-ink/45 ring-1 ring-black/10">Type a reply…</div>
+            <div className="h-11 flex-1 rounded-lg px-2.5 py-2 text-ink/45 ring-1 ring-black/10">Type a reply…</div>
             <div className="flex flex-col gap-1.5 text-ink/65">
               <span className="inline-flex size-6 items-center justify-center rounded-md ring-1 ring-black/10">
                 <FileText className="size-3" />
@@ -175,9 +174,9 @@ export function ConversationsSection() {
   }, [reduce, inView, step]);
 
   return (
-    <section className="relative pb-20 sm:pb-24">
+    <section className="relative pb-24 sm:pb-32">
       <Container>
-        <div className="grid items-center gap-12 lg:grid-cols-[0.85fr_1.15fr] lg:gap-16">
+        <div className="grid items-center gap-12 lg:grid-cols-2 lg:gap-16">
           <Reveal className="lg:order-1">
             <p className="font-mono text-[0.9375rem] tracking-[0.08em] text-cta uppercase">Conversations</p>
             <h2 className="mt-5 max-w-[16ch] heading-section text-balance text-subheading">
@@ -209,12 +208,13 @@ export function ConversationsSection() {
             <div
               ref={ref}
               aria-hidden
-              className="relative isolate flex min-h-[26rem] items-center justify-center overflow-hidden rounded-3xl bg-[linear-gradient(225deg,#8ec9c5_0%,#b4dcd6_48%,#eaf0e6_100%)] px-4 py-10 sm:px-8 sm:py-12"
+              className="relative isolate flex h-[30rem] items-center justify-center overflow-hidden rounded-3xl bg-[linear-gradient(200deg,#f0e7d4_0%,#d3e7de_42%,#7fbeb9_100%)] px-4 sm:h-[31rem] sm:px-6"
             >
-              <div className="absolute -top-16 right-[28%] -z-10 h-56 w-28 -rotate-[14deg] bg-white/30 [clip-path:polygon(50%_0,100%_72%,0_100%)]" />
-              <div className="absolute top-[34%] -right-10 -z-10 h-52 w-28 rotate-[16deg] rounded-[40%_60%_45%_55%] bg-white/25 ring-1 ring-white/50" />
-              <div className="absolute bottom-8 -left-8 -z-10 h-44 w-32 -rotate-[26deg] rounded-[60%_40%_50%_50%] bg-white/30 ring-1 ring-white/50" />
-              <div className="absolute bottom-[-2.5rem] left-[12%] -z-10 h-44 w-72 rounded-full bg-cta/25 blur-3xl" />
+              <div className="absolute -top-24 -left-16 -z-10 size-64 rounded-full bg-white/20 ring-1 ring-white/50" />
+              <div className="absolute top-8 right-8 -z-10 h-24 w-20 rotate-[18deg] bg-white/30 [clip-path:polygon(0_0,100%_30%,40%_100%)]" />
+              <div className="absolute -right-10 bottom-10 -z-10 h-48 w-28 -rotate-[20deg] rounded-[50%_50%_40%_60%] bg-white/25 ring-1 ring-white/50" />
+              <div className="absolute -top-10 right-[16%] -z-10 h-40 w-64 rounded-full bg-[#f3e3bd]/60 blur-3xl" />
+              <div className="absolute -bottom-12 left-[8%] -z-10 h-44 w-72 rounded-full bg-cta/25 blur-3xl" />
               <ConversationsPanel stage={stage} />
             </div>
           </Reveal>
