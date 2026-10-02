@@ -5,6 +5,7 @@ import { ConversationsSection } from "@/components/features/ConversationsSection
 import { AnalyticsSection } from "@/components/features/AnalyticsSection";
 import { RequestsSection } from "@/components/features/RequestsSection";
 import { GuestsSection } from "@/components/features/GuestsSection";
+import { StaffActivitySection } from "@/components/features/StaffActivitySection";
 
 export const metadata = pageMetadata({
   title: "SaraiOS Features — AI Guest Experience Platform",
@@ -23,6 +24,7 @@ export default function FeaturesPage() {
       <AnalyticsSection />
       <RequestsSection />
       <GuestsSection />
+      <StaffActivitySection />
     </>
   );
 }
