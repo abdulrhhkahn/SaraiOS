@@ -15,6 +15,13 @@ const defaultCopy = {
 };
 
 const pageCopy: Record<string, typeof defaultCopy> = {
+  // Solutions page: reuses the page banner's heading and paragraph
+  "/industries": {
+    lines: ["AI guest experience for every kind of hospitality."],
+    body: "Whether you run one boutique property or a portfolio of hotels, SaraiOS adapts to your guests, your team and your way of working.",
+    titleWidth: "max-w-[26ch]",
+    bodyWidth: "max-w-[56ch]",
+  },
   // Platform page
   "/features": {
     lines: ["Less relaying.", "More hospitality."],
