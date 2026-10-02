@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import type { ReactNode } from "react";
 import { footerNav, primaryCta, secondaryCta } from "@/lib/navigation";
@@ -39,12 +40,17 @@ export function Footer() {
   const social = footerNav.find((g) => g.title === "Connect")?.links ?? [];
 
   return (
-    <footer className="bg-page text-ink">
-      {/* Closing call to action with the product underneath */}
-      <section aria-labelledby="footer-cta" className="relative overflow-hidden pt-20 pb-16 sm:pt-24 sm:pb-24">
-        <div
+    <footer className="bg-[#f4f5f7] text-ink">
+      {/* Closing call to action: same background image as the home banner, with the product window cut off at the bottom and fading into the footer */}
+      <section aria-labelledby="footer-cta" className="relative isolate overflow-hidden bg-[#f4f5f7] pt-20 sm:pt-24">
+        <Image
+          src="/images/hero/home-bg.jpg"
+          alt=""
+          fill
+          quality={80}
+          sizes="100vw"
           aria-hidden
-          className="pointer-events-none absolute inset-x-0 top-40 -z-10 h-[520px] bg-[radial-gradient(60%_60%_at_50%_40%,var(--linen-2),transparent)]"
+          className="-z-10 object-cover object-top"
         />
         <Container className="text-center">
           <p className="font-mono text-[0.9375rem] tracking-[0.08em] text-cta uppercase">Get started</p>
@@ -60,20 +66,21 @@ export function Footer() {
         </Container>
 
         <Container className="mt-14 sm:mt-20">
-          <div className="rounded-[1.75rem] bg-black/[0.03] [mask-image:linear-gradient(to_bottom,#000_58%,transparent)] p-2.5 ring-1 ring-black/[0.05] sm:p-3">
-            <ProductScreenshot
-              screen="overview"
-              src={shots.overview}
-              chrome={false}
-              sizes="(min-width: 1240px) 1150px, 100vw"
-            />
+          <div className="max-h-[22rem] overflow-hidden sm:max-h-[28rem]">
+            <ProductScreenshot screen="overview" src={shots.overview} sizes="(min-width: 1240px) 1176px, 100vw" />
           </div>
         </Container>
+
+        {/* fade into the footer */}
+        <div
+          aria-hidden
+          className="pointer-events-none absolute inset-x-0 bottom-0 h-40 bg-[linear-gradient(to_bottom,transparent,#f4f5f7)] sm:h-56"
+        />
       </section>
 
       {/* Links: same width as the sections and the header, inset like the header pill so the logos line up. */}
       <Container>
-        <div className="border-t border-black/[0.08] px-4 pt-11 pb-8 sm:px-5">
+        <div className="px-4 pt-11 pb-8 sm:px-5">
           <div className="grid grid-cols-2 gap-x-6 gap-y-8 sm:grid-cols-3 lg:grid-cols-[1.62fr_1fr_1.5fr_1fr_1fr_0.48fr]">
             <div className="col-span-full lg:col-span-1">
               <Logo />
