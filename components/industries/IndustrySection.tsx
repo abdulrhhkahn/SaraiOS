@@ -1,4 +1,4 @@
-import { Check, ListChecks, Sparkles, Workflow } from "lucide-react";
+import { Check, Sparkles } from "lucide-react";
 import type { ComponentType, ReactNode } from "react";
 import type { Industry } from "@/lib/industries";
 import { Container } from "@/components/ui/primitives";
@@ -30,9 +30,9 @@ function IconTile({ icon: Icon, children, className }: { icon?: Icon; children?:
  * and use cases and benefits in three columns underneath. Panels alternate sides and tint.
  */
 export function IndustrySection({ industry, src, flip }: { industry: Industry; src: string | null; flip?: boolean }) {
-  const columns: { icon: Icon; title: string; body?: string; list?: string[] }[] = [
-    { icon: ListChecks, title: "Use cases", list: industry.useCases },
-    ...industry.benefits.map((b, i) => ({ icon: i === 0 ? Sparkles : Workflow, title: b.title, body: b.body })),
+  const columns: { title: string; body?: string; list?: string[] }[] = [
+    { title: "Use cases", list: industry.useCases },
+    ...industry.benefits.map((b) => ({ title: b.title, body: b.body })),
   ];
 
   return (
@@ -135,8 +135,7 @@ export function IndustrySection({ industry, src, flip }: { industry: Industry; s
           <div className="mt-12 grid gap-8 border-t border-black/[0.07] pt-10 md:grid-cols-3 lg:mt-14 lg:gap-10 lg:pt-12">
             {columns.map((c) => (
               <div key={c.title}>
-                <IconTile icon={c.icon} />
-                <h3 className="mt-5 heading-sub text-xl text-subheading">{c.title}</h3>
+                <h3 className="heading-sub text-xl text-subheading">{c.title}</h3>
                 {c.body && <p className="mt-2 max-w-[38ch] text-[0.95rem] text-pretty text-ink/60">{c.body}</p>}
                 {c.list && (
                   <ul className="mt-3 space-y-2">
