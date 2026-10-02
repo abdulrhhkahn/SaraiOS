@@ -7,6 +7,7 @@ import { Container } from "@/components/ui/primitives";
 import { ArrowButton } from "@/components/ui/ArrowButton";
 import { ProductScreenshot } from "@/components/dashboard/ProductScreenshot";
 import { Logo } from "./Logo";
+import { FooterCtaCopy } from "./FooterCtaCopy";
 
 /** Simple Icons paths (CC0). lucide-react no longer ships brand icons. */
 const socialIcons: Record<string, ReactNode> = {
@@ -47,12 +48,7 @@ export function Footer() {
         />
         <Container className="text-center">
           <p className="font-mono text-[0.9375rem] tracking-[0.08em] text-cta uppercase">Get started</p>
-          <h2 id="footer-cta" className="mx-auto mt-5 max-w-[16ch] heading-section text-balance text-subheading">
-            Give every guest a smarter stay.
-          </h2>
-          <p className="mx-auto mt-5 max-w-[46ch] text-lg text-pretty text-stone">
-            Bring AI into the guest journey without taking the hospitality out of it.
-          </p>
+          <FooterCtaCopy />
           <div className="mt-8 flex flex-wrap justify-center gap-2.5">
             <ArrowButton href={primaryCta.href} size="sm">
               {primaryCta.label}
