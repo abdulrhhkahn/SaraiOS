@@ -106,7 +106,7 @@ export function RequestsSection() {
   return (
     <section className="relative pb-24 sm:pb-32">
       <Container>
-        <div className="grid items-center gap-12 lg:grid-cols-2 lg:gap-16">
+        <div className="grid items-center gap-12 lg:grid-cols-2 lg:gap-16 xl:grid-cols-[600px_1fr]">
           {/* Visual: same card style as the other sections, with its own green and cream mix */}
           <Reveal>
             <div

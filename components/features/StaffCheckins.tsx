@@ -137,7 +137,7 @@ export function StaffCheckins() {
   return (
     <section className="relative pt-24 pb-24 sm:pt-32 sm:pb-32">
       <Container>
-        <div className="grid items-center gap-12 lg:grid-cols-2 lg:gap-16">
+        <div className="grid items-center gap-12 lg:grid-cols-2 lg:gap-16 xl:grid-cols-[600px_1fr]">
           {/* Visual: soft green-and-cream card with glass shapes and the staff page floating on it */}
           <Reveal>
             <div

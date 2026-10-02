@@ -175,7 +175,7 @@ export function ConversationsSection() {
   return (
     <section className="relative pb-24 sm:pb-32">
       <Container>
-        <div className="grid items-center gap-12 lg:grid-cols-2 lg:gap-16">
+        <div className="grid items-center gap-12 lg:grid-cols-2 lg:gap-16 xl:grid-cols-[1fr_600px]">
           <Reveal className="lg:order-1">
             <p className="font-mono text-[0.9375rem] tracking-[0.08em] text-cta uppercase">Conversations</p>
             <h2 className="mt-5 max-w-[16ch] heading-section text-balance text-subheading">
