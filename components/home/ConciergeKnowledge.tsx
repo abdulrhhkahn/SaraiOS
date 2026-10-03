@@ -250,8 +250,13 @@ export function ConciergeKnowledge() {
             <div
               ref={ref}
               aria-hidden
-              className="relative isolate flex flex-col gap-8 overflow-hidden rounded-3xl bg-white px-4 py-8 ring-1 ring-black/[0.08] md:block md:h-[38rem] md:p-0"
+              className="relative isolate flex flex-col gap-8 overflow-hidden rounded-3xl bg-[linear-gradient(135deg,#8ec9c5_0%,#b4dcd6_48%,#eaf0e6_100%)] px-4 py-8 md:block md:h-[38rem] md:p-0"
             >
+              {/* soft glass shapes and glow, same style as the Platform and Solutions visuals */}
+              <div className="absolute -top-16 left-[30%] -z-10 h-56 w-28 rotate-[14deg] bg-white/30 [clip-path:polygon(50%_0,100%_100%,0_72%)]" />
+              <div className="absolute top-[38%] -left-10 -z-10 h-52 w-28 -rotate-[16deg] rounded-[60%_40%_55%_45%] bg-white/25 ring-1 ring-white/50" />
+              <div className="absolute -right-8 bottom-10 -z-10 h-44 w-32 rotate-[26deg] rounded-[40%_60%_50%_50%] bg-white/30 ring-1 ring-white/50" />
+              <div className="absolute right-[14%] -bottom-12 -z-10 h-44 w-72 rounded-full bg-cta/25 blur-3xl" />
               <div className="order-2 md:absolute md:inset-y-0 md:right-0 md:w-[68%] md:pt-10 md:pr-6">
                 <KnowledgeCard stage={stage} />
               </div>
