@@ -15,7 +15,10 @@ export const mainNav: NavLink[] = [
 export const mobileNav: NavLink[] = [...mainNav, { label: "Blog", href: "/blog" }, { label: "FAQ", href: "/faq" }];
 
 export const primaryCta: NavLink = { label: "Book a Demo", href: "/demo" };
-export const secondaryCta: NavLink = { label: "Explore Features", href: "/features" };
+export const secondaryCta: NavLink = { label: "Explore Platform", href: "/features" };
+
+/** Button in the header and the mobile menu. Same destination as the demo button, different wording. */
+export const headerCta: NavLink = { label: "Get early access", href: primaryCta.href };
 
 export type FooterGroup = { title: string; links: (NavLink & { disabled?: boolean })[] };
 
