@@ -9,7 +9,7 @@ import { Logo } from "@/components/layout/Logo";
 import { Container } from "@/components/ui/primitives";
 import { ArrowButton } from "@/components/ui/ArrowButton";
 import { RandomLetterSwap } from "@/components/ui/RandomLetterSwap";
-import { mainNav, primaryCta } from "@/lib/navigation";
+import { headerCta, mainNav } from "@/lib/navigation";
 import { cn } from "@/lib/cn";
 import { MobileMenu } from "./MobileMenu";
 
@@ -70,15 +70,11 @@ export function Header() {
             </nav>
 
             <div className="flex items-center gap-1.5">
-              <ArrowButton
-                href={primaryCta.href}
-                size="sm"
-                className="max-sm:hidden sm:inline-flex md:min-h-10 md:px-5"
-              >
-                {primaryCta.label}
+              <ArrowButton href={headerCta.href} size="sm" className="max-sm:hidden sm:inline-flex md:min-h-10 md:px-5">
+                {headerCta.label}
               </ArrowButton>
-              <ArrowButton href={primaryCta.href} size="sm" className="sm:hidden">
-                Book Demo
+              <ArrowButton href={headerCta.href} size="sm" className="sm:hidden">
+                Early access
               </ArrowButton>
               <button
                 type="button"

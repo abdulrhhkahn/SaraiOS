@@ -4,7 +4,7 @@ import Link from "next/link";
 import { useEffect, useRef } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import { ArrowUpRight } from "lucide-react";
-import { mobileNav, primaryCta } from "@/lib/navigation";
+import { headerCta, mobileNav } from "@/lib/navigation";
 import { siteConfig } from "@/lib/siteConfig";
 import { buttonClass } from "@/components/ui/primitives";
 import { easeOut } from "@/components/animations/variants";
@@ -72,8 +72,8 @@ export function MobileMenu({ open, onClose }: { open: boolean; onClose: () => vo
             animate={{ opacity: 1, y: 0, transition: { delay: 0.35, duration: 0.35 } }}
             className="space-y-4"
           >
-            <Link href={primaryCta.href} onClick={onClose} className={buttonClass("primary", "lg") + " w-full"}>
-              {primaryCta.label}
+            <Link href={headerCta.href} onClick={onClose} className={buttonClass("primary", "lg") + " w-full"}>
+              {headerCta.label}
             </Link>
             <p className="text-center text-sm text-stone">{siteConfig.tagline}</p>
           </motion.div>
