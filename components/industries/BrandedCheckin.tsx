@@ -1,5 +1,5 @@
 import type { ComponentType, ReactNode } from "react";
-import { ArrowRight, QrCode } from "lucide-react";
+import { ArrowRight, Building2 } from "lucide-react";
 import { Container, DemoTag } from "@/components/ui/primitives";
 import { Reveal, RevealItem, Stagger } from "@/components/animations/Reveal";
 import { cn } from "@/lib/cn";
@@ -82,7 +82,7 @@ function PropertyMock() {
 /** The guest check-in welcome screen carrying the hotel's branding, on a white background. */
 function GuestWelcomeMock() {
   return (
-    <div className="rounded-[1.2rem] bg-white p-5 pr-9 pb-10">
+    <div className="rounded-[1.2rem] bg-white p-5 pr-9 pb-32">
       <div className="flex items-center gap-3">
         <span className="size-9 rounded-xl" style={{ backgroundColor: BRAND }} />
         <p className="font-serif text-[1rem] text-ink">Demo Hotel</p>
@@ -125,7 +125,7 @@ export function BrandedCheckin() {
           <RevealItem>
             <CardShell className="lg:h-[31rem]">
               <h3 className="heading-sub text-xl text-subheading">Set up your brand</h3>
-              <p className="mt-3 max-w-[40ch] text-[0.95rem] text-pretty text-ink/60">
+              <p className="mt-3 min-h-[2.9rem] max-w-[40ch] text-[0.95rem] text-pretty text-ink/60">
                 Enter your hotel&apos;s name, brand colour, logo and address in the dashboard.
               </p>
               <DemoTag className="mt-5 w-fit">Demo data</DemoTag>
@@ -136,27 +136,27 @@ export function BrandedCheckin() {
           </RevealItem>
 
           <RevealItem>
+            <CardShell className="min-h-[22rem] lg:h-[31rem]">
+              <IconBadge icon={Building2} />
+              <div className="mt-auto pt-16">
+                <h3 className="heading-sub text-xl text-subheading">One page per property</h3>
+                <p className="mt-3 max-w-[40ch] text-[0.95rem] text-pretty text-ink/60">
+                  Each property gets its own check-in link and branding, so groups can set up every hotel separately.
+                </p>
+              </div>
+            </CardShell>
+          </RevealItem>
+
+          <RevealItem>
             <CardShell className="lg:h-[31rem]">
               <h3 className="heading-sub text-xl text-subheading">Your own guest surface</h3>
-              <p className="mt-3 max-w-[40ch] text-[0.95rem] text-pretty text-ink/60">
-                Guests start check-in on a page with your name, colour and logo, and a welcome message from your hotel.
+              <p className="mt-3 min-h-[2.9rem] max-w-[40ch] text-[0.95rem] text-pretty text-ink/60">
+                Guests check in on a page with your name, colour and logo.
               </p>
               <DemoTag className="mt-5 w-fit">Demo data</DemoTag>
               <Crop>
                 <GuestWelcomeMock />
               </Crop>
-            </CardShell>
-          </RevealItem>
-
-          <RevealItem>
-            <CardShell className="min-h-[22rem] lg:h-[31rem]">
-              <IconBadge icon={QrCode} />
-              <div className="mt-auto pt-16">
-                <h3 className="heading-sub text-xl text-subheading">Digital check-in</h3>
-                <p className="mt-3 max-w-[40ch] text-[0.95rem] text-pretty text-ink/60">
-                  Guests scan a QR code or open a link and check in before they arrive, with no login.
-                </p>
-              </div>
             </CardShell>
           </RevealItem>
         </Stagger>
