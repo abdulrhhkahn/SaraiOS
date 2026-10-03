@@ -15,6 +15,13 @@ const defaultCopy = {
 };
 
 const pageCopy: Record<string, typeof defaultCopy> = {
+  // Pricing page: reuses the page banner's heading and paragraph
+  "/pricing": {
+    lines: ["A guest experience platform built around your operation."],
+    body: "Every hotel has different requirements, workflows and technology. Let's build the right SaraiOS deployment for your property.",
+    titleWidth: "max-w-[28ch]",
+    bodyWidth: "max-w-[56ch]",
+  },
   // Solutions page: reuses the page banner's heading and paragraph
   "/industries": {
     lines: ["AI guest experience for every kind of hospitality."],
