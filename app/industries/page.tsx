@@ -5,6 +5,7 @@ import { pageMetadata } from "@/lib/seo";
 import { Container } from "@/components/ui/primitives";
 import { ImageBanner } from "@/components/ui/ImageBanner";
 import { IndustrySection } from "@/components/industries/IndustrySection";
+import { BrandedCheckin } from "@/components/industries/BrandedCheckin";
 import { SolutionsFaq } from "@/components/industries/SolutionsFaq";
 import { IndustryIcon } from "@/components/industries/IndustryIcon";
 
@@ -45,6 +46,7 @@ export default function IndustriesPage() {
           ))}
         </div>
       </div>
+      <BrandedCheckin />
       <SolutionsFaq />
     </>
   );
