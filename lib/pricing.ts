@@ -1,6 +1,6 @@
 /**
- * Pricing is intentionally non-numeric. Update plan copy and the comparison
- * matrix here once packaging is confirmed.
+ * `pricingPlans` are the Essential, Growth and Pro plans shown on the pricing page (same plans and prices as the
+ * Sarai app). The older `plans` and `comparison` below describe the earlier tailored Custom and Enterprise model.
  */
 export type Plan = {
   id: string;
@@ -63,3 +63,94 @@ export const availabilityLabel: Record<Availability, string> = {
   available: "Available",
   discuss: "Scoped with you",
 };
+
+export type PricingPlan = {
+  id: string;
+  name: string;
+  /** Large price text, e.g. "Free" or "12,999". */
+  price: string;
+  /** Currency shown before the price, if any. */
+  currency?: string;
+  /** Shown after the price, e.g. "/mo". */
+  period?: string;
+  /** Small note under the price, e.g. onboarding fees. */
+  priceNote?: string;
+  tagline: string;
+  groups: { title: string; items: string[] }[];
+  cta: { label: string; href: string };
+  /** The recommended plan: filled in Sarai green. */
+  featured?: boolean;
+  badge?: string;
+};
+
+export const pricingPlans: PricingPlan[] = [
+  {
+    id: "essential",
+    name: "Essential",
+    price: "Free",
+    priceNote: "Onboarding fees PKR 5,000",
+    tagline: "Get started with in app web chat and essential guest messaging.",
+    groups: [
+      {
+        title: "Guest experience",
+        items: [
+          "Contactless digital check-in",
+          "Contactless digital F&B menu/room service",
+          "Contactless digital local tour/activities booking",
+          "Dedicated hotel guest surface",
+          "Review and verify guests",
+        ],
+      },
+      {
+        title: "AI and messaging",
+        items: ["AI Concierge - Suggests replies", "Channel - In-app web chat", "Conversations - 50/month"],
+      },
+      {
+        title: "Plan",
+        items: [
+          "Email seats - 2",
+          "Single property",
+          "Offline capabilities and lightweight data load",
+          "24/7 chat support",
+        ],
+      },
+    ],
+    cta: { label: "Get early access", href: "/demo" },
+  },
+  {
+    id: "growth",
+    name: "Growth",
+    currency: "PKR",
+    price: "12,999",
+    period: "/mo",
+    tagline: "Reach guests on every channel with smarter AI assistance.",
+    groups: [
+      {
+        title: "Everything in Essential, plus",
+        items: ["AI Concierge - Auto sends replies", "Channel - WhatsApp & SMS", "Conversations - Unlimited"],
+      },
+      {
+        title: "Insights and team",
+        items: ["Advanced analytics", "Weekly analytics report", "In-app staff activity tracker", "Email seats - 5"],
+      },
+    ],
+    cta: { label: "Book a Demo", href: "/demo" },
+    featured: true,
+    badge: "Most popular",
+  },
+  {
+    id: "pro",
+    name: "Pro",
+    currency: "PKR",
+    price: "27,999",
+    period: "/mo",
+    tagline: "Full automation and multi-property control for growing portfolios.",
+    groups: [
+      {
+        title: "Everything in Growth, plus",
+        items: ["Email seats - Unlimited", "Multi-properties", "Cross property comparison"],
+      },
+    ],
+    cta: { label: "Book a Demo", href: "/demo" },
+  },
+];
