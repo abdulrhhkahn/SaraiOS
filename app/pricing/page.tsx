@@ -1,7 +1,7 @@
 import { faqCategories } from "@/lib/faq";
 import { faqJsonLd, pageMetadata } from "@/lib/seo";
 import { Container, Section, SectionHeading } from "@/components/ui/primitives";
-import { PageHero } from "@/components/ui/PageHero";
+import { ImageBanner } from "@/components/ui/ImageBanner";
 import { Reveal } from "@/components/animations/Reveal";
 import { PlanCards } from "@/components/pricing/PlanCards";
 import { ComparisonTable } from "@/components/pricing/ComparisonTable";
@@ -32,12 +32,8 @@ export default function PricingPage() {
   return (
     <>
       <JsonLd data={faqJsonLd(pricingFaqs)} />
-      <PageHero
-        eyebrow="Pricing"
-        title="A guest experience platform built around your operation."
-        body="Every hotel has different requirements, workflows and technology. Let's build the right SaraiOS deployment for your property."
-      />
-      <Container className="pb-8">
+      <ImageBanner src="/images/pricing/banner.jpg" title="Pricing" wide imageClassName="object-[50%_48%]" />
+      <Container className="pt-14 pb-8 sm:pt-20">
         <h2 className="sr-only">Plans</h2>
         <PlanCards />
       </Container>
