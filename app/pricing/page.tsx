@@ -3,7 +3,7 @@ import { faqJsonLd, pageMetadata } from "@/lib/seo";
 import { Container, Section, SectionHeading } from "@/components/ui/primitives";
 import { ImageBanner } from "@/components/ui/ImageBanner";
 import { Reveal } from "@/components/animations/Reveal";
-import { PlanCards } from "@/components/pricing/PlanCards";
+import { PricingCards } from "@/components/pricing/PricingCards";
 import { ComparisonTable } from "@/components/pricing/ComparisonTable";
 import { Accordion } from "@/components/faq/Accordion";
 import { JsonLd } from "@/components/layout/JsonLd";
@@ -35,7 +35,7 @@ export default function PricingPage() {
       <ImageBanner src="/images/pricing/banner.jpg" title="Pricing" wide imageClassName="object-[50%_48%]" />
       <Container className="pt-14 pb-8 sm:pt-20">
         <h2 className="sr-only">Plans</h2>
-        <PlanCards />
+        <PricingCards />
       </Container>
 
       <Section>
