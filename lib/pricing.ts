@@ -64,16 +64,16 @@ export const availabilityLabel: Record<Availability, string> = {
   discuss: "Scoped with you",
 };
 
+/** Share taken off the monthly price when a plan is billed yearly. */
+export const YEARLY_DISCOUNT = 0.1;
+
 export type PricingPlan = {
   id: string;
   name: string;
-  /** Large price text, e.g. "Free" or "12,999". */
-  price: string;
-  /** Currency shown before the price, if any. */
-  currency?: string;
-  /** Shown after the price, e.g. "/mo". */
-  period?: string;
-  /** Small note under the price, e.g. onboarding fees. */
+  /** Monthly price in PKR, or null when the plan is free. */
+  monthly: number | null;
+  currency: string;
+  /** Small note under the price of a free plan, e.g. onboarding fees. */
   priceNote?: string;
   tagline: string;
   groups: { title: string; items: string[] }[];
@@ -87,7 +87,8 @@ export const pricingPlans: PricingPlan[] = [
   {
     id: "essential",
     name: "Essential",
-    price: "Free",
+    monthly: null,
+    currency: "PKR",
     priceNote: "Onboarding fees PKR 5,000",
     tagline: "Get started with in app web chat and essential guest messaging.",
     groups: [
@@ -120,9 +121,8 @@ export const pricingPlans: PricingPlan[] = [
   {
     id: "growth",
     name: "Growth",
+    monthly: 12999,
     currency: "PKR",
-    price: "12,999",
-    period: "/mo",
     tagline: "Reach guests on every channel with smarter AI assistance.",
     groups: [
       {
@@ -141,9 +141,8 @@ export const pricingPlans: PricingPlan[] = [
   {
     id: "pro",
     name: "Pro",
+    monthly: 27999,
     currency: "PKR",
-    price: "27,999",
-    period: "/mo",
     tagline: "Full automation and multi-property control for growing portfolios.",
     groups: [
       {
