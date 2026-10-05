@@ -64,6 +64,9 @@ export const availabilityLabel: Record<Availability, string> = {
   discuss: "Scoped with you",
 };
 
+/** Where "Subscribe Now" goes. Point this at the app's sign-up or checkout page once it exists. */
+export const SUBSCRIBE_HREF = "/demo";
+
 /** Share taken off the monthly price when a plan is billed yearly. */
 export const YEARLY_DISCOUNT = 0.1;
 
@@ -116,7 +119,7 @@ export const pricingPlans: PricingPlan[] = [
         ],
       },
     ],
-    cta: { label: "Get early access", href: "/demo" },
+    cta: { label: "Subscribe Now", href: SUBSCRIBE_HREF },
   },
   {
     id: "growth",
@@ -134,7 +137,7 @@ export const pricingPlans: PricingPlan[] = [
         items: ["Advanced analytics", "Weekly analytics report", "In-app staff activity tracker", "Email seats - 5"],
       },
     ],
-    cta: { label: "Book a Demo", href: "/demo" },
+    cta: { label: "Subscribe Now", href: SUBSCRIBE_HREF },
     featured: true,
     badge: "Most popular",
   },
@@ -150,6 +153,6 @@ export const pricingPlans: PricingPlan[] = [
         items: ["Email seats - Unlimited", "Multi-properties", "Cross property comparison"],
       },
     ],
-    cta: { label: "Book a Demo", href: "/demo" },
+    cta: { label: "Subscribe Now", href: SUBSCRIBE_HREF },
   },
 ];
