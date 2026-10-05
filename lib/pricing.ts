@@ -156,3 +156,47 @@ export const pricingPlans: PricingPlan[] = [
     cta: { label: "Subscribe Now", href: SUBSCRIBE_HREF },
   },
 ];
+
+/** A cell in the plan comparison: included, not included, or a short value such as "50/month". */
+export type PlanCell = boolean | string;
+
+/** Feature matrix for Essential, Growth and Pro, in that order. Built from the plan cards above. */
+export const planComparison: { title: string; rows: { feature: string; values: [PlanCell, PlanCell, PlanCell] }[] }[] =
+  [
+    {
+      title: "Guest experience",
+      rows: [
+        { feature: "Contactless digital check-in", values: [true, true, true] },
+        { feature: "Contactless digital F&B menu/room service", values: [true, true, true] },
+        { feature: "Contactless digital local tour/activities booking", values: [true, true, true] },
+        { feature: "Dedicated hotel guest surface", values: [true, true, true] },
+        { feature: "Review and verify guests", values: [true, true, true] },
+      ],
+    },
+    {
+      title: "AI and messaging",
+      rows: [
+        { feature: "AI Concierge", values: ["Suggests replies", "Auto sends replies", "Auto sends replies"] },
+        { feature: "Channels", values: ["In-app web chat", "Web chat, WhatsApp & SMS", "Web chat, WhatsApp & SMS"] },
+        { feature: "Conversations", values: ["50/month", "Unlimited", "Unlimited"] },
+      ],
+    },
+    {
+      title: "Insights",
+      rows: [
+        { feature: "Advanced analytics", values: [false, true, true] },
+        { feature: "Weekly analytics report", values: [false, true, true] },
+        { feature: "In-app staff activity tracker", values: [false, true, true] },
+        { feature: "Cross property comparison", values: [false, false, true] },
+      ],
+    },
+    {
+      title: "Plan",
+      rows: [
+        { feature: "Email seats", values: ["2", "5", "Unlimited"] },
+        { feature: "Properties", values: ["Single property", "Single property", "Multi-properties"] },
+        { feature: "Offline capabilities and lightweight data load", values: [true, true, true] },
+        { feature: "24/7 chat support", values: [true, true, true] },
+      ],
+    },
+  ];
