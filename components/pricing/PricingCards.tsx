@@ -2,7 +2,9 @@
 
 import { useState } from "react";
 import { motion } from "framer-motion";
+import Link from "next/link";
 import { Check } from "lucide-react";
+import { primaryCta } from "@/lib/navigation";
 import { pricingPlans, YEARLY_DISCOUNT } from "@/lib/pricing";
 import { ArrowButton } from "@/components/ui/ArrowButton";
 import { RevealItem, Stagger } from "@/components/animations/Reveal";
@@ -85,7 +87,7 @@ export function PricingCards() {
             <RevealItem key={plan.id} className="h-full">
               <article
                 className={cn(
-                  "flex h-full flex-col rounded-3xl p-7 ring-1 sm:p-8",
+                  "flex h-full flex-col rounded-3xl p-6 ring-1 sm:p-7",
                   f
                     ? "bg-[linear-gradient(to_bottom,#ffffff_45%,#e4f1ee_100%)] ring-cta/30"
                     : "bg-white ring-black/[0.08]",
@@ -106,7 +108,7 @@ export function PricingCards() {
                   )}
                 </div>
 
-                <div className="mt-9 min-h-[4.6rem]">
+                <div className="mt-6 min-h-[4rem]">
                   <motion.p
                     key={`${plan.id}-${billing}`}
                     initial={{ opacity: 0, y: 6 }}
@@ -115,34 +117,34 @@ export function PricingCards() {
                     className="flex flex-wrap items-baseline gap-x-1.5 text-subheading"
                   >
                     {perMonth === null ? (
-                      <span className="heading-sub text-[2.4rem] leading-none">Free</span>
+                      <span className="heading-sub text-[2.1rem] leading-none">Free</span>
                     ) : (
                       <>
                         <span className="text-sm font-medium text-ink/60">{plan.currency}</span>
-                        <span className="heading-sub text-[2.4rem] leading-none">{fmt(perMonth)}</span>
+                        <span className="heading-sub text-[2.1rem] leading-none">{fmt(perMonth)}</span>
                         <span className="text-sm text-ink/60">per month</span>
                       </>
                     )}
                   </motion.p>
-                  {note && <p className="mt-2 text-xs text-ink/55">{note}</p>}
+                  {note && <p className="mt-1.5 text-xs text-ink/55">{note}</p>}
                 </div>
 
-                <p className="mt-3 text-[0.95rem] text-pretty text-ink/60">{plan.tagline}</p>
+                <p className="mt-2 text-[0.9rem] text-pretty text-ink/60">{plan.tagline}</p>
 
-                <div className="mt-8">
+                <div className="mt-5">
                   {plan.groups.map((g, gi) => (
-                    <div key={g.title} className={cn(gi > 0 && "mt-6")}>
-                      <h4 className="text-[1rem] font-medium text-ink">{g.title}</h4>
-                      <ul className="mt-1.5">
+                    <div key={g.title} className={cn(gi > 0 && "mt-4")}>
+                      <h4 className="text-[0.95rem] font-medium text-ink">{g.title}</h4>
+                      <ul className="mt-1">
                         {g.items.map((item, i) => (
                           <li
                             key={item}
                             className={cn(
-                              "flex gap-3 py-3 text-[0.92rem] text-ink/75",
+                              "flex gap-2.5 py-2 text-[0.84rem] text-ink/75",
                               i > 0 && "border-t border-black/[0.07]",
                             )}
                           >
-                            <Check className="mt-0.5 size-[1.05rem] shrink-0 text-cta" aria-hidden />
+                            <Check className="mt-[0.1rem] size-4 shrink-0 text-cta" aria-hidden />
                             {item}
                           </li>
                         ))}
@@ -151,10 +153,19 @@ export function PricingCards() {
                   ))}
                 </div>
 
-                <div className="mt-auto pt-9">
+                <div className="mt-auto pt-6">
                   <ArrowButton href={plan.cta.href} size="md" variant={f ? "primary" : "secondary"} className="w-full">
                     {plan.cta.label}
                   </ArrowButton>
+                  <p className="mt-3 text-center text-xs text-ink/60">
+                    or{" "}
+                    <Link
+                      href={primaryCta.href}
+                      className="underline underline-offset-2 transition-colors hover:text-ink"
+                    >
+                      book a demo
+                    </Link>
+                  </p>
                 </div>
               </article>
             </RevealItem>
