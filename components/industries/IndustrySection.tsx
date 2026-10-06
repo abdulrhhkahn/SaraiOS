@@ -125,7 +125,7 @@ export function IndustrySection({ industry, src, flip }: { industry: Industry; s
               </p>
               <div className="mt-8">
                 <ArrowButton href="/pricing" size="sm">
-                  Start your free trial
+                  Start your Free Trial
                 </ArrowButton>
               </div>
             </Reveal>
