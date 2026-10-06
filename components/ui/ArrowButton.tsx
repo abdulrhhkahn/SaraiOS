@@ -14,6 +14,23 @@ const variants = {
   secondary: "bg-card text-ink ring-1 ring-line-strong hover:ring-ink/30 focus-visible:ring-ink/30",
 } as const;
 
+/** The drawn arrow after the label; reused by buttons that are not links (e.g. form submit). */
+export function ArrowGlyph() {
+  return (
+    <span
+      aria-hidden
+      className="relative mt-px h-0.5 w-2.5 bg-transparent transition-colors duration-200 group-hover:bg-current group-focus-visible:bg-current"
+    >
+      <span className="absolute -top-[3px] right-[3px] box-border inline-block -rotate-45 border-r-2 border-b-2 border-current p-[3px] transition-[right] duration-200 group-hover:right-0 group-focus-visible:right-0" />
+    </span>
+  );
+}
+
+/** Class list for an arrow button, for elements other than a link. */
+export function arrowButtonClass(variant: keyof typeof variants = "primary", size: "sm" | "md" | "lg" = "md") {
+  return cn(buttonBase(size), variants[variant]);
+}
+
 export function ArrowButton({
   href,
   children,
@@ -31,12 +48,7 @@ export function ArrowButton({
   return (
     <Link href={href} className={cn(buttonBase(size), variants[variant], className)} {...rest}>
       {children}
-      <span
-        aria-hidden
-        className="relative mt-px h-0.5 w-2.5 bg-transparent transition-colors duration-200 group-hover:bg-current group-focus-visible:bg-current"
-      >
-        <span className="absolute -top-[3px] right-[3px] box-border inline-block -rotate-45 border-r-2 border-b-2 border-current p-[3px] transition-[right] duration-200 group-hover:right-0 group-focus-visible:right-0" />
-      </span>
+      <ArrowGlyph />
     </Link>
   );
 }
