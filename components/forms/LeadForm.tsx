@@ -13,18 +13,125 @@ type Status = "idle" | "submitting" | "success" | "error";
 const inputBase =
   "w-full rounded-xl bg-card px-4 text-[1rem] text-ink ring-1 ring-line-strong transition-[box-shadow] duration-200 placeholder:text-stone/70 focus:ring-2 focus:ring-iris-ink focus:outline-none";
 
+/**
+ * Floating-label field: the label sits inside the box and, on focus or once there is a value, shrinks onto the
+ * top border. Rounded box, 1.5px border that turns Sarai green on focus and when filled (red on error).
+ */
+const floatBox =
+  "peer w-full rounded-2xl border-[1.5px] border-[#9e9e9e] bg-transparent px-4 py-3.5 text-[1rem] text-ink transition-[border-color] duration-150 ease-[cubic-bezier(0.4,0,0.2,1)] focus:border-cta focus:shadow-[0_0_0_3px_rgba(0,120,125,0.14)] focus:outline-none focus-visible:outline-none! aria-invalid:border-[#b42318] focus:aria-invalid:border-[#b42318] focus:aria-invalid:shadow-[0_0_0_3px_rgba(180,35,24,0.12)]";
+const floatLabel =
+  "pointer-events-none absolute top-0 left-3.5 z-10 origin-left bg-card px-1 text-[1rem] text-stone transition-all duration-150 ease-[cubic-bezier(0.4,0,0.2,1)] peer-aria-invalid:text-[#b42318]";
+/** Label resting position (inside the box) and floated position (on the border). */
+const labelRest = "translate-y-[0.95rem] bg-transparent";
+const labelUp = "-translate-y-1/2 scale-[0.8]";
+
+function FloatingField({
+  field,
+  id,
+  common,
+  hasError,
+}: {
+  field: FormField;
+  id: string;
+  common: Record<string, unknown>;
+  hasError: boolean;
+}) {
+  const required = field.required && (
+    <span aria-hidden className="text-iris-ink">
+      {" "}
+      *
+    </span>
+  );
+
+  if (field.type === "select") {
+    return (
+      <div className="relative">
+        <select
+          {...common}
+          defaultValue=""
+          className={cn(
+            floatBox,
+            "min-h-[3.4rem] cursor-pointer appearance-none pr-10 valid:border-cta invalid:text-stone",
+          )}
+        >
+          <option value="" disabled>
+            Select…
+          </option>
+          {field.options?.map((o) => (
+            <option key={o} value={o}>
+              {o}
+            </option>
+          ))}
+        </select>
+        <ChevronDown
+          className="pointer-events-none absolute top-1/2 right-3.5 size-4 -translate-y-1/2 text-stone"
+          aria-hidden
+        />
+        {/* a select always shows a value or "Select…", so its label stays on the border */}
+        <label htmlFor={id} className={cn(floatLabel, labelUp, "bg-card peer-valid:text-cta peer-focus:text-cta")}>
+          {field.label}
+          {required}
+        </label>
+      </div>
+    );
+  }
+
+  const labelState = cn(
+    labelRest,
+    "peer-focus:-translate-y-1/2 peer-focus:scale-[0.8] peer-focus:bg-card peer-focus:text-cta",
+    "peer-[:not(:placeholder-shown)]:-translate-y-1/2 peer-[:not(:placeholder-shown)]:scale-[0.8] peer-[:not(:placeholder-shown)]:bg-card peer-[:not(:placeholder-shown)]:text-cta",
+  );
+
+  return (
+    <div className="relative">
+      {field.type === "textarea" ? (
+        <textarea
+          {...common}
+          rows={5}
+          // the hint only appears once the field is focused, so it never collides with the label
+          placeholder={field.placeholder ?? " "}
+          className={cn(
+            floatBox,
+            "min-h-32 resize-y placeholder:text-transparent focus:placeholder:text-stone/70 [&:not(:placeholder-shown)]:border-cta",
+            hasError && "border-[#b42318]",
+          )}
+        />
+      ) : (
+        <input
+          {...common}
+          type={field.type}
+          inputMode={field.type === "email" ? "email" : undefined}
+          placeholder=" "
+          className={cn(
+            floatBox,
+            "min-h-[3.4rem] [&:not(:placeholder-shown)]:border-cta",
+            hasError && "border-[#b42318]",
+          )}
+        />
+      )}
+      <label htmlFor={id} className={cn(floatLabel, labelState)}>
+        {field.label}
+        {required}
+      </label>
+    </div>
+  );
+}
+
 export function LeadForm({
   formId,
   fields,
   submitLabel,
   successTitle,
   successBody,
+  floatingLabels = false,
 }: {
   formId: string;
   fields: FormField[];
   submitLabel: string;
   successTitle: string;
   successBody: string;
+  /** Use floating-label inputs instead of labels above the fields. */
+  floatingLabels?: boolean;
 }) {
   const [status, setStatus] = useState<Status>("idle");
   const [errors, setErrors] = useState<Record<string, string>>({});
@@ -106,6 +213,18 @@ export function LeadForm({
                   "aria-describedby": err ? errId : undefined,
                   onBlur: (e: { currentTarget: { value: string } }) => onBlur(f, e.currentTarget.value),
                 };
+                if (floatingLabels) {
+                  return (
+                    <div key={f.name} className={cn(!f.half && "sm:col-span-2")}>
+                      <FloatingField field={f} id={id} common={common} hasError={!!err} />
+                      {err && (
+                        <p id={errId} className="mt-2 flex items-center gap-1.5 text-sm font-medium text-[#b42318]">
+                          <AlertCircle className="size-4 shrink-0" aria-hidden /> {err}
+                        </p>
+                      )}
+                    </div>
+                  );
+                }
                 return (
                   <div key={f.name} className={cn(!f.half && "sm:col-span-2")}>
                     <label htmlFor={id} className="mb-2 block text-sm font-semibold text-ink">
