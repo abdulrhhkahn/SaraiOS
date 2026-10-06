@@ -34,7 +34,7 @@ function SupportChatMock() {
   return (
     <div aria-hidden className="w-[calc(100%+2rem)] pt-5">
       <div className="rounded-[1.6rem] bg-black/[0.03] p-2 ring-1 ring-black/[0.06]">
-        <div className="rounded-[1.2rem] bg-white pb-6">
+        <div className="rounded-[1.2rem] bg-white pb-40">
           <div className="flex items-center justify-between border-b border-black/[0.07] px-5 py-3.5 pr-9">
             <p className="text-[1.05rem] font-semibold text-ink">Chat with support</p>
             <X className="size-4 text-ink/60" />
@@ -99,7 +99,7 @@ export function SupportChat() {
                 Send a message about your issue and get the reply in the same chat.
               </p>
               <DemoTag className="mt-5 w-fit">Sample conversation</DemoTag>
-              <div className="relative mt-auto -mr-7 -mb-7 h-[20rem] overflow-hidden sm:-mr-8 sm:-mb-8 lg:h-auto lg:flex-1">
+              <div className="relative mt-auto -mr-7 -mb-7 h-[22rem] overflow-hidden sm:-mr-8 sm:-mb-8 lg:h-auto lg:flex-1">
                 <SupportChatMock />
               </div>
             </CardShell>
