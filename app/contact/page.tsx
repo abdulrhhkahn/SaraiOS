@@ -7,6 +7,7 @@ import { Container } from "@/components/ui/primitives";
 import { ImageBanner } from "@/components/ui/ImageBanner";
 import { Reveal } from "@/components/animations/Reveal";
 import { LeadForm } from "@/components/forms/LeadForm";
+import { SupportChat } from "@/components/contact/SupportChat";
 import { ContactFaq } from "@/components/contact/ContactFaq";
 
 export const metadata = pageMetadata({
@@ -81,6 +82,7 @@ export default function ContactPage() {
           )}
         </Reveal>
       </Container>
+      <SupportChat />
       <ContactFaq />
     </>
   );
