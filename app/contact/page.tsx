@@ -36,7 +36,7 @@ const shortcuts = [
 export default function ContactPage() {
   return (
     <>
-      <ImageBanner src="/images/contact/banner-lobby.jpg" title="Contact" imageClassName="object-[50%_40%]" />
+      <ImageBanner src="/images/contact/banner-lobby.jpg" title="Contact" imageClassName="object-[50%_42%]" />
       <Container className="grid gap-12 pt-14 pb-28 sm:pt-20 lg:grid-cols-[1.4fr_1fr] lg:gap-16">
         <Reveal>
           <LeadForm
