@@ -2,9 +2,9 @@
 
 import { useRef, useState, type FormEvent } from "react";
 import { AnimatePresence, motion } from "framer-motion";
-import { AlertCircle, ArrowRight, Check, ChevronDown, Loader2 } from "lucide-react";
+import { AlertCircle, Check, ChevronDown, Loader2 } from "lucide-react";
 import { submitLead, validate, type FormField } from "@/lib/forms";
-import { buttonClass } from "@/components/ui/primitives";
+import { ArrowGlyph, arrowButtonClass } from "@/components/ui/ArrowButton";
 import { easeOut } from "@/components/animations/variants";
 import { cn } from "@/lib/cn";
 
@@ -300,7 +300,10 @@ export function LeadForm({
             <button
               type="submit"
               disabled={status === "submitting"}
-              className={cn(buttonClass("primary", "lg"), "mt-8 w-full sm:w-auto")}
+              className={cn(
+                arrowButtonClass("primary", "sm"),
+                "mt-8 cursor-pointer disabled:cursor-not-allowed disabled:opacity-70",
+              )}
             >
               {status === "submitting" ? (
                 <>
@@ -309,7 +312,7 @@ export function LeadForm({
               ) : (
                 <>
                   {submitLabel}
-                  <ArrowRight className="size-4 transition-transform group-hover:translate-x-0.5" aria-hidden />
+                  <ArrowGlyph />
                 </>
               )}
             </button>
