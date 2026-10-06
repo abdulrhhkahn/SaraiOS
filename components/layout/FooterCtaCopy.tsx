@@ -36,6 +36,13 @@ const pageCopy: Record<string, typeof defaultCopy> = {
     titleWidth: "max-w-[26ch]",
     bodyWidth: "max-w-[56ch]",
   },
+  // Book a demo page: reuses the page banner's heading and paragraph
+  "/demo": {
+    lines: ["See SaraiOS in action."],
+    body: "A focused session built around your property. Tell us a little about your operation and we'll tailor the demo.",
+    titleWidth: "max-w-[22ch]",
+    bodyWidth: "max-w-[52ch]",
+  },
   // Platform page
   "/features": {
     lines: ["Less relaying.", "More hospitality."],
