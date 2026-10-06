@@ -39,6 +39,7 @@ export default function ContactPage() {
         <Reveal>
           <LeadForm
             formId="contact"
+            floatingLabels
             fields={contactFields}
             submitLabel="Get in Touch"
             successTitle="Thanks. We'll be in touch shortly."
