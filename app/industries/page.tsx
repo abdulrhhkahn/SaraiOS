@@ -20,7 +20,7 @@ export default function IndustriesPage() {
   const shots = getScreenAvailability();
   return (
     <>
-      <ImageBanner src="/images/solutions/banner.jpg" title="Solutions" imageClassName="object-[50%_34%]" />
+      <ImageBanner src="/images/solutions/banner.jpg" title="Solutions" imageClassName="object-[50%_38%]" />
       {/* The tabs stay pinned only while the solution panels are on screen, not over the FAQ below */}
       <div>
         <nav aria-label="Industries" className="sticky top-[84px] z-30 mt-6">
