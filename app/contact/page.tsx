@@ -4,7 +4,7 @@ import { contactFields } from "@/lib/forms";
 import { siteConfig } from "@/lib/siteConfig";
 import { pageMetadata } from "@/lib/seo";
 import { Container } from "@/components/ui/primitives";
-import { PageHero } from "@/components/ui/PageHero";
+import { ImageBanner } from "@/components/ui/ImageBanner";
 import { Reveal } from "@/components/animations/Reveal";
 import { LeadForm } from "@/components/forms/LeadForm";
 
@@ -34,12 +34,8 @@ const shortcuts = [
 export default function ContactPage() {
   return (
     <>
-      <PageHero
-        eyebrow="Contact"
-        title="Let's build a better guest experience."
-        body="Tell us about your property and what you'd like to improve. We'll get back to you."
-      />
-      <Container className="grid gap-12 pb-28 lg:grid-cols-[1.4fr_1fr] lg:gap-16">
+      <ImageBanner src="/images/contact/banner-lobby.jpg" title="Contact" imageClassName="object-[50%_40%]" />
+      <Container className="grid gap-12 pt-14 pb-28 sm:pt-20 lg:grid-cols-[1.4fr_1fr] lg:gap-16">
         <Reveal>
           <LeadForm
             formId="contact"
