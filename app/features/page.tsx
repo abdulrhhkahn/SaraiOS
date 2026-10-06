@@ -19,7 +19,7 @@ export const metadata = pageMetadata({
 export default function FeaturesPage() {
   return (
     <>
-      <ImageBanner src="/images/platform/banner.jpg" title="Platform" imageClassName="object-[50%_28%]" />
+      <ImageBanner src="/images/platform/banner.jpg" title="Platform" imageClassName="object-[50%_36%]" />
       <StaffCheckins />
       <ConversationsSection />
       <AnalyticsSection />
