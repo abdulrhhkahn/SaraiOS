@@ -76,7 +76,7 @@ export default function PricingPage() {
   return (
     <>
       <JsonLd data={faqJsonLd(pricingFaqs)} />
-      <ImageBanner src="/images/pricing/banner-lobby.jpg" title="Pricing" imageClassName="object-[50%_44%]" />
+      <ImageBanner src="/images/pricing/banner-lobby.jpg" title="Pricing" imageClassName="object-[50%_50%]" />
       <Container className="pt-14 pb-8 sm:pt-20">
         <h2 className="sr-only">Plans</h2>
         <PricingCards />
