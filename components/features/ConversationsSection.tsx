@@ -197,7 +197,7 @@ export function ConversationsSection() {
             </ul>
             <div className="mt-9">
               <ArrowButton href="/pricing" size="sm">
-                Start your free trial
+                Start your Free Trial
               </ArrowButton>
             </div>
           </Reveal>
