@@ -18,7 +18,7 @@ export const primaryCta: NavLink = { label: "Book a Demo", href: "/demo" };
 export const secondaryCta: NavLink = { label: "Explore Platform", href: "/features" };
 
 /** Button in the header and the mobile menu: early access starts on the pricing page. */
-export const headerCta: NavLink = { label: "Get early access", href: "/pricing" };
+export const headerCta: NavLink = { label: "Get early Access", href: "/pricing" };
 
 export type FooterGroup = { title: string; links: (NavLink & { disabled?: boolean })[] };
 
