@@ -237,7 +237,7 @@ export function ConciergeKnowledge() {
             </p>
             <div className="mt-8 flex flex-wrap gap-2.5">
               <ArrowButton href="/pricing" size="sm">
-                Start your free trial
+                Start your Free Trial
               </ArrowButton>
               <ArrowButton href={primaryCta.href} size="sm" variant="secondary">
                 {primaryCta.label}
