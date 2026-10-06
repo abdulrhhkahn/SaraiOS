@@ -37,7 +37,7 @@ function FloatingField({
   hasError: boolean;
 }) {
   const required = field.required && (
-    <span aria-hidden className="text-iris-ink">
+    <span aria-hidden className="text-cta">
       {" "}
       *
     </span>
@@ -230,7 +230,7 @@ export function LeadForm({
                     <label htmlFor={id} className="mb-2 block text-sm font-semibold text-ink">
                       {f.label}
                       {f.required && (
-                        <span aria-hidden className="text-iris-ink">
+                        <span aria-hidden className="text-cta">
                           {" "}
                           *
                         </span>
