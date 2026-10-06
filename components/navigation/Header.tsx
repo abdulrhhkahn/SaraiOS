@@ -74,7 +74,7 @@ export function Header() {
                 {headerCta.label}
               </ArrowButton>
               <ArrowButton href={headerCta.href} size="sm" className="sm:hidden">
-                Early access
+                Early Access
               </ArrowButton>
               <button
                 type="button"
