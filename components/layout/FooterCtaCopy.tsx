@@ -15,6 +15,13 @@ const defaultCopy = {
 };
 
 const pageCopy: Record<string, typeof defaultCopy> = {
+  // Contact page: reuses the page banner's heading and paragraph
+  "/contact": {
+    lines: ["Let's build a better guest experience."],
+    body: "Tell us about your property and what you'd like to improve. We'll get back to you.",
+    titleWidth: "max-w-[22ch]",
+    bodyWidth: "max-w-[52ch]",
+  },
   // Pricing page: reuses the page banner's heading and paragraph
   "/pricing": {
     lines: ["A guest experience platform built around your operation."],
