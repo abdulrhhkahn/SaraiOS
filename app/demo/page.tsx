@@ -3,7 +3,7 @@ import { demoFields } from "@/lib/forms";
 import { getScreenAvailability } from "@/lib/screenshots.server";
 import { pageMetadata } from "@/lib/seo";
 import { Container } from "@/components/ui/primitives";
-import { PageHero } from "@/components/ui/PageHero";
+import { ImageBanner } from "@/components/ui/ImageBanner";
 import { Reveal } from "@/components/animations/Reveal";
 import { LeadForm } from "@/components/forms/LeadForm";
 import { ProductScreenshot } from "@/components/dashboard/ProductScreenshot";
@@ -25,12 +25,8 @@ export default function DemoPage() {
   const shots = getScreenAvailability();
   return (
     <>
-      <PageHero
-        eyebrow="Book a demo"
-        title="See SaraiOS in action."
-        body="A focused session built around your property. Tell us a little about your operation and we'll tailor the demo."
-      />
-      <Container className="grid gap-12 pb-28 lg:grid-cols-[1.1fr_1fr] lg:gap-16">
+      <ImageBanner src="/images/demo/banner.jpg" title="Book a Demo" imageClassName="object-[50%_50%]" />
+      <Container className="grid gap-12 pt-14 pb-28 sm:pt-20 lg:grid-cols-[1.1fr_1fr] lg:gap-16">
         <Reveal>
           <LeadForm
             formId="demo"
