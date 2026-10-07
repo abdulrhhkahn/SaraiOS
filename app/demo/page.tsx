@@ -30,6 +30,7 @@ export default function DemoPage() {
         <Reveal>
           <LeadForm
             formId="demo"
+            floatingLabels
             fields={demoFields}
             submitLabel="Request a Demo"
             successTitle="Your demo request is in."
