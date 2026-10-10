@@ -43,6 +43,13 @@ const pageCopy: Record<string, typeof defaultCopy> = {
     titleWidth: "max-w-[22ch]",
     bodyWidth: "max-w-[52ch]",
   },
+  // FAQ page: reuses the page banner's heading and paragraph
+  "/faq": {
+    lines: ["Questions, answered."],
+    body: "Everything you need to know about SaraiOS. Can't find an answer? Our team is happy to help.",
+    titleWidth: "max-w-[22ch]",
+    bodyWidth: "max-w-[52ch]",
+  },
   // Platform page
   "/features": {
     lines: ["Less relaying.", "More hospitality."],
