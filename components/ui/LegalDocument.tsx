@@ -2,18 +2,10 @@ import Link from "next/link";
 import { AlertTriangle } from "lucide-react";
 import type { LegalDoc } from "@/lib/legal";
 import { Container } from "./primitives";
-import { BannerGlow } from "./BannerGlow";
 
 export function LegalDocument({ doc }: { doc: LegalDoc }) {
   return (
-    <div className="pt-36 pb-28 sm:pt-44">
-      <section className="relative isolate overflow-hidden">
-        <BannerGlow />
-        <Container className="mb-14 text-center">
-          <h1 className="heading-hero">{doc.title}</h1>
-          <p className="mt-4 text-stone">Last updated: {doc.lastUpdated}</p>
-        </Container>
-      </section>
+    <div className="pt-32 pb-28 sm:pt-40">
       <Container className="grid gap-12 lg:grid-cols-[240px_1fr] lg:gap-20">
         <aside className="lg:sticky lg:top-28 lg:self-start">
           <p className="text-xs font-semibold tracking-[0.14em] text-stone uppercase">On this page</p>
@@ -28,6 +20,8 @@ export function LegalDocument({ doc }: { doc: LegalDoc }) {
           </ul>
         </aside>
         <article className="max-w-[720px]">
+          <h1 className="heading-hero text-left">{doc.title}</h1>
+          <p className="mt-4 mb-10 text-stone">Last updated: {doc.lastUpdated}</p>
           <div role="note" className="flex gap-3 rounded-2xl bg-warning-soft p-5 text-[0.95rem] text-[#6b4a0c]">
             <AlertTriangle className="mt-0.5 size-5 shrink-0" aria-hidden />
             <p>
