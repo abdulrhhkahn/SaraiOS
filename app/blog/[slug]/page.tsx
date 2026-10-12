@@ -94,7 +94,7 @@ export default async function BlogPostPage(props: PageProps<"/blog/[slug]">) {
               </ol>
             </nav>
             <Reveal className="text-center">
-              <p className="mt-10 text-sm font-semibold text-brass-ink">{post.category}</p>
+              <p className="mt-10 text-sm font-semibold text-cta">{post.category}</p>
               <h1 className="mt-4 heading-hero text-balance">{post.title}</h1>
               <p className="mt-6 lead text-stone">{post.excerpt}</p>
               <div className="mt-8 flex flex-wrap items-center justify-center gap-x-6 gap-y-2 border-y border-line py-4 text-sm">
@@ -144,7 +144,7 @@ export default async function BlogPostPage(props: PageProps<"/blog/[slug]">) {
 
       <section className="py-24">
         <Container>
-          <h2 className="heading-sub text-3xl">Related articles</h2>
+          <h2 className="text-2xl font-semibold tracking-[-0.02em]">Related articles</h2>
           <Stagger className="mt-8 grid gap-x-6 gap-y-14 sm:grid-cols-2 lg:grid-cols-3">
             {related.map((p) => (
               <RevealItem key={p.slug}>
