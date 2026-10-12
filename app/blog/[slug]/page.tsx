@@ -1,12 +1,9 @@
-import Link from "next/link";
 import { notFound } from "next/navigation";
-import { ChevronRight } from "lucide-react";
 import { formatDate, getAllPosts, getPost, getRelatedPosts } from "@/lib/blog";
 import { absoluteUrl, siteConfig } from "@/lib/siteConfig";
 import { publicFileExists } from "@/lib/screenshots.server";
 import { breadcrumbJsonLd, pageMetadata } from "@/lib/seo";
 import { ButtonLink, Container } from "@/components/ui/primitives";
-import { BannerGlow } from "@/components/ui/BannerGlow";
 import { Reveal, RevealItem, Stagger } from "@/components/animations/Reveal";
 import { reveal } from "@/components/animations/variants";
 import { JsonLd } from "@/components/layout/JsonLd";
@@ -67,34 +64,10 @@ export default async function BlogPostPage(props: PageProps<"/blog/[slug]">) {
         ]}
       />
       <article className="pt-36 sm:pt-44">
-        <div className="relative isolate overflow-hidden">
-          <BannerGlow />
+        <div>
           <Container className="max-w-[880px]">
-            <nav aria-label="Breadcrumb" className="flex justify-center">
-              <ol className="flex flex-wrap items-center justify-center gap-1.5 text-sm text-stone">
-                <li>
-                  <Link href="/" className="hover:text-ink">
-                    Home
-                  </Link>
-                </li>
-                <li aria-hidden>
-                  <ChevronRight className="size-3.5" />
-                </li>
-                <li>
-                  <Link href="/blog" className="hover:text-ink">
-                    Blog
-                  </Link>
-                </li>
-                <li aria-hidden>
-                  <ChevronRight className="size-3.5" />
-                </li>
-                <li aria-current="page" className="max-w-[40ch] truncate text-ink">
-                  {post.title}
-                </li>
-              </ol>
-            </nav>
             <Reveal className="text-center">
-              <p className="mt-10 text-sm font-semibold text-cta">{post.category}</p>
+              <p className="text-sm font-semibold text-cta">{post.category}</p>
               <h1 className="mt-4 heading-hero text-balance">{post.title}</h1>
               <p className="mt-6 lead text-stone">{post.excerpt}</p>
               <div className="mt-8 flex flex-wrap items-center justify-center gap-x-6 gap-y-2 border-y border-line py-4 text-sm">
