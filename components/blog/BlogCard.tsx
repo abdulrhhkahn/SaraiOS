@@ -7,7 +7,7 @@ import { cn } from "@/lib/cn";
 export function PostMeta({ post, className }: { post: BlogPost; className?: string }) {
   return (
     <p className={cn("flex flex-wrap items-center gap-x-3 gap-y-1 text-sm text-stone", className)}>
-      <span className="font-semibold text-brass-ink">{post.category}</span>
+      <span className="font-semibold text-cta">{post.category}</span>
       <span aria-hidden className="size-1 rounded-full bg-black/20" />
       <time dateTime={post.date}>{formatDate(post.date)}</time>
       <span aria-hidden className="size-1 rounded-full bg-black/20" />
@@ -27,13 +27,13 @@ export function BlogCard({ post, hasImage }: { post: BlogPost; hasImage: boolean
         />
       </div>
       <PostMeta post={post} className="mt-5" />
-      <h3 className="mt-2.5 heading-sub text-2xl leading-snug text-balance">
+      <h3 className="mt-2.5 text-xl leading-snug font-semibold tracking-[-0.02em] text-balance">
         <Link href={`/blog/${post.slug}`} className="after:absolute after:inset-0 after:content-['']">
           {post.title}
         </Link>
       </h3>
       <p className="mt-2 line-clamp-2 leading-relaxed text-stone">{post.excerpt}</p>
-      <p className="mt-4 inline-flex items-center gap-1.5 font-semibold">
+      <p className="mt-4 inline-flex items-center gap-1.5 font-semibold text-cta">
         Read article
         <ArrowRight className="size-4 transition-transform duration-200 group-hover:translate-x-1" aria-hidden />
       </p>

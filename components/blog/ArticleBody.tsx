@@ -1,3 +1,4 @@
+import Image from "next/image";
 import type { BlogPost, ContentBlock } from "@/lib/blog";
 import { BlogCover } from "./BlogCover";
 
@@ -24,11 +25,17 @@ function Block({ block, post, index }: { block: ContentBlock; post: BlogPost; in
     case "image":
       return (
         <figure className="!my-12">
-          <BlogCover
-            post={{ ...post, slug: `${post.slug}-${index}` }}
-            hasImage={false}
-            className="aspect-[16/9] rounded-2xl ring-1 ring-line"
-          />
+          {block.src ? (
+            <div className="relative aspect-[16/9] overflow-hidden rounded-2xl ring-1 ring-line">
+              <Image src={block.src} alt={block.alt} fill sizes="(min-width: 720px) 720px, 100vw" className="object-cover" />
+            </div>
+          ) : (
+            <BlogCover
+              post={{ ...post, slug: `${post.slug}-${index}` }}
+              hasImage={false}
+              className="aspect-[16/9] rounded-2xl ring-1 ring-line"
+            />
+          )}
           {block.caption && <figcaption className="mt-3 text-sm text-stone">{block.caption}</figcaption>}
         </figure>
       );
