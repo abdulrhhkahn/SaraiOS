@@ -4,7 +4,6 @@ import { getAllPosts } from "@/lib/blog";
 import { publicFileExists } from "@/lib/screenshots.server";
 import { pageMetadata } from "@/lib/seo";
 import { Container } from "@/components/ui/primitives";
-import { PageHero } from "@/components/ui/PageHero";
 import { Reveal, RevealItem, Stagger } from "@/components/animations/Reveal";
 import { reveal } from "@/components/animations/variants";
 import { BlogCard, PostMeta } from "@/components/blog/BlogCard";
@@ -23,7 +22,14 @@ export default function BlogIndexPage() {
 
   return (
     <>
-      <PageHero eyebrow="Blog" title="Hospitality, AI & the future of guest experience." />
+      <section className="pt-36 pb-14 sm:pt-44 sm:pb-20">
+        <Container>
+          <Reveal className="mx-auto max-w-4xl text-center">
+            <p className="font-mono text-[0.9375rem] tracking-[0.08em] text-cta uppercase">Blog</p>
+            <h1 className="mt-6 heading-hero text-balance">Hospitality, AI &amp; the future of guest experience.</h1>
+          </Reveal>
+        </Container>
+      </section>
       <Container className="pb-28">
         {posts.some((p) => p.placeholder) && (
           <p className="mb-10 inline-flex rounded-full bg-warning-soft px-3 py-1 text-xs font-semibold text-warning">
@@ -43,15 +49,15 @@ export default function BlogIndexPage() {
               />
             </div>
             <div className="flex flex-col justify-center p-8 sm:p-12">
-              <p className="text-xs font-semibold tracking-[0.14em] text-iris-ink uppercase">Featured</p>
+              <p className="font-mono text-[0.9375rem] tracking-[0.08em] text-cta uppercase">Featured</p>
               <PostMeta post={featured} className="mt-4" />
-              <h2 className="mt-3 heading-sub text-[clamp(2rem,3.6vw,3rem)] leading-[1.05] text-balance">
+              <h2 className="mt-3 font-serif text-[clamp(2rem,3.6vw,3rem)] leading-[1.05] text-balance">
                 <Link href={`/blog/${featured.slug}`} className="after:absolute after:inset-0 after:content-['']">
                   {featured.title}
                 </Link>
               </h2>
               <p className="mt-4 lead text-stone">{featured.excerpt}</p>
-              <p className="mt-6 inline-flex items-center gap-1.5 font-semibold">
+              <p className="mt-6 inline-flex items-center gap-1.5 font-semibold text-cta">
                 Read article{" "}
                 <ArrowRight className="size-4 transition-transform group-hover:translate-x-1" aria-hidden />
               </p>
@@ -59,7 +65,7 @@ export default function BlogIndexPage() {
           </article>
         </Reveal>
 
-        <h2 className="mt-24 heading-sub text-3xl">Latest articles</h2>
+        <h2 className="mt-24 text-2xl font-semibold tracking-[-0.02em]">Latest articles</h2>
         <Stagger className="mt-8 grid gap-x-6 gap-y-14 sm:grid-cols-2 lg:grid-cols-3">
           {rest.map((post) => (
             <RevealItem key={post.slug}>
