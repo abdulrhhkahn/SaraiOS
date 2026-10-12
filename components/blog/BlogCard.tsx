@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { ArrowRight } from "lucide-react";
+import { ArrowButton } from "@/components/ui/ArrowButton";
 import { formatDate, type BlogPost } from "@/lib/blog";
 import { BlogCover } from "./BlogCover";
 import { cn } from "@/lib/cn";
@@ -33,10 +33,11 @@ export function BlogCard({ post, hasImage }: { post: BlogPost; hasImage: boolean
         </Link>
       </h3>
       <p className="mt-2 line-clamp-2 leading-relaxed text-stone">{post.excerpt}</p>
-      <p className="mt-4 inline-flex items-center gap-1.5 font-semibold text-cta">
-        Read article
-        <ArrowRight className="size-4 transition-transform duration-200 group-hover:translate-x-1" aria-hidden />
-      </p>
+      <div className="mt-5">
+        <ArrowButton href={`/blog/${post.slug}`} size="sm">
+          Read article
+        </ArrowButton>
+      </div>
     </article>
   );
 }
