@@ -2,12 +2,13 @@ import { notFound } from "next/navigation";
 import { formatDate, getAllPosts, getPost, getRelatedPosts } from "@/lib/blog";
 import { absoluteUrl, siteConfig } from "@/lib/siteConfig";
 import { publicFileExists } from "@/lib/screenshots.server";
-import { breadcrumbJsonLd, pageMetadata } from "@/lib/seo";
+import { breadcrumbJsonLd, faqJsonLd, pageMetadata } from "@/lib/seo";
 import { ButtonLink, Container } from "@/components/ui/primitives";
 import { Reveal, RevealItem, Stagger } from "@/components/animations/Reveal";
 import { reveal } from "@/components/animations/variants";
 import { JsonLd } from "@/components/layout/JsonLd";
 import { ArticleBody } from "@/components/blog/ArticleBody";
+import { ArticleFaq } from "@/components/blog/ArticleFaq";
 import { BlogCard } from "@/components/blog/BlogCard";
 import { BlogCover } from "@/components/blog/BlogCover";
 import { ReadingProgress } from "@/components/blog/ReadingProgress";
@@ -22,12 +23,16 @@ export async function generateMetadata(props: PageProps<"/blog/[slug]">) {
   const { slug } = await props.params;
   const post = getPost(slug);
   if (!post) return {};
-  return pageMetadata({
-    title: `${post.title} | SaraiOS Blog`,
-    description: post.excerpt,
-    path: `/blog/${post.slug}`,
-    type: "article",
-  });
+  return {
+    ...pageMetadata({
+      title: `${post.title} | SaraiOS Blog`,
+      description: post.answer.length <= 160 ? post.answer : post.excerpt,
+      path: `/blog/${post.slug}`,
+      type: "article",
+    }),
+    keywords: post.keywords,
+    authors: [{ name: post.author.name }],
+  };
 }
 
 export default async function BlogPostPage(props: PageProps<"/blog/[slug]">) {
@@ -36,6 +41,15 @@ export default async function BlogPostPage(props: PageProps<"/blog/[slug]">) {
   if (!post) notFound();
   const related = getRelatedPosts(post.slug);
   const hasImage = publicFileExists(post.image);
+  const wordCount = [
+    post.answer,
+    ...post.content.map((b) =>
+      b.type === "list" ? b.items.join(" ") : b.type === "story" ? `${b.title} ${b.text} ${b.takeaway}` : "text" in b ? b.text : "",
+    ),
+  ]
+    .join(" ")
+    .split(/\s+/)
+    .filter(Boolean).length;
 
   const articleLd = {
     "@context": "https://schema.org",
@@ -43,7 +57,13 @@ export default async function BlogPostPage(props: PageProps<"/blog/[slug]">) {
     headline: post.title,
     description: post.excerpt,
     datePublished: post.date,
-    dateModified: post.date,
+    dateModified: post.updated,
+    articleSection: post.category,
+    keywords: post.keywords.join(", "),
+    inLanguage: "en",
+    wordCount,
+    abstract: post.answer,
+    citation: post.sources.map((src) => ({ "@type": "CreativeWork", name: src.title, url: src.url })),
     author: { "@type": "Organization", name: post.author.name },
     publisher: { "@type": "Organization", name: siteConfig.name, url: siteConfig.url },
     mainEntityOfPage: absoluteUrl(`/blog/${post.slug}`),
@@ -56,6 +76,7 @@ export default async function BlogPostPage(props: PageProps<"/blog/[slug]">) {
       <JsonLd
         data={[
           articleLd,
+          faqJsonLd(post.faqs),
           breadcrumbJsonLd([
             { name: "Home", path: "/" },
             { name: "Blog", path: "/blog" },
@@ -78,12 +99,8 @@ export default async function BlogPostPage(props: PageProps<"/blog/[slug]">) {
                 <time dateTime={post.date} className="text-stone">
                   {formatDate(post.date)}
                 </time>
+                <span className="text-stone">Updated {formatDate(post.updated)}</span>
                 <span className="text-stone">{post.readingMinutes} min read</span>
-                {post.placeholder && (
-                  <span className="rounded-full bg-warning-soft px-2.5 py-0.5 text-xs font-semibold text-warning">
-                    Placeholder article
-                  </span>
-                )}
               </div>
             </Reveal>
           </Container>
@@ -101,8 +118,51 @@ export default async function BlogPostPage(props: PageProps<"/blog/[slug]">) {
           </Reveal>
         </Container>
 
-        <Container className="mt-14 max-w-[720px] pb-20">
+        <Container className="mt-14 max-w-[720px]">
+          <section aria-label="Summary" className="rounded-3xl bg-[#e4f1ee] p-6 ring-1 ring-[#005458]/10 sm:p-8">
+            <p className="font-mono text-[0.8125rem] tracking-[0.08em] text-cta uppercase">In short</p>
+            <p className="mt-3 text-[1.0625rem] leading-relaxed text-ink">{post.answer}</p>
+            <h2 className="mt-6 text-base font-semibold">Key takeaways</h2>
+            <ul className="mt-3 list-disc space-y-2 pl-5 text-[0.98rem] leading-relaxed text-stone">
+              {post.takeaways.map((t) => (
+                <li key={t}>{t}</li>
+              ))}
+            </ul>
+          </section>
+        </Container>
+
+        <Container className="mt-12 max-w-[720px] pb-16">
           <ArticleBody post={post} />
+        </Container>
+
+        <Container className="max-w-[720px] pb-20">
+          <section aria-labelledby="article-faq">
+            <h2 id="article-faq" className="text-2xl font-semibold tracking-[-0.02em]">
+              Frequently asked questions
+            </h2>
+            <div className="mt-6">
+              <ArticleFaq faqs={post.faqs} />
+            </div>
+          </section>
+          <section aria-labelledby="article-sources" className="mt-14">
+            <h2 id="article-sources" className="text-lg font-semibold">
+              Sources
+            </h2>
+            <ol className="mt-4 list-decimal space-y-2 pl-5 text-[0.95rem] text-stone">
+              {post.sources.map((src) => (
+                <li key={src.url}>
+                  <a href={src.url} target="_blank" rel="noopener noreferrer" className="font-semibold text-cta underline underline-offset-2">
+                    {src.title}
+                  </a>
+                  , {src.publisher}
+                </li>
+              ))}
+            </ol>
+            <p className="mt-6 text-sm text-stone">
+              Examples above come from the cited third-party sources and describe other hotels and vendors, not
+              SaraiOS customers. Last updated {formatDate(post.updated)}.
+            </p>
+          </section>
         </Container>
       </article>
 
