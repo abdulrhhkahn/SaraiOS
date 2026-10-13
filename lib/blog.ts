@@ -124,7 +124,7 @@ export const posts: BlogPost[] = [
       {
         type: "image",
         src: "/images/blog/guest-journey-inline.jpg",
-        alt: "A hotel lobby bar and lounge with warm lighting",
+        alt: "A grand hotel lobby with a crystal chandelier and a marble front desk",
         caption: "Conversation, understanding, action, confirmation.",
       },
       { type: "heading", text: "What changes for the team" },
@@ -236,7 +236,7 @@ export const posts: BlogPost[] = [
       {
         type: "image",
         src: "/images/blog/messaging-layer-inline.jpg",
-        alt: "A bright hotel lounge with seating areas and plants",
+        alt: "A silver service bell and guest paperwork on a hotel front desk",
         caption: "One conversation per guest, whichever channel they use.",
       },
       { type: "heading", text: "What an intelligent layer adds" },
@@ -344,7 +344,7 @@ export const posts: BlogPost[] = [
       {
         type: "image",
         src: "/images/blog/digital-concierge-inline.jpg",
-        alt: "A hotel reception area with decorative stonework and plants",
+        alt: "A hotel lounge with leather sofas, a living plant wall and wooden slat ceiling",
         caption: "The concierge desk, available at any hour.",
       },
       {
@@ -461,8 +461,8 @@ export const posts: BlogPost[] = [
       {
         type: "image",
         src: "/images/blog/request-workflows-inline.jpg",
-        alt: "A long quiet hotel corridor with guest room doors",
-        caption: "Every door in the corridor is a request waiting to be closed.",
+        alt: "A calm hotel guest room with a made bed and a view of the garden",
+        caption: "Behind every room number is a request waiting to be closed.",
       },
       { type: "heading", text: "What hotels have reported" },
       {
@@ -603,7 +603,7 @@ export const posts: BlogPost[] = [
       {
         type: "image",
         src: "/images/blog/human-touch-inline.jpg",
-        alt: "An elegant hotel hallway with a chandelier and armchair",
+        alt: "A hotel pool and palm trees at dusk",
         caption: "More time for the details guests notice.",
       },
       { type: "quote", text: "Bring AI into the guest journey without taking the hospitality out of it." },
