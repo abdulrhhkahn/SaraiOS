@@ -44,7 +44,7 @@ export default function DemoPage() {
             <ul className="mt-4 space-y-3">
               {expectations.map((e) => (
                 <li key={e} className="flex gap-3">
-                  <Check className="mt-1 size-4 shrink-0 text-iris-ink" aria-hidden />
+                  <Check className="mt-1 size-4 shrink-0 text-cta" aria-hidden />
                   {e}
                 </li>
               ))}
