@@ -31,12 +31,6 @@ export default function BlogIndexPage() {
         </Container>
       </section>
       <Container className="pb-28">
-        {posts.some((p) => p.placeholder) && (
-          <p className="mb-10 inline-flex rounded-full bg-warning-soft px-3 py-1 text-xs font-semibold text-warning">
-            Sample articles — placeholder content until editorial is published
-          </p>
-        )}
-
         <Reveal variants={reveal}>
           <article className="group relative grid overflow-hidden rounded-[2rem] bg-card ring-1 ring-line lg:grid-cols-[1.25fr_1fr]">
             <div className="overflow-hidden">
