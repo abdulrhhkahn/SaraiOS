@@ -3,7 +3,8 @@ import { formatDate, getAllPosts, getPost, getRelatedPosts } from "@/lib/blog";
 import { absoluteUrl, siteConfig } from "@/lib/siteConfig";
 import { publicFileExists } from "@/lib/screenshots.server";
 import { breadcrumbJsonLd, faqJsonLd, pageMetadata } from "@/lib/seo";
-import { ButtonLink, Container } from "@/components/ui/primitives";
+import { Container } from "@/components/ui/primitives";
+import { ArrowButton } from "@/components/ui/ArrowButton";
 import { Reveal, RevealItem, Stagger } from "@/components/animations/Reveal";
 import { reveal } from "@/components/animations/variants";
 import { JsonLd } from "@/components/layout/JsonLd";
@@ -166,12 +167,12 @@ export default async function BlogPostPage(props: PageProps<"/blog/[slug]">) {
         </Container>
       </article>
 
-      <section className="on-night bg-night py-20 text-linen">
+      <section className="on-night bg-cta py-20 text-linen">
         <Container className="flex flex-col items-start gap-8 lg:flex-row lg:items-center lg:justify-between">
           <h2 className="max-w-2xl heading-section">See what an AI-native guest experience looks like.</h2>
-          <ButtonLink href="/demo" size="lg" variant="light" arrow>
+          <ArrowButton href="/demo" variant="secondary">
             Book a Demo
-          </ButtonLink>
+          </ArrowButton>
         </Container>
       </section>
 
