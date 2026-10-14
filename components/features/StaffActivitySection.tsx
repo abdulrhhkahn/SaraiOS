@@ -20,7 +20,7 @@ function CardShell({ className, children }: { className?: string; children: Reac
   return (
     <article
       className={cn(
-        "flex flex-col overflow-hidden rounded-3xl bg-white p-7 ring-1 ring-black/[0.08] sm:p-8",
+        "flex flex-col overflow-hidden rounded-3xl bg-linen p-7 ring-1 ring-black/[0.08] sm:p-8",
         className,
       )}
     >
