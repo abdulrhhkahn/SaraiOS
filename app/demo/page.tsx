@@ -7,6 +7,8 @@ import { ImageBanner } from "@/components/ui/ImageBanner";
 import { Reveal } from "@/components/animations/Reveal";
 import { LeadForm } from "@/components/forms/LeadForm";
 import { ProductScreenshot } from "@/components/dashboard/ProductScreenshot";
+import { CloudBased } from "@/components/demo/CloudBased";
+import { DemoFaq } from "@/components/demo/DemoFaq";
 
 export const metadata = pageMetadata({
   title: "Book a SaraiOS Demo",
@@ -52,6 +54,8 @@ export default function DemoPage() {
           </div>
         </Reveal>
       </Container>
+      <CloudBased />
+      <DemoFaq />
     </>
   );
 }
