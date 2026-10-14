@@ -133,7 +133,7 @@ export function ProblemSection() {
         <Stagger className="mt-14 grid gap-5 sm:mt-16 lg:grid-cols-3" stagger={0.09}>
           {problems.map((p) => (
             <RevealItem key={p.label} className="h-full">
-              <article className="group relative isolate flex h-full min-h-[27rem] flex-col overflow-hidden rounded-3xl bg-white p-7 ring-1 ring-black/[0.08] sm:p-9">
+              <article className="group relative isolate flex h-full min-h-[27rem] flex-col overflow-hidden rounded-3xl bg-linen p-7 ring-1 ring-black/[0.08] sm:p-9">
                 <p className="text-[0.95rem] text-stone/70">{p.label}</p>
                 <h3 className="mt-3 max-w-[24ch] heading-sub text-2xl leading-snug text-balance text-subheading sm:text-[1.7rem] lg:text-2xl">
                   {p.text}

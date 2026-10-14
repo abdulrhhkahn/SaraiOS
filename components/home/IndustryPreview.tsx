@@ -30,7 +30,7 @@ export function IndustryPreview() {
               <RevealItem key={ind.slug} className="h-full">
                 <Link
                   href={`/industries#${ind.slug}`}
-                  className="on-night group relative flex h-full min-h-[260px] flex-col overflow-hidden rounded-3xl bg-white p-7 ring-1 ring-black/[0.08] transition-[transform,box-shadow,background-color,--tw-ring-color] duration-300 ease-out hover:-translate-y-1 hover:bg-[#005458] hover:shadow-[0_28px_50px_-26px_rgba(0,40,42,0.8)] hover:ring-[#005458] focus-visible:-translate-y-1 focus-visible:bg-[#005458] sm:p-8"
+                  className="on-night group relative flex h-full min-h-[260px] flex-col overflow-hidden rounded-3xl bg-linen p-7 ring-1 ring-black/[0.08] transition-[transform,box-shadow,background-color,--tw-ring-color] duration-300 ease-out hover:-translate-y-1 hover:bg-[#005458] hover:shadow-[0_28px_50px_-26px_rgba(0,40,42,0.8)] hover:ring-[#005458] focus-visible:-translate-y-1 focus-visible:bg-[#005458] sm:p-8"
                 >
                   <div className="flex items-start justify-between">
                     <span className="inline-flex size-12 items-center justify-center rounded-xl bg-white text-cta shadow-sm ring-1 ring-line transition-colors duration-300 group-hover:bg-white/15 group-hover:text-white group-hover:ring-white/25 group-focus-visible:bg-white/15 group-focus-visible:text-white">
