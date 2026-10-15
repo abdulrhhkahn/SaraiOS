@@ -133,9 +133,9 @@ export function PricingCards() {
 
                 <div className="mt-5">
                   {plan.groups.map((g, gi) => (
-                    <div key={g.title} className={cn(gi > 0 && "mt-4")}>
-                      <h4 className="text-[0.95rem] font-medium text-ink">{g.title}</h4>
-                      <ul className="mt-1">
+                    <div key={g.title ?? gi} className={cn(gi > 0 && "mt-4")}>
+                      {g.title && <h4 className="text-[0.95rem] font-medium text-ink">{g.title}</h4>}
+                      <ul className={cn(g.title && "mt-1")}>
                         {g.items.map((item, i) => (
                           <li
                             key={item}
