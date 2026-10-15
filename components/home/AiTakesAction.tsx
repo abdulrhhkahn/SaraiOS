@@ -41,7 +41,7 @@ export function AiTakesAction() {
             tone="night"
             eyebrow="AI takes action"
             title="Not another chatbot. An AI that gets things done."
-            body="Sarai understands the request, checks the guest's stay, creates the task, notifies the right team — and tells the guest what happens next."
+            body="Sarai understands the request, checks the guest's stay, helps your team create the task and assign it to the right department — and tells the guest what happens next."
           />
         </Reveal>
 
@@ -151,7 +151,7 @@ export function AiTakesAction() {
           </div>
         </div>
         <p className="mt-6 text-sm text-night-muted">
-          Illustrative workflows. Actual routing and confirmations are configured for each property.
+          Illustrative workflows. Actual assignments and confirmations are configured for each property.
         </p>
       </Container>
     </section>
