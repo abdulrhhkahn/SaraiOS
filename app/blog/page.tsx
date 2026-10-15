@@ -2,18 +2,15 @@ import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 import { getAllPosts } from "@/lib/blog";
 import { publicFileExists } from "@/lib/screenshots.server";
-import { pageMetadata } from "@/lib/seo";
+import { blogIndexJsonLd, seoMetadata } from "@/lib/seo";
+import { JsonLd } from "@/components/layout/JsonLd";
 import { Container } from "@/components/ui/primitives";
 import { Reveal, RevealItem, Stagger } from "@/components/animations/Reveal";
 import { reveal } from "@/components/animations/variants";
 import { BlogCard, PostMeta } from "@/components/blog/BlogCard";
 import { BlogCover } from "@/components/blog/BlogCover";
 
-export const metadata = pageMetadata({
-  title: "SaraiOS Blog — AI & Hospitality",
-  description: "Perspectives on AI, hospitality operations and the future of the guest experience.",
-  path: "/blog",
-});
+export const metadata = seoMetadata("blog");
 
 export default function BlogIndexPage() {
   const posts = getAllPosts();
@@ -22,6 +19,7 @@ export default function BlogIndexPage() {
 
   return (
     <>
+      <JsonLd data={blogIndexJsonLd(getAllPosts())} />
       <section className="pt-36 pb-14 sm:pt-44 sm:pb-20">
         <Container>
           <Reveal className="mx-auto max-w-4xl text-center">
