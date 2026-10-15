@@ -18,7 +18,7 @@ export const metadata = pageMetadata({
 
 const expectations = [
   "A walkthrough of the guest and team experience",
-  "How requests route to your departments",
+  "How requests are created and assigned to departments",
   "How SaraiOS fits alongside your systems",
   "Next steps and a tailored proposal",
 ];
