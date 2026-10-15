@@ -1,5 +1,5 @@
 import type { FaqItem } from "@/lib/faq";
-import { faqJsonLd, pageMetadata } from "@/lib/seo";
+import { faqJsonLd, pageJsonLd, seoMetadata, softwareJsonLd } from "@/lib/seo";
 import { pricingPlans, YEARLY_DISCOUNT } from "@/lib/pricing";
 import { Container } from "@/components/ui/primitives";
 import { ImageBanner } from "@/components/ui/ImageBanner";
@@ -10,12 +10,7 @@ import { ComparisonTable } from "@/components/pricing/ComparisonTable";
 import { Accordion } from "@/components/faq/Accordion";
 import { JsonLd } from "@/components/layout/JsonLd";
 
-export const metadata = pageMetadata({
-  title: "SaraiOS Pricing",
-  description:
-    "SaraiOS plans for hotels: Essential is free to start, Growth is PKR 12,999 per month and Pro is PKR 27,999 per month, with 10% off when billed yearly.",
-  path: "/pricing",
-});
+export const metadata = seoMetadata("pricing");
 
 // Answers are built from the same plan data as the cards, so prices and limits cannot drift apart.
 const fmt = (n: number) => n.toLocaleString("en-US");
@@ -75,6 +70,7 @@ const pricingFaqs: FaqItem[] = [
 export default function PricingPage() {
   return (
     <>
+      <JsonLd data={[...pageJsonLd("pricing"), softwareJsonLd({ withOffers: true })]} />
       <JsonLd data={faqJsonLd(pricingFaqs)} />
       <ImageBanner src="/images/pricing/banner-lounge.jpg" title="Pricing" imageClassName="object-[50%_38%]" />
       <Container className="pt-14 pb-8 sm:pt-20">
