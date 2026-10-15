@@ -11,7 +11,7 @@ import { PlatformFaq } from "@/components/features/PlatformFaq";
 export const metadata = pageMetadata({
   title: "SaraiOS Features — AI Guest Experience Platform",
   description:
-    "AI Concierge, guest messaging, guest requests, guest profiles, analytics and integrations — see how SaraiOS connects every guest conversation to the right action.",
+    "AI Concierge, guest messaging, guest requests, guest profiles, analytics and staff activity — see how SaraiOS turns every guest conversation into the right action.",
   path: "/features",
 });
 
