@@ -124,6 +124,8 @@ export function LeadForm({
   successTitle,
   successBody,
   floatingLabels = false,
+  bare = false,
+  onSuccess,
 }: {
   formId: string;
   fields: FormField[];
@@ -132,6 +134,10 @@ export function LeadForm({
   successBody: string;
   /** Use floating-label inputs instead of labels above the fields. */
   floatingLabels?: boolean;
+  /** Drop the card around the form and the success message, for use inside a dialog that is already a card. */
+  bare?: boolean;
+  /** Called once the form has been sent. */
+  onSuccess?: () => void;
 }) {
   const [status, setStatus] = useState<Status>("idle");
   const [errors, setErrors] = useState<Record<string, string>>({});
@@ -151,6 +157,7 @@ export function LeadForm({
     try {
       await submitLead({ ...data, formId });
       setStatus("success");
+      onSuccess?.();
     } catch {
       setStatus("error");
     }
@@ -176,7 +183,10 @@ export function LeadForm({
             initial={{ opacity: 0, y: 16 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, ease: easeOut }}
-            className="flex min-h-[420px] flex-col items-start justify-center rounded-3xl bg-card p-8 ring-1 ring-line sm:p-10"
+            className={cn(
+              "flex flex-col items-start justify-center",
+              bare ? "min-h-[300px] py-6" : "min-h-[420px] rounded-3xl bg-card p-8 ring-1 ring-line sm:p-10",
+            )}
             role="status"
           >
             <span className="inline-flex size-12 items-center justify-center rounded-full bg-success-soft text-success">
@@ -192,7 +202,7 @@ export function LeadForm({
             exit={{ opacity: 0, y: -8, transition: { duration: 0.2 } }}
             onSubmit={onSubmit}
             noValidate
-            className="rounded-3xl bg-card/60 p-6 ring-1 ring-line sm:p-8"
+            className={cn(!bare && "rounded-3xl bg-card/60 p-6 ring-1 ring-line sm:p-8")}
             aria-describedby="form-required-note"
           >
             <p id="form-required-note" className="mb-6 text-sm text-stone">
