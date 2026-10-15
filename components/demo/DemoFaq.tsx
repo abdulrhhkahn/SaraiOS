@@ -12,7 +12,7 @@ const demoFaqs: FaqItem[] = [
     id: "what-happens",
     question: "What happens in the demo?",
     answer:
-      "We walk you through the guest and team experience, show how requests route to your departments and how SaraiOS fits alongside your systems, and finish with next steps and a tailored proposal.",
+      "We walk you through the guest and team experience, show how requests are created and assigned to your departments and how SaraiOS fits alongside your systems, and finish with next steps and a tailored proposal.",
   },
   {
     id: "after-request",
