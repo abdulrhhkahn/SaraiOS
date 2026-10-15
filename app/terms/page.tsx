@@ -1,13 +1,15 @@
 import { terms } from "@/lib/legal";
-import { pageMetadata } from "@/lib/seo";
+import { pageJsonLd, seoMetadata } from "@/lib/seo";
+import { JsonLd } from "@/components/layout/JsonLd";
 import { LegalDocument } from "@/components/ui/LegalDocument";
 
-export const metadata = pageMetadata({
-  title: "Terms of Service | SaraiOS",
-  description: "SaraiOS Terms of Service (placeholder pending legal review).",
-  path: "/terms",
-});
+export const metadata = seoMetadata("terms");
 
 export default function TermsPage() {
-  return <LegalDocument doc={terms} />;
+  return (
+    <>
+      <JsonLd data={pageJsonLd("terms")} />
+      <LegalDocument doc={terms} />
+    </>
+  );
 }
