@@ -2,9 +2,8 @@
 
 import { useState } from "react";
 import { motion } from "framer-motion";
-import Link from "next/link";
 import { Check } from "lucide-react";
-import { primaryCta } from "@/lib/navigation";
+import { BookDemoLink } from "@/components/demo/BookDemoLink";
 import { pricingPlans, YEARLY_DISCOUNT } from "@/lib/pricing";
 import { ArrowButton } from "@/components/ui/ArrowButton";
 import { RevealItem, Stagger } from "@/components/animations/Reveal";
@@ -170,12 +169,9 @@ export function PricingCards() {
                   </ArrowButton>
                   <p className="mt-3 text-center text-xs text-ink/60">
                     or{" "}
-                    <Link
-                      href={primaryCta.href}
-                      className="underline underline-offset-2 transition-colors hover:text-ink"
-                    >
+                    <BookDemoLink className="cursor-pointer underline underline-offset-2 transition-colors hover:text-ink">
                       book a demo
-                    </Link>
+                    </BookDemoLink>
                   </p>
                 </div>
               </article>

@@ -1,12 +1,11 @@
 "use client";
 
 import { useState } from "react";
-import Link from "next/link";
 import { Check } from "lucide-react";
 import { planComparison, pricingPlans, YEARLY_DISCOUNT, type PlanCell } from "@/lib/pricing";
 import { BillingToggle, type Billing } from "@/components/pricing/PricingCards";
 import { ArrowButton } from "@/components/ui/ArrowButton";
-import { primaryCta } from "@/lib/navigation";
+import { BookDemoLink } from "@/components/demo/BookDemoLink";
 import { cn } from "@/lib/cn";
 
 const fmt = (n: number) => n.toLocaleString("en-US");
@@ -131,12 +130,9 @@ export function ComparisonTable() {
                 </ArrowButton>
                 <p className="mt-3 text-center text-xs text-ink/60">
                   or{" "}
-                  <Link
-                    href={primaryCta.href}
-                    className="underline underline-offset-2 transition-colors hover:text-ink"
-                  >
+                  <BookDemoLink className="cursor-pointer underline underline-offset-2 transition-colors hover:text-ink">
                     book a demo
-                  </Link>
+                  </BookDemoLink>
                 </p>
               </div>
             ))}
