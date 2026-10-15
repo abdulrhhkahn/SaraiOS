@@ -24,7 +24,7 @@ const solutionsFaqs: FaqItem[] = [
     id: "resorts",
     question: "How does it work for a resort?",
     answer:
-      "Sarai surfaces the right experience at the right moment, such as activities, spa and dining, and routes bookings to the teams that run them as structured requests.",
+      "Sarai surfaces the right experience at the right moment, such as activities, spa and dining, and bookings become structured requests assigned to the teams that run them.",
   },
   {
     id: "luxury",
