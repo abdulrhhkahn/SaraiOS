@@ -1,22 +1,18 @@
 import Link from "next/link";
 import { allFaqs, faqCategories } from "@/lib/faq";
-import { faqJsonLd, pageMetadata } from "@/lib/seo";
+import { faqJsonLd, pageJsonLd, seoMetadata } from "@/lib/seo";
 import { ButtonLink, Container } from "@/components/ui/primitives";
 import { ImageBanner } from "@/components/ui/ImageBanner";
 import { Reveal } from "@/components/animations/Reveal";
 import { Accordion } from "@/components/faq/Accordion";
 import { JsonLd } from "@/components/layout/JsonLd";
 
-export const metadata = pageMetadata({
-  title: "SaraiOS FAQ",
-  description:
-    "Answers about SaraiOS, the AI concierge, guest experience, operations, the cloud platform, privacy and pricing.",
-  path: "/faq",
-});
+export const metadata = seoMetadata("faq");
 
 export default function FaqPage() {
   return (
     <>
+      <JsonLd data={pageJsonLd("faq")} />
       <JsonLd data={faqJsonLd(allFaqs)} />
       <ImageBanner src="/images/faq/banner.jpg" title="FAQ" imageClassName="object-[50%_60%]" />
       <Container className="grid gap-12 pt-14 pb-28 sm:pt-20 lg:grid-cols-[240px_1fr] lg:gap-20">
