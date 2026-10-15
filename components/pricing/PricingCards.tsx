@@ -10,7 +10,7 @@ import { ArrowButton } from "@/components/ui/ArrowButton";
 import { RevealItem, Stagger } from "@/components/animations/Reveal";
 import { cn } from "@/lib/cn";
 
-type Billing = "monthly" | "yearly";
+export type Billing = "monthly" | "yearly";
 
 /** Fixed locale so the server and the browser format numbers the same way. */
 const fmt = (n: number) => n.toLocaleString("en-US");
@@ -20,9 +20,20 @@ const options: { id: Billing; label: string }[] = [
   { id: "yearly", label: "Yearly" },
 ];
 
-function BillingToggle({ value, onChange }: { value: Billing; onChange: (b: Billing) => void }) {
+/** Monthly / yearly switch. `id` keeps the sliding pill separate when more than one switch is on a page. */
+export function BillingToggle({
+  value,
+  onChange,
+  id = "billing-pill",
+  className = "justify-center",
+}: {
+  value: Billing;
+  onChange: (b: Billing) => void;
+  id?: string;
+  className?: string;
+}) {
   return (
-    <div className="flex justify-center">
+    <div className={cn("flex", className)}>
       <div
         role="group"
         aria-label="Billing period"
@@ -43,7 +54,7 @@ function BillingToggle({ value, onChange }: { value: Billing; onChange: (b: Bill
             >
               {active && (
                 <motion.span
-                  layoutId="billing-pill"
+                  layoutId={id}
                   className="absolute inset-0 -z-10 rounded-full bg-white shadow-sm ring-1 ring-black/[0.06]"
                   transition={{ type: "spring", duration: 0.4, bounce: 0.15 }}
                 />
