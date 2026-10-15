@@ -22,7 +22,7 @@ export const faqCategories: FaqCategory[] = [
         featured: true,
         question: "Is SaraiOS a chatbot?",
         answer:
-          "No. A chatbot answers questions. SaraiOS understands what the guest needs, uses your hotel's context, creates structured requests for the right team and keeps the guest informed until the request is complete.",
+          "No. A chatbot answers questions. SaraiOS understands what the guest needs, uses your hotel's context, helps your team create structured requests and assign them to the right department, and keeps the guest informed until the request is complete.",
       },
       {
         id: "who-is-it-for",
@@ -41,7 +41,7 @@ export const faqCategories: FaqCategory[] = [
         featured: true,
         question: "How does the AI concierge work?",
         answer:
-          "Sarai answers guest questions using information your property provides and approves. When a guest asks for something that needs action, Sarai captures the details, creates a request and routes it to the right team.",
+          "Sarai answers guest questions using information your property provides and approves. When a guest asks for something that needs action, Sarai captures the details so your team can create a request and assign it to the right department.",
       },
       {
         id: "multiple-languages",
@@ -85,13 +85,13 @@ export const faqCategories: FaqCategory[] = [
         featured: true,
         question: "Can SaraiOS handle guest requests?",
         answer:
-          "Yes. Requests such as late checkout, housekeeping items, dining or spa bookings can be captured from conversation, routed to the right team and tracked through to completion.",
+          "Yes. Requests such as late checkout, housekeeping items, dining or spa bookings can be captured from conversation, created as requests, assigned to the right department and tracked through to completion.",
       },
       {
         id: "implementation",
         question: "How does implementation work?",
         answer:
-          "We start with a discovery session to understand your property, workflows and systems. We then configure Sarai's knowledge, tone and routing with your team before going live.",
+          "We start with a discovery session to understand your property, workflows and systems. We then configure Sarai's knowledge, tone and departments with your team before going live.",
       },
     ],
   },

@@ -111,6 +111,6 @@ export const valueFlow = [
   { id: "sarai", label: "Sarai", detail: "Understands intent" },
   { id: "context", label: "Hotel context", detail: "Stay, policies, availability" },
   { id: "action", label: "Action", detail: "Structured request created" },
-  { id: "staff", label: "Staff", detail: "Right team, notified" },
+  { id: "staff", label: "Staff", detail: "Assigned to a team" },
   { id: "confirm", label: "Guest confirmation", detail: "Closed loop" },
 ] as const;

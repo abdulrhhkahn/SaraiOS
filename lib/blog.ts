@@ -59,7 +59,7 @@ export const posts: BlogPost[] = [
     excerpt:
       "From the first pre-arrival question to the last checkout request, AI is reshaping how guests and hotels talk to each other.",
     answer:
-      "AI is changing the hotel guest journey by answering routine questions instantly, turning guest messages into tasks for the right team and confirming back to the guest. The result is faster responses before arrival, during the stay and at checkout, with less manual relaying for staff.",
+      "AI is changing the hotel guest journey by answering routine questions instantly, helping staff turn guest messages into tasks assigned to the right team and confirming back to the guest. The result is faster responses before arrival, during the stay and at checkout, with less manual relaying for staff.",
     keywords: ["AI hotel guest journey", "hotel guest experience AI", "hotel guest messaging", "AI concierge for hotels"],
     category: "AI in Hospitality",
     date: "2026-09-10",
@@ -71,7 +71,7 @@ export const posts: BlogPost[] = [
     takeaways: [
       "The guest journey is mostly small questions and requests, and speed decides how a stay feels.",
       "Guests who already use their phones for other purchases are more likely to prefer mobile messaging with a hotel.",
-      "AI works best when it starts a workflow, not just a reply: understand, route, track and confirm.",
+      "AI works best when it starts a workflow, not just a reply: understand, create, assign, track and confirm.",
       "Start with the questions guests repeat most, then move on to requests that need a team to act.",
     ],
     content: [
@@ -119,7 +119,7 @@ export const posts: BlogPost[] = [
       { type: "heading", text: "From answers to actions" },
       {
         type: "paragraph",
-        text: "An AI-native approach treats each conversation as the start of a workflow. The AI understands the request, checks the stay context, routes the task to the right team and confirms back to the guest.",
+        text: "An AI-native approach treats each conversation as the start of a workflow. The AI understands the request and checks the stay context, staff create and assign the task to the right team, and the guest gets a confirmation.",
       },
       {
         type: "image",
@@ -136,7 +136,7 @@ export const posts: BlogPost[] = [
         type: "list",
         items: [
           "Fewer repeated questions at the desk and on the phone",
-          "Requests reach the right department the first time",
+          "Requests are assigned to the right department the first time",
           "Clear status on every open task",
           "A record of what guests actually ask for",
         ],
@@ -155,7 +155,7 @@ export const posts: BlogPost[] = [
       {
         question: "How is AI used in the hotel guest journey?",
         answer:
-          "AI answers routine guest questions at any hour, understands requests sent in plain language, routes them to the right department and confirms back to the guest. It is used before arrival (arrival details, special requests), during the stay (amenities, housekeeping, dining) and at departure (late checkout, transport).",
+          "AI answers routine guest questions at any hour, understands requests sent in plain language, helps staff turn them into requests for the right department and confirms back to the guest. It is used before arrival (arrival details, special requests), during the stay (amenities, housekeeping, dining) and at departure (late checkout, transport).",
       },
       {
         question: "Does AI replace hotel front desk staff?",
@@ -175,7 +175,7 @@ export const posts: BlogPost[] = [
       {
         question: "How does SaraiOS support the guest journey?",
         answer:
-          "SaraiOS is an AI guest experience platform for hotels. It combines an AI concierge, digital guest check-in, a conversations view for staff, request routing and a staff activity view, so a guest message becomes a tracked task for the right team.",
+          "SaraiOS is an AI guest experience platform for hotels. It combines an AI concierge, digital guest check-in, a conversations view for staff, guest requests that can be created and assigned to departments, and a staff activity view, so a guest message becomes a tracked task for the right team.",
       },
     ],
     sources: [
@@ -191,7 +191,7 @@ export const posts: BlogPost[] = [
     title: "Why hotel guest messaging needs an intelligent layer",
     excerpt: "More channels created more conversations, not better ones. Here's what an intelligent layer adds.",
     answer:
-      "Hotel guest messaging needs an intelligent layer because inboxes only store messages. An intelligent layer understands what the guest wants, adds stay context, routes the request to the right team and tracks it to completion, so nothing is lost between channels or shifts.",
+      "Hotel guest messaging needs an intelligent layer because inboxes only store messages. An intelligent layer understands what the guest wants, adds stay context, makes it easy to create the request and assign it to the right team, and tracks it to completion, so nothing is lost between channels or shifts.",
     keywords: ["hotel guest messaging", "hotel messaging platform", "guest communication hotels", "unified inbox hotel"],
     category: "Guest Experience",
     date: "2026-08-27",
@@ -202,7 +202,7 @@ export const posts: BlogPost[] = [
     takeaways: [
       "Each messaging channel set its own expectation for speed, so a single inbox per channel is not enough.",
       "An inbox stores messages. It does not know a message is a housekeeping request tied to a room.",
-      "An intelligent layer adds intent, hotel context, routing and a clear owner for every thread.",
+      "An intelligent layer adds intent, hotel context, department assignment and a clear owner for every thread.",
       "It sits on top of the channels guests already use, so guests change nothing.",
     ],
     content: [
@@ -245,7 +245,7 @@ export const posts: BlogPost[] = [
         items: [
           "Understanding of intent across conversations",
           "Hotel context such as stay dates, room and policies",
-          "Routing to the right team",
+          "Requests assigned to the right team",
           "A clear owner and status for every thread",
         ],
       },
@@ -277,7 +277,7 @@ export const posts: BlogPost[] = [
       {
         question: "What is an intelligent messaging layer for hotels?",
         answer:
-          "It is software that sits on top of the channels guests already use. It understands the intent of each message, adds context such as the stay and room, routes the request to the right team and tracks its status, instead of just storing messages in an inbox.",
+          "It is software that sits on top of the channels guests already use. It understands the intent of each message, adds context such as the stay and room, lets staff create the request and assign it to the right team, and tracks its status, instead of just storing messages in an inbox.",
       },
       {
         question: "Why isn't a shared inbox enough for hotel guest messaging?",
@@ -292,12 +292,12 @@ export const posts: BlogPost[] = [
       {
         question: "What should hotels look for in a guest messaging platform?",
         answer:
-          "Look for intent understanding, use of hotel-approved information, smooth handover to a person, routing to departments, and visibility for managers into response times and open requests.",
+          "Look for intent understanding, use of hotel-approved information, smooth handover to a person, requests that can be assigned to departments, and visibility for managers into response times and open requests.",
       },
       {
         question: "How does SaraiOS handle guest conversations?",
         answer:
-          "SaraiOS gives staff a conversations view where each guest thread has a clear status and owner. Requests found in a conversation are routed to the right department, and the AI concierge can answer routine questions from information the hotel has approved.",
+          "SaraiOS gives staff a conversations view where each guest thread has a clear status and owner. Requests raised from a conversation are assigned to the right department by staff, and the AI concierge can answer routine questions from information the hotel has approved.",
       },
     ],
     sources: [
@@ -409,7 +409,7 @@ export const posts: BlogPost[] = [
       {
         question: "How does the SaraiOS AI concierge work?",
         answer:
-          "The SaraiOS AI concierge answers guests from hotel-approved knowledge and turns requests into tasks for the right team. Staff see every conversation in one place and can take over at any point.",
+          "The SaraiOS AI concierge answers guests from hotel-approved knowledge, and staff turn requests into tasks assigned to the right team. Staff see every conversation in one place and can take over at any point.",
       },
     ],
     sources: [
@@ -425,7 +425,7 @@ export const posts: BlogPost[] = [
     title: "Turning guest requests into operational workflows",
     excerpt: "A request is only as good as the workflow behind it. How to go from message to completed task.",
     answer:
-      "To turn guest requests into operational workflows, capture each request with the room and guest attached, route it to the team that owns it, track its status until it is done and confirm back to the guest. Hotels that moved from paper and radios to mobile request tracking have reported faster response times.",
+      "To turn guest requests into operational workflows, capture each request with the room and guest attached, assign it to the team that owns it, track its status until it is done and confirm back to the guest. Hotels that moved from paper and radios to mobile request tracking have reported faster response times.",
     keywords: ["hotel guest request management", "hotel operations workflow", "hotel task management", "housekeeping request tracking"],
     category: "Operations",
     date: "2026-07-30",
@@ -453,7 +453,7 @@ export const posts: BlogPost[] = [
         type: "list",
         items: [
           "Capture the request with room and guest attached",
-          "Route it to the team that owns it",
+          "Assign it to the team that owns it",
           "Track status through to completion",
           "Confirm back to the guest",
         ],
@@ -483,7 +483,7 @@ export const posts: BlogPost[] = [
         title: "ibis London Blackfriars (Accor)",
         text: "An Accor pilot of the Connect Staff mobile app, built by Monscierge, let hotel teams communicate and track and prioritise tasks across departments. ibis operates a 15 Minute Guarantee, under which guests are refunded if a request is not delivered or resolved within 15 minutes. After a six-month pilot, Assistant General Manager Frederic Le Bras said the system had helped reduce the time to respond to maintenance requests by up to 50%. Training took under an hour per hotel.",
         takeaway:
-          "Clear accountability between departments matters most when a service promise is on the line. Structured routing is how a hotel can keep that promise on a busy day.",
+          "Clear accountability between departments matters most when a service promise is on the line. Structured assignment is how a hotel can keep that promise on a busy day.",
         source: {
           name: "Hospitality Net",
           url: "https://www.hospitalitynet.org/news/4075807.html",
@@ -523,7 +523,7 @@ export const posts: BlogPost[] = [
       {
         question: "How can hotels respond to guest requests faster?",
         answer:
-          "Give every request an owner and a status, route it to the department that handles it, and make open requests visible to managers. Hotels that moved from paper to mobile tools have reported faster responses, for example a 45% drop in average response time at Celebration Suites.",
+          "Give every request an owner and a status, assign it to the department that handles it, and make open requests visible to managers. Hotels that moved from paper to mobile tools have reported faster responses, for example a 45% drop in average response time at Celebration Suites.",
       },
       {
         question: "What request types should a hotel start with?",
@@ -538,7 +538,7 @@ export const posts: BlogPost[] = [
       {
         question: "How does SaraiOS turn guest messages into tasks?",
         answer:
-          "SaraiOS finds the request in a guest conversation, attaches the room and guest, routes it to the right department and tracks its status. Managers see open and completed requests, and the guest gets a confirmation.",
+          "With SaraiOS, staff create the request from a guest conversation with the room and guest attached, assign it to the right department and track its status. Managers see open and completed requests, and the guest gets a confirmation.",
       },
     ],
     sources: [
@@ -614,7 +614,7 @@ export const posts: BlogPost[] = [
         title: "Hilton's Connie, 2016",
         text: "When Hilton piloted its Watson-powered robot concierge Connie at the Hilton McLean, coverage cited a Travelzoo study finding that consumers see robots and humans working side by side in customer-facing roles as the ideal situation. The same coverage noted robots like Connie were not expected to replace human concierges.",
         takeaway:
-          "A hotel can adopt the same stance today: AI answers and routes, people welcome and resolve.",
+          "A hotel can adopt the same stance today: AI answers and assists, people welcome and resolve.",
         source: {
           name: "Speech Technology Magazine",
           url: "https://www.speechtechmag.com/Articles/Editorial/FYI/IBM-and-Hilton-Field-Test-a-Robot-Concierge-111718.aspx",

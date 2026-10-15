@@ -13,8 +13,8 @@ export const guestJourney = [
   },
   {
     stage: "In stay",
-    title: "Requests, routed",
-    body: "Towels, dining, spa and transport requests reach the right team with context attached.",
+    title: "Requests, assigned",
+    body: "Towels, dining, spa and transport requests are created with context attached and assigned to the right team.",
   },
   {
     stage: "Departure",

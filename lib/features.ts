@@ -48,10 +48,10 @@ export const features: Feature[] = [
     eyebrow: "Guest Requests",
     title: "Turn conversations into actions.",
     summary:
-      "When a guest asks for something, SaraiOS creates a structured request, routes it to the right team and keeps the guest updated as it moves.",
+      "When a guest asks for something, staff can create a structured request, assign it to the right department and keep the guest updated as it moves.",
     points: [
       "Requests created directly from conversation",
-      "Routed to the right department automatically",
+      "Assigned to the right department by your team",
       "Status updates flow back to the guest",
     ],
     screen: "requests",

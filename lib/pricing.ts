@@ -20,7 +20,7 @@ export const plans: Plan[] = [
     description: "A SaraiOS deployment configured around your property, your team and your guests.",
     highlights: [
       "AI Concierge and guest messaging",
-      "Guest requests and routing",
+      "Guest requests and department assignment",
       "Property knowledge and tone setup",
       "Guided onboarding",
     ],

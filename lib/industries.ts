@@ -26,7 +26,7 @@ export const industries: Industry[] = [
     icon: "hotel",
     headline: "Improve guest communication and automate repetitive requests.",
     summary:
-      "Give every guest a fast, accurate answer and turn everyday requests into routed tasks — so your front desk can focus on the moments that need a person.",
+      "Give every guest a fast, accurate answer and turn everyday requests into assigned tasks — so your front desk can focus on the moments that need a person.",
     useCases: [
       "Pre-arrival questions",
       "Check-in and checkout requests",
@@ -54,7 +54,7 @@ export const industries: Industry[] = [
     icon: "palm",
     headline: "Help guests discover experiences, amenities and activities.",
     summary:
-      "Resorts offer far more than guests can find on a PDF. Sarai surfaces the right experience at the right moment and routes bookings to the teams that run them.",
+      "Resorts offer far more than guests can find on a PDF. Sarai surfaces the right experience at the right moment, and bookings become requests assigned to the teams that run them.",
     useCases: [
       "Activity and excursion discovery",
       "Spa and dining requests",
@@ -84,7 +84,7 @@ export const industries: Industry[] = [
       "After-hours guest questions",
       "Neighbourhood recommendations",
       "Arrival and access information",
-      "Simple request routing",
+      "Simple request assignment",
     ],
     benefits: [
       { title: "Your voice, always on", body: "Tone and answers configured to feel like your property." },
