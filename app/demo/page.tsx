@@ -12,14 +12,14 @@ import { DemoFaq } from "@/components/demo/DemoFaq";
 
 export const metadata = pageMetadata({
   title: "Book a SaraiOS Demo",
-  description: "See SaraiOS in action. Book a demo tailored to your property's guests, workflows and systems.",
+  description: "See SaraiOS in action. Book a demo tailored to your property's guests, workflows and team.",
   path: "/demo",
 });
 
 const expectations = [
   "A walkthrough of the guest and team experience",
   "How requests are created and assigned to departments",
-  "How SaraiOS fits alongside your systems",
+  "How SaraiOS runs in the cloud with nothing to install",
   "Next steps and a tailored proposal",
 ];
 
