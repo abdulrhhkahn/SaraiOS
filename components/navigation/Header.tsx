@@ -59,7 +59,7 @@ export function Header() {
                       {isActive(item.href) && (
                         <motion.span
                           layoutId="nav-active"
-                          className="absolute inset-x-4 bottom-2 h-px bg-ink"
+                          className="absolute inset-x-4 bottom-2 h-px bg-cta"
                           transition={{ type: "spring", stiffness: 500, damping: 40 }}
                         />
                       )}
