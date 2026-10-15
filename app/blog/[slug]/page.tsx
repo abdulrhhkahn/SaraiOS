@@ -20,16 +20,23 @@ export function generateStaticParams() {
 
 export const dynamicParams = false;
 
+/** Meta description: the first sentence of the direct answer when it fits in a search snippet, else the excerpt. */
+function metaDescription(post: { answer: string; excerpt: string }) {
+  const first = post.answer.split(/(?<=[.?!])\s/)[0] ?? "";
+  return first.length >= 110 && first.length <= 160 ? first : post.excerpt;
+}
+
 export async function generateMetadata(props: PageProps<"/blog/[slug]">) {
   const { slug } = await props.params;
   const post = getPost(slug);
   if (!post) return {};
   return {
     ...pageMetadata({
-      title: `${post.title} | SaraiOS Blog`,
-      description: post.answer.length <= 160 ? post.answer : post.excerpt,
+      title: `${post.title} | SaraiOS`,
+      description: metaDescription(post),
       path: `/blog/${post.slug}`,
       type: "article",
+      image: publicFileExists(post.image) && post.image ? post.image : undefined,
     }),
     keywords: post.keywords,
     authors: [{ name: post.author.name }],
@@ -65,10 +72,15 @@ export default async function BlogPostPage(props: PageProps<"/blog/[slug]">) {
     wordCount,
     abstract: post.answer,
     citation: post.sources.map((src) => ({ "@type": "CreativeWork", name: src.title, url: src.url })),
-    author: { "@type": "Organization", name: post.author.name },
-    publisher: { "@type": "Organization", name: siteConfig.name, url: siteConfig.url },
-    mainEntityOfPage: absoluteUrl(`/blog/${post.slug}`),
-    ...(hasImage && post.image ? { image: absoluteUrl(post.image) } : {}),
+    author: { "@type": "Organization", name: post.author.name, url: siteConfig.url },
+    publisher: {
+      "@type": "Organization",
+      name: siteConfig.name,
+      url: siteConfig.url,
+      logo: { "@type": "ImageObject", url: absoluteUrl("/icon-512.png") },
+    },
+    mainEntityOfPage: { "@type": "WebPage", "@id": absoluteUrl(`/blog/${post.slug}`) },
+    image: absoluteUrl(hasImage && post.image ? post.image : "/opengraph-image"),
   };
 
   return (
