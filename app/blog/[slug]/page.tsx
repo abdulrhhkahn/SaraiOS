@@ -4,7 +4,7 @@ import { absoluteUrl, siteConfig } from "@/lib/siteConfig";
 import { publicFileExists } from "@/lib/screenshots.server";
 import { breadcrumbJsonLd, faqJsonLd, pageMetadata } from "@/lib/seo";
 import { Container } from "@/components/ui/primitives";
-import { ArrowButton } from "@/components/ui/ArrowButton";
+import { BookDemoButton } from "@/components/demo/BookDemoLink";
 import { Reveal, RevealItem, Stagger } from "@/components/animations/Reveal";
 import { reveal } from "@/components/animations/variants";
 import { JsonLd } from "@/components/layout/JsonLd";
@@ -170,9 +170,7 @@ export default async function BlogPostPage(props: PageProps<"/blog/[slug]">) {
       <section className="on-night bg-cta py-20 text-linen">
         <Container className="flex flex-col items-start gap-8 lg:flex-row lg:items-center lg:justify-between">
           <h2 className="max-w-2xl heading-section">See what an AI-native guest experience looks like.</h2>
-          <ArrowButton href="/demo" variant="secondary">
-            Book a Demo
-          </ArrowButton>
+          <BookDemoButton variant="secondary" />
         </Container>
       </section>
 
