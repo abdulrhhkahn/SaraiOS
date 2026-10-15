@@ -430,7 +430,7 @@ export function SettingsMock() {
               </div>
             ))}
           </Panel>
-          <Panel title="Routing">
+          <Panel title="Departments">
             <KeyValue
               k="Amenity requests"
               v={
