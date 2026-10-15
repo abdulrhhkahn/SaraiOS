@@ -79,7 +79,7 @@ export type PricingPlan = {
   /** Small note under the price of a free plan, e.g. onboarding fees. */
   priceNote?: string;
   tagline: string;
-  groups: { title: string; items: string[] }[];
+  groups: { title?: string; items: string[] }[];
   cta: { label: string; href: string };
   /** The recommended plan: filled in Sarai green. */
   featured?: boolean;
@@ -96,25 +96,17 @@ export const pricingPlans: PricingPlan[] = [
     tagline: "Get started with in app web chat and essential guest messaging.",
     groups: [
       {
-        title: "Guest experience",
         items: [
           "Contactless digital check-in",
-          "Contactless digital F&B menu/room service",
-          "Contactless digital local tour/activities booking",
-          "Dedicated hotel guest surface",
-          "Review and verify guests",
-        ],
-      },
-      {
-        title: "AI and messaging",
-        items: ["AI Concierge - Suggests replies", "Channel - In-app web chat", "Conversations - 50/month"],
-      },
-      {
-        title: "Plan",
-        items: [
+          "Review and verify guest",
+          "Review and create guest requests",
+          "Store guest details",
+          "Offline capabilities and lightweight data load",
+          "AI Concierge - Suggests replies",
+          "Channel - In-app web chat",
+          "Conversations - 50/month",
           "Email seats - 2",
           "Single property",
-          "Offline capabilities and lightweight data load",
           "24/7 chat support",
         ],
       },
@@ -130,11 +122,15 @@ export const pricingPlans: PricingPlan[] = [
     groups: [
       {
         title: "Everything in Essential, plus",
-        items: ["AI Concierge - Auto sends replies", "Channel - WhatsApp & SMS", "Conversations - Unlimited"],
-      },
-      {
-        title: "Insights and team",
-        items: ["Advanced analytics", "Weekly analytics report", "In-app staff activity tracker", "Email seats - 5"],
+        items: [
+          "AI Concierge - Auto sends replies",
+          "Channel - WhatsApp & SMS",
+          "Conversations - Unlimited",
+          "Advanced analytics",
+          "Weekly analytics report",
+          "In-app staff activity tracker",
+          "Email seats - 5",
+        ],
       },
     ],
     cta: { label: "Subscribe Now", href: SUBSCRIBE_HREF },
