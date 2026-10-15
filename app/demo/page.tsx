@@ -1,7 +1,8 @@
 import { Check } from "lucide-react";
 import { demoFields } from "@/lib/forms";
 import { getScreenAvailability } from "@/lib/screenshots.server";
-import { pageMetadata } from "@/lib/seo";
+import { pageJsonLd, seoMetadata } from "@/lib/seo";
+import { JsonLd } from "@/components/layout/JsonLd";
 import { Container } from "@/components/ui/primitives";
 import { ImageBanner } from "@/components/ui/ImageBanner";
 import { Reveal } from "@/components/animations/Reveal";
@@ -10,11 +11,7 @@ import { ProductScreenshot } from "@/components/dashboard/ProductScreenshot";
 import { CloudBased } from "@/components/demo/CloudBased";
 import { DemoFaq } from "@/components/demo/DemoFaq";
 
-export const metadata = pageMetadata({
-  title: "Book a SaraiOS Demo",
-  description: "See SaraiOS in action. Book a demo tailored to your property's guests, workflows and team.",
-  path: "/demo",
-});
+export const metadata = seoMetadata("demo");
 
 const expectations = [
   "A walkthrough of the guest and team experience",
@@ -27,6 +24,7 @@ export default function DemoPage() {
   const shots = getScreenAvailability();
   return (
     <>
+      <JsonLd data={pageJsonLd("demo")} />
       <ImageBanner src="/images/demo/banner.jpg" title="Book a Demo" imageClassName="object-[50%_50%]" />
       <Container className="grid gap-12 pt-14 pb-28 sm:pt-20 lg:grid-cols-[1.1fr_1fr] lg:gap-16">
         <Reveal>
