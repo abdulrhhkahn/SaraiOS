@@ -129,7 +129,7 @@ export function RequestsSection() {
               From a message to a tracked request.
             </h2>
             <p className="mt-5 max-w-[46ch] text-lg text-pretty text-stone">
-              Raise a structured request from any conversation, send it to the right department, and see every request
+              Raise a structured request from any conversation, assign it to the right department, and see every request
               in one list.
             </p>
             <ul className="mt-8 space-y-4">
