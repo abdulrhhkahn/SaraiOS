@@ -10,7 +10,7 @@ import { JsonLd } from "@/components/layout/JsonLd";
 export const metadata = pageMetadata({
   title: "SaraiOS FAQ",
   description:
-    "Answers about SaraiOS, the AI concierge, guest experience, operations, integrations, privacy and pricing.",
+    "Answers about SaraiOS, the AI concierge, guest experience, operations, the cloud platform, privacy and pricing.",
   path: "/faq",
 });
 
