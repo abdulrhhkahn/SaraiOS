@@ -6,6 +6,8 @@ import { AnimatePresence, motion } from "framer-motion";
 import { X } from "lucide-react";
 import { demoFields } from "@/lib/forms";
 import { LeadForm } from "@/components/forms/LeadForm";
+import { ArrowGlyph, arrowButtonClass } from "@/components/ui/ArrowButton";
+import { cn } from "@/lib/cn";
 import { easeOut } from "@/components/animations/variants";
 
 /** How long the success message stays up before the dialog closes by itself. */
@@ -81,8 +83,8 @@ function DemoDialog({ onClose }: { onClose: () => void }) {
   );
 }
 
-/** A text button that opens the Book a Demo form in a dialog, so the visitor stays on the page. */
-export function BookDemoLink({ children, className }: { children: ReactNode; className?: string }) {
+/** A button that opens the Book a Demo form in a dialog, so the visitor stays on the page. */
+function BookDemoTrigger({ children, className }: { children: ReactNode; className?: string }) {
   const [open, setOpen] = useState(false);
   const trigger = useRef<HTMLButtonElement>(null);
   const close = useCallback(() => {
@@ -97,5 +99,28 @@ export function BookDemoLink({ children, className }: { children: ReactNode; cla
       </button>
       <AnimatePresence>{open && <DemoDialog onClose={close} />}</AnimatePresence>
     </>
+  );
+}
+
+/** Plain text trigger, styled by the caller (e.g. the "or book a demo" underline link). */
+export const BookDemoLink = BookDemoTrigger;
+
+/** Arrow button trigger that matches the site's ArrowButton. */
+export function BookDemoButton({
+  children = "Book a Demo",
+  variant = "primary",
+  size = "md",
+  className,
+}: {
+  children?: ReactNode;
+  variant?: "primary" | "secondary";
+  size?: "sm" | "md" | "lg";
+  className?: string;
+}) {
+  return (
+    <BookDemoTrigger className={cn(arrowButtonClass(variant, size), className)}>
+      {children}
+      <ArrowGlyph />
+    </BookDemoTrigger>
   );
 }
