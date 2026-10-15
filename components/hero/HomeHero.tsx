@@ -68,7 +68,7 @@ export function HomeHero({ src }: { src: string | null }) {
             </ArrowButton>
           </motion.div>
           <motion.p variants={item} className="mt-4 text-[0.8125rem] text-stone">
-            *Early birds get to use the SaraiOS Essential plan for free.
+            *Early birds get to use the SaraiOS Essential plan for free. Limited time only.
           </motion.p>
         </motion.div>
 
