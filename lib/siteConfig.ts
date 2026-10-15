@@ -27,7 +27,6 @@ export const siteConfig = {
   footerTagline: "Beyond Arrivals",
   social: {
     linkedin: process.env.NEXT_PUBLIC_LINKEDIN_URL || "",
-    x: process.env.NEXT_PUBLIC_X_URL || "",
     instagram: process.env.NEXT_PUBLIC_INSTAGRAM_URL || "",
   },
 } as const;

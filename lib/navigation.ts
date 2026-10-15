@@ -57,7 +57,6 @@ export const footerNav: FooterGroup[] = [
     title: "Connect",
     links: [
       { label: "LinkedIn", href: siteConfig.social.linkedin, external: true, disabled: !siteConfig.social.linkedin },
-      { label: "X", href: siteConfig.social.x, external: true, disabled: !siteConfig.social.x },
       { label: "Instagram", href: siteConfig.social.instagram, external: true, disabled: !siteConfig.social.instagram },
     ],
   },
