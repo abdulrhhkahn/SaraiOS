@@ -159,6 +159,8 @@ export type PlanCell = boolean | string;
 /** Feature matrix for Essential, Growth and Pro, in the same order as the plan cards above. */
 export const planComparison: { feature: string; values: [PlanCell, PlanCell, PlanCell] }[] = [
   { feature: "Contactless digital check-in", values: [true, true, true] },
+  { feature: "Contactless digital room service/F&B menu", values: [true, true, true] },
+  { feature: "Contactless digital tour/activity booking", values: [true, true, true] },
   { feature: "Review and verify guests", values: [true, true, true] },
   { feature: "Review and create guest requests", values: [true, true, true] },
   { feature: "Store guest details", values: [true, true, true] },
