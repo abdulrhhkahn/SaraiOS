@@ -112,7 +112,7 @@ export function IndustrySection({ industry, src, flip }: { industry: Industry; s
                 <IconTile>
                   <IndustryIcon icon={industry.icon} className="size-5 text-cta" />
                 </IconTile>
-                <p className="font-mono text-[0.9375rem] tracking-[0.08em] text-cta uppercase">{industry.name}</p>
+                <p className="eyebrow-pill text-cta">{industry.name}</p>
               </div>
               <h2
                 id={`${industry.slug}-title`}

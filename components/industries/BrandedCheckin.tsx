@@ -108,7 +108,7 @@ export function BrandedCheckin() {
     <section className="relative pb-24 sm:pb-32">
       <Container>
         <Reveal className="flex max-w-[44rem] flex-col items-start text-left">
-          <p className="font-mono text-[0.9375rem] tracking-[0.08em] text-cta uppercase">Guest surface</p>
+          <p className="eyebrow-pill text-cta">Guest surface</p>
           <h2 className="mt-5 max-w-[20ch] heading-section text-balance text-subheading">
             A check-in page that carries your branding.
           </h2>
