@@ -81,7 +81,7 @@ export default function PricingPage() {
       <section className="relative pt-20 pb-24 sm:pt-28 sm:pb-32">
         <Container>
           <Reveal>
-            <p className="font-mono text-[0.9375rem] tracking-[0.08em] text-cta uppercase">Compare plans</p>
+            <p className="eyebrow-pill text-cta">Compare plans</p>
             <h2 className="mt-5 max-w-[20ch] heading-section text-balance text-subheading">
               What&apos;s in each plan.
             </h2>
@@ -98,7 +98,7 @@ export default function PricingPage() {
       <section className="relative pb-24 sm:pb-32">
         <Container className="grid gap-12 lg:grid-cols-[1fr_1.6fr] lg:gap-20">
           <Reveal>
-            <p className="font-mono text-[0.9375rem] tracking-[0.08em] text-cta uppercase">FAQ</p>
+            <p className="eyebrow-pill text-cta">FAQ</p>
             <h2 className="mt-5 max-w-[14ch] heading-section text-balance text-subheading">
               Questions about our plans.
             </h2>
