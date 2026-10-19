@@ -49,7 +49,7 @@ export function ContactFaq() {
       <JsonLd data={faqJsonLd(contactFaqs)} />
       <Container className="grid gap-12 lg:grid-cols-[1fr_1.6fr] lg:gap-20">
         <Reveal>
-          <p className="font-mono text-[0.9375rem] tracking-[0.08em] text-cta uppercase">FAQ</p>
+          <p className="eyebrow-pill text-cta">FAQ</p>
           <h2 className="mt-5 max-w-[14ch] heading-section text-balance text-subheading">Before you get in touch.</h2>
           <ArrowButton href="/faq" size="sm" variant="secondary" className="mt-8">
             View All FAQs

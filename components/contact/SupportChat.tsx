@@ -67,7 +67,7 @@ export function SupportChat() {
     <section className="relative pb-24 sm:pb-32">
       <Container>
         <Reveal className="flex max-w-[44rem] flex-col items-start text-left">
-          <p className="font-mono text-[0.9375rem] tracking-[0.08em] text-cta uppercase">In-app support</p>
+          <p className="eyebrow-pill text-cta">In-app support</p>
           <h2 className="mt-5 max-w-[20ch] heading-section text-balance text-subheading">
             Support, right inside the app.
           </h2>
