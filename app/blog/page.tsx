@@ -23,7 +23,7 @@ export default function BlogIndexPage() {
       <section className="pt-36 pb-14 sm:pt-44 sm:pb-20">
         <Container>
           <Reveal className="mx-auto max-w-4xl text-center">
-            <p className="font-mono text-[0.9375rem] tracking-[0.08em] text-cta uppercase">Blog</p>
+            <p className="eyebrow-pill text-cta">Blog</p>
             <h1 className="mt-6 heading-hero text-balance">Hospitality, AI &amp; the future of guest experience.</h1>
           </Reveal>
         </Container>
@@ -41,7 +41,7 @@ export default function BlogIndexPage() {
               />
             </div>
             <div className="flex flex-col justify-center p-8 sm:p-12">
-              <p className="font-mono text-[0.9375rem] tracking-[0.08em] text-cta uppercase">Featured</p>
+              <p className="eyebrow-pill text-cta">Featured</p>
               <PostMeta post={featured} className="mt-4" />
               <h2 className="mt-3 font-serif text-[clamp(2rem,3.6vw,3rem)] leading-[1.05] text-balance">
                 <Link href={`/blog/${featured.slug}`} className="after:absolute after:inset-0 after:content-['']">
