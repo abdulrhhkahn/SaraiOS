@@ -203,7 +203,7 @@ export function AnalyticsSection() {
           {/* 1. Intro and table cards */}
           <div className="px-6 pt-10 pb-12 sm:px-10 sm:pt-12 sm:pb-14">
             <Reveal>
-              <p className="font-mono text-[0.9375rem] tracking-[0.08em] text-cta uppercase">Analytics</p>
+              <p className="eyebrow-pill text-cta">Analytics</p>
               <h2 className="mt-5 max-w-[24ch] heading-section text-balance text-subheading">
                 See who answers guests, and how fast.
               </h2>

@@ -124,7 +124,7 @@ export function RequestsSection() {
           </Reveal>
 
           <Reveal delay={0.1}>
-            <p className="font-mono text-[0.9375rem] tracking-[0.08em] text-cta uppercase">Requests</p>
+            <p className="eyebrow-pill text-cta">Requests</p>
             <h2 className="mt-5 max-w-[16ch] heading-section text-balance text-subheading">
               From a message to a tracked request.
             </h2>

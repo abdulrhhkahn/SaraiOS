@@ -154,7 +154,7 @@ export function StaffCheckins() {
           </Reveal>
 
           <Reveal delay={0.1}>
-            <p className="font-mono text-[0.9375rem] tracking-[0.08em] text-cta uppercase">Guest check-ins</p>
+            <p className="eyebrow-pill text-cta">Guest check-ins</p>
             <h2 className="mt-5 max-w-[16ch] heading-section text-balance text-subheading">
               Every arrival, reviewed in one place.
             </h2>
