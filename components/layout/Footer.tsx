@@ -50,7 +50,7 @@ export function Footer() {
           className="-z-10 object-cover object-top"
         />
         <Container className="text-center">
-          <p className="font-mono text-[0.9375rem] tracking-[0.08em] text-cta uppercase">Get started</p>
+          <p className="eyebrow-pill text-cta">Get started</p>
           <FooterCtaCopy />
           <div className="mt-8 flex flex-wrap justify-center gap-2.5">
             <ArrowButton href={primaryCta.href} size="sm">
