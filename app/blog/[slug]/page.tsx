@@ -133,7 +133,7 @@ export default async function BlogPostPage(props: PageProps<"/blog/[slug]">) {
 
         <Container className="mt-14 max-w-[720px]">
           <section aria-label="Summary" className="rounded-3xl bg-[#e4f1ee] p-6 ring-1 ring-[#005458]/10 sm:p-8">
-            <p className="font-mono text-[0.8125rem] tracking-[0.08em] text-cta uppercase">In short</p>
+            <p className="eyebrow-pill text-cta">In short</p>
             <p className="mt-3 text-[1.0625rem] leading-relaxed text-ink">{post.answer}</p>
             <h2 className="mt-6 text-base font-semibold">Key takeaways</h2>
             <ul className="mt-3 list-disc space-y-2 pl-5 text-[0.98rem] leading-relaxed text-stone">
@@ -188,7 +188,7 @@ export default async function BlogPostPage(props: PageProps<"/blog/[slug]">) {
 
       <section className="py-24">
         <Container>
-          <p className="font-mono text-[0.9375rem] tracking-[0.08em] text-cta uppercase">Keep reading</p>
+          <p className="eyebrow-pill text-cta">Keep reading</p>
           <h2 className="mt-5 heading-section text-balance text-subheading">Related articles.</h2>
           <Stagger className="mt-8 grid gap-x-6 gap-y-14 sm:grid-cols-2 lg:grid-cols-3">
             {related.map((p) => (
