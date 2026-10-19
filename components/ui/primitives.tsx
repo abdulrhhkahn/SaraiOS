@@ -23,14 +23,13 @@ export function Eyebrow({
   return (
     <p
       className={cn(
-        "inline-flex items-center gap-2 text-[0.75rem] font-semibold tracking-[0.14em] uppercase",
+        "eyebrow-pill",
         tone === "iris" && "text-subheading",
         tone === "brass" && "text-brass-ink",
         tone === "night" && "text-brass",
         className,
       )}
     >
-      <span aria-hidden className={cn("size-1.5 rounded-full", tone === "iris" ? "bg-iris" : "bg-brass")} />
       {children}
     </p>
   );
