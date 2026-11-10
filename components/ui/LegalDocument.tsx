@@ -25,8 +25,12 @@ export function LegalDocument({ doc }: { doc: LegalDoc }) {
           <div role="note" className="flex gap-3 rounded-2xl bg-warning-soft p-5 text-[0.95rem] text-[#6b4a0c]">
             <AlertTriangle className="mt-0.5 size-5 shrink-0" aria-hidden />
             <p>
-              <strong>Content requires legal review before production.</strong> This page is a structural placeholder
-              and does not constitute legal advice or a binding policy.
+              {doc.notice ?? (
+                <>
+                  <strong>Content requires legal review before production.</strong> This page is a structural
+                  placeholder and does not constitute legal advice or a binding policy.
+                </>
+              )}
             </p>
           </div>
           <div className="prose-sarai mt-10">
