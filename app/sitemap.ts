@@ -10,7 +10,7 @@ import { absoluteUrl } from "@/lib/siteConfig";
  * everything changed each time.
  */
 export default function sitemap(): MetadataRoute.Sitemap {
-  const legal = ["/terms", "/privacy"];
+  const legal = ["/terms", "/privacy", "/cookies"];
   return [
     ...Object.values(seoPages)
       .filter((p) => p.path !== "/blog")
