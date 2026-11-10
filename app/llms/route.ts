@@ -68,6 +68,7 @@ export function GET() {
     link("Blog", "/blog", seoPages.blog.description),
     link("Terms of Service", "/terms", seoPages.terms.description),
     link("Privacy Policy", "/privacy", seoPages.privacy.description),
+    link("Cookie Policy", "/cookies", seoPages.cookies.description),
     `- [Sitemap](${absoluteUrl("/sitemap.xml")}): every public page and article`,
     "",
     `There are ${allFaqs.length} frequently asked questions answered at ${absoluteUrl("/faq")}.`,
