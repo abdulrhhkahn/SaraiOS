@@ -51,6 +51,7 @@ export const footerNav: FooterGroup[] = [
     links: [
       { label: "Terms", href: "/terms" },
       { label: "Privacy", href: "/privacy" },
+      { label: "Cookies", href: "/cookies" },
     ],
   },
   {

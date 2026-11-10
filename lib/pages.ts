@@ -96,6 +96,13 @@ export const seoPages = {
     name: "Privacy Policy",
     schema: "WebPage",
   },
+  cookies: {
+    path: "/cookies",
+    title: "Cookie Policy | SaraiOS",
+    description: "Which cookies and similar technologies the SaraiOS website uses, and how to change your cookie choice.",
+    name: "Cookie Policy",
+    schema: "WebPage",
+  },
 } as const satisfies Record<string, SeoPage>;
 
 export type SeoPageKey = keyof typeof seoPages;
