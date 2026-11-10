@@ -9,6 +9,8 @@ import { ArrowButton } from "@/components/ui/ArrowButton";
 import { ProductScreenshot } from "@/components/dashboard/ProductScreenshot";
 import { Logo } from "./Logo";
 import { FooterCtaCopy } from "./FooterCtaCopy";
+import { CookieBanner } from "./CookieBanner";
+import { CookieSettingsButton } from "./CookieSettingsButton";
 
 /** Simple Icons paths (CC0). lucide-react no longer ships brand icons. */
 const socialIcons: Record<string, ReactNode> = {
@@ -132,9 +134,13 @@ export function Footer() {
 
       <Container>
         <div className="border-t border-black/[0.08] px-4 py-5 text-sm text-ink/60 sm:px-5">
-          <p className="ml-[3px]">© 2026 SaraiOS. All rights reserved. {siteConfig.footerNote}</p>
+          <div className="ml-[3px] flex flex-wrap items-center justify-between gap-x-6 gap-y-2">
+            <p>© 2026 SaraiOS. All rights reserved. {siteConfig.footerNote}</p>
+            <CookieSettingsButton className="cursor-pointer transition-colors hover:text-ink" />
+          </div>
         </div>
       </Container>
+      <CookieBanner />
     </footer>
   );
 }
