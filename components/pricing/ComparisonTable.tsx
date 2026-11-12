@@ -4,9 +4,11 @@ import { useState } from "react";
 import { Check } from "lucide-react";
 import { planComparison, pricingPlans, YEARLY_DISCOUNT, type PlanCell } from "@/lib/pricing";
 import { BillingToggle, type Billing } from "@/components/pricing/PricingCards";
-import { ArrowButton } from "@/components/ui/ArrowButton";
-import { BookDemoLink } from "@/components/demo/BookDemoLink";
+import { BookDemoButton, BookDemoLink } from "@/components/demo/BookDemoLink";
 import { cn } from "@/lib/cn";
+
+/** The small "or book a demo" link under each button is switched off for now. Set to true to show it again. */
+const SHOW_BOOK_DEMO_LINK = false;
 
 const fmt = (n: number) => n.toLocaleString("en-US");
 
@@ -120,20 +122,17 @@ export function ComparisonTable() {
                 key={p.id}
                 className={cn("px-5 pt-6 pb-6", p.featured && TINT, i === pricingPlans.length - 1 && "rounded-br-3xl")}
               >
-                <ArrowButton
-                  href={p.cta.href}
-                  size="md"
-                  variant={p.featured ? "primary" : "secondary"}
-                  className="w-full"
-                >
-                  {p.cta.label}
-                </ArrowButton>
-                <p className="mt-3 text-center text-xs text-ink/60">
-                  or{" "}
-                  <BookDemoLink className="cursor-pointer underline underline-offset-2 transition-colors hover:text-ink">
-                    book a demo
-                  </BookDemoLink>
-                </p>
+                <BookDemoButton variant={p.featured ? "primary" : "secondary"} className="w-full">
+                  Book my Demo
+                </BookDemoButton>
+                {SHOW_BOOK_DEMO_LINK && (
+                  <p className="mt-3 text-center text-xs text-ink/60">
+                    or{" "}
+                    <BookDemoLink className="cursor-pointer underline underline-offset-2 transition-colors hover:text-ink">
+                      book a demo
+                    </BookDemoLink>
+                  </p>
+                )}
               </div>
             ))}
           </div>

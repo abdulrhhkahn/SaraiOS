@@ -3,11 +3,13 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
 import { Check } from "lucide-react";
-import { BookDemoLink } from "@/components/demo/BookDemoLink";
+import { BookDemoButton, BookDemoLink } from "@/components/demo/BookDemoLink";
 import { pricingPlans, YEARLY_DISCOUNT } from "@/lib/pricing";
-import { ArrowButton } from "@/components/ui/ArrowButton";
 import { RevealItem, Stagger } from "@/components/animations/Reveal";
 import { cn } from "@/lib/cn";
+
+/** The small "or book a demo" link under each button is switched off for now. Set to true to show it again. */
+const SHOW_BOOK_DEMO_LINK = false;
 
 export type Billing = "monthly" | "yearly";
 
@@ -164,15 +166,17 @@ export function PricingCards() {
                 </div>
 
                 <div className="mt-auto pt-6">
-                  <ArrowButton href={plan.cta.href} size="md" variant={f ? "primary" : "secondary"} className="w-full">
-                    {plan.cta.label}
-                  </ArrowButton>
-                  <p className="mt-3 text-center text-xs text-ink/60">
-                    or{" "}
-                    <BookDemoLink className="cursor-pointer underline underline-offset-2 transition-colors hover:text-ink">
-                      book a demo
-                    </BookDemoLink>
-                  </p>
+                  <BookDemoButton variant={f ? "primary" : "secondary"} className="w-full">
+                    Book my Demo
+                  </BookDemoButton>
+                  {SHOW_BOOK_DEMO_LINK && (
+                    <p className="mt-3 text-center text-xs text-ink/60">
+                      or{" "}
+                      <BookDemoLink className="cursor-pointer underline underline-offset-2 transition-colors hover:text-ink">
+                        book a demo
+                      </BookDemoLink>
+                    </p>
+                  )}
                 </div>
               </article>
             </RevealItem>
